@@ -13,6 +13,7 @@ const links = [
   { to: "/ministries", label: "Ministries" },
   { to: "/sermons", label: "Sermons" },
   { to: "/events", label: "Events" },
+  { to: "/prayer-points", label: "Prayer Points" },
   { to: "/gallery", label: "Gallery" },
   { to: "/giving", label: "Give Online" },
 ];
@@ -70,13 +71,13 @@ function Navbar() {
           right-0
           top-0
           z-50
-          border-b
+          border
           transition-all
           duration-300
 
           ${
             isTransparent
-              ? "border-transparent bg-transparent"
+              ? "border-white/10 bg-white/5 shadow-[0_12px_35px_-18px_rgba(0,0,0,0.55)] backdrop-blur-sm"
               : "border-white/10 bg-[#310065]/95 shadow-lg backdrop-blur-md"
           }
         `}
@@ -89,7 +90,7 @@ function Navbar() {
             items-center
             justify-between
             px-5
-            py-2
+            py-5
             md:px-6
           "
         >
@@ -100,7 +101,7 @@ function Navbar() {
           <Link
             to="/"
             onClick={() => setIsOpen(false)}
-            className="flex items-center gap-2"
+            className="flex items-center gap-2 rounded-none border-0 bg-transparent p-0"
           >
             <img
               src={mfmLogo}
@@ -139,30 +140,20 @@ function Navbar() {
                 className={({ isActive }) =>
                   `
                   relative
-                  py-3
+                  rounded-full
+                  border
+                  border-transparent
+                  px-3
+                  py-2
                   text-sm
                   font-bold
-                  transition-colors
+                  transition-all
                   duration-200
 
                   ${
                     isActive
-                      ? "text-[#ffdf9e]"
-                      : "text-white/80 hover:text-white"
-                  }
-
-                  after:absolute
-                  after:bottom-1
-                  after:left-0
-                  after:h-[2px]
-                  after:bg-[#ffdf9e]
-                  after:transition-all
-                  after:duration-300
-
-                  ${
-                    isActive
-                      ? "after:w-full"
-                      : "after:w-0 hover:after:w-full"
+                      ? "border-[#ffdf9e]/40 bg-white/10 text-[#ffdf9e]"
+                      : "text-white/80 hover:border-[#ffdf9e]/40 hover:bg-white/10 hover:text-white"
                   }
                   `
                 }

@@ -9,7 +9,7 @@ import MinistriesPreview from "../components/home/MinistriesPreview";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#f9f9fb] text-[#1a1c1d]">
+    <main className="min-h-screen bg-white text-[#1a1c1d]">
       <Hero />
 
 
@@ -18,8 +18,8 @@ export default function Home() {
       <AboutPreview />
       <ServicesPreview />
       <SermonsPreview />
-      <EventsPreview />
       <MinistriesPreview />
+      <EventsPreview />
     </main>
   );
 }

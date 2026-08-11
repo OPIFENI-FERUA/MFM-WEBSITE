@@ -1,10 +1,13 @@
+import PageHero from "../components/layout/PageHero";
+
 function Services() {
   return (
-    <main className="page-shell">
-      <div className="container">
-        <h1>Services</h1>
-        <p>Explore our worship services, prayer meetings, and spiritual support programs.</p>
-      </div>
+    <main className="min-h-screen bg-white text-[#1a1c1d]">
+      <PageHero
+        label="Services"
+        title="Services"
+        description="Explore our worship services, prayer meetings, and spiritual support programs."
+      />
     </main>
   )
 }

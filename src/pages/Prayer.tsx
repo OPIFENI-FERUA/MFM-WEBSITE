@@ -1,10 +1,13 @@
+import PageHero from "../components/layout/PageHero";
+
 function Prayer() {
   return (
-    <main className="page-shell">
-      <div className="container">
-        <h1>Prayer</h1>
-        <p>We believe in the power of prayer and the strength that comes from praying together.</p>
-      </div>
+    <main className="min-h-screen bg-white text-[#1a1c1d]">
+      <PageHero
+        label="Prayer"
+        title="Prayer"
+        description="We believe in the power of prayer and the strength that comes from praying together."
+      />
     </main>
   )
 }

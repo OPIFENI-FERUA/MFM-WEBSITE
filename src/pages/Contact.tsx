@@ -29,29 +29,29 @@ function Contact() {
   }
 
   return (
-    <main className="min-h-screen bg-[#f8f7fa]">
+    <main className="min-h-screen bg-white">
 
       {/* =========================================
           PAGE HEADER
       ========================================= */}
-      <section className="relative overflow-hidden bg-[#f8f7fa] px-6 py-16 md:py-20">
+      <section className="relative overflow-hidden bg-[#310065] px-6 py-20 text-white md:py-24">
 
         {/* Soft background decorations */}
-        <div className="pointer-events-none absolute -left-20 -top-20 h-64 w-64 rounded-full bg-[#fabd00]/10 blur-3xl" />
+        <div className="pointer-events-none absolute -left-20 -top-20 h-64 w-64 rounded-full bg-white/10 blur-3xl" />
 
-        <div className="pointer-events-none absolute -bottom-20 -right-20 h-72 w-72 rounded-full bg-[#310065]/5 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-20 -right-20 h-72 w-72 rounded-full bg-[#ffffff]/10 blur-3xl" />
 
         <div className="relative mx-auto max-w-[1280px] text-center">
 
-          <p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-[#310065]">
+          <p className="mb-4 inline-flex rounded-full bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.3em] text-white/90">
             Get In Touch
           </p>
 
-          <h1 className="text-4xl font-bold text-[#310065] md:text-5xl">
+          <h1 className="mt-6 text-5xl font-bold uppercase tracking-[-0.03em] text-white md:text-6xl">
             Contact Us
           </h1>
 
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-gray-600 md:text-lg">
+          <p className="mx-auto mt-6 max-w-3xl text-base leading-8 text-white/80 md:text-lg">
             We would love to hear from you. Whether you have a question,
             need prayer, or simply want to connect with us, our team is
             here to help.
@@ -96,7 +96,7 @@ function Contact() {
               {/* Phone */}
               <a
                 href="tel:+256000000000"
-                className="flex items-start gap-4 rounded-xl p-3 transition-colors hover:bg-[#f8f7fa]"
+                className="flex items-start gap-4 rounded-xl p-3 transition-colors hover:bg-white"
               >
                 <Phone
                   size={19}
@@ -118,7 +118,7 @@ function Contact() {
               {/* Email */}
               <a
                 href="mailto:info@mfmkanyanya.org"
-                className="flex items-start gap-4 rounded-xl p-3 transition-colors hover:bg-[#f8f7fa]"
+                className="flex items-start gap-4 rounded-xl p-3 transition-colors hover:bg-white"
               >
                 <Mail
                   size={19}

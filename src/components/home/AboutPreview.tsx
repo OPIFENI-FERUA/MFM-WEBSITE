@@ -3,7 +3,6 @@ import {
   ArrowRight,
   Target,
   HeartHandshake,
-  CheckCircle2,
 } from "lucide-react";
 
 import pastorImage from "../../assets/images/pastor Benita.jpg";

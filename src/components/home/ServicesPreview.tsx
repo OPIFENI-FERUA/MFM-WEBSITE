@@ -17,18 +17,23 @@ interface Service {
 const services: Service[] = [
   {
     title: "Sunday Worship Service",
-    time: "09:00 AM",
+    time: "09:00 AM - 12:00 PM",
     description: "Worship, Word, Prayer and Fellowship.",
   },
   {
-    title: "Wednesday Bible Study",
-    time: "06:00 PM",
-    description: "Learning and growing deeper in God's Word.",
+    title: "Holy Communion Sunday",
+    time: "08:00 AM - 12:00 PM",
+    description: "Takes place every 1st Sunday of the month.",
   },
   {
-    title: "Friday Prayer Service",
-    time: "06:00 PM",
-    description: "Prayer, revival and spiritual renewal.",
+    title: "Power Must Change Hands",
+    time: "08:00 AM - 12:00 PM",
+    description: "Happens every 1st Saturday of the month.",
+  },
+  {
+    title: "Youth Fellowship",
+    time: "06:00 PM - 08:00 PM",
+    description: "Happens                                every Friday",
   },
 ];
 
@@ -45,16 +50,16 @@ function ServicesPreview() {
         <div className="absolute inset-0" />
 
         <div className="relative z-10 flex h-full items-center justify-center px-6 text-center">
-          <div className="max-w-lg text-white">
+          <div className="max-w-lg rounded-[2rem] border border-white/20 bg-black/35 px-7 py-8 text-white shadow-[0_10px_30px_rgba(0,0,0,0.25)] backdrop-blur-sm">
             <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#d4af37]">
               Our Services
             </p>
 
             <h2 className="mt-5 text-4xl font-bold uppercase md:text-5xl">
-              Experience Worship & Community
+              experience worship and community
             </h2>
 
-            <p className="mt-6 leading-8 text-white/80">
+            <p className="mt-6 leading-8 text-white/90">
               Join us every week as we worship together, study God's Word,
               strengthen our faith, and experience His transforming presence.
             </p>
@@ -63,10 +68,10 @@ function ServicesPreview() {
       </div>
 
       {/* RIGHT CONTENT */}
-      <div className="flex items-center bg-[#faf9fc] px-6 py-20 md:px-12 lg:px-20">
+      <div className="flex items-center bg-white px-6 py-20 md:px-12 lg:px-20">
         <div className="w-full">
 
-          <div className="rounded-[2rem] bg-white p-8 shadow-[0_25px_70px_rgba(49,0,101,0.08)]">
+          <div className="rounded-[2rem] bg-white p-8 shadow-[0_12px_35px_rgba(15,23,42,0.08)]">
 
             <div className="mb-8 flex items-center justify-between">
               <div>
@@ -93,7 +98,7 @@ function ServicesPreview() {
                 return (
                   <div
                     key={service.title}
-                    className="flex items-center justify-between rounded-2xl border border-gray-100 bg-white p-5 transition hover:border-[#d4af37] hover:shadow-lg"
+                    className="flex items-center justify-between rounded-2xl border border-gray-100 bg-white p-5 shadow-[0_8px_25px_rgba(107,114,128,0.16)] transition hover:border-[#d4af37] hover:shadow-[0_10px_28px_rgba(107,114,128,0.2)]"
                   >
                     <div className="flex items-center gap-4">
                       <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#310065]/10">

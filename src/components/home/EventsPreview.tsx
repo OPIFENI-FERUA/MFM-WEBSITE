@@ -1,9 +1,19 @@
 import { Link } from "react-router-dom";
 
-const events = [
+interface EventItem {
+  title: string;
+  date: string;
+  image: string;
+  description: string;
+  time?: string;
+  link?: string;
+}
+
+const events: EventItem[] = [
   {
     title: "MEDICAL CAMP",
     date: "Sat, 15 Jun 2024",
+    time: "8:00 AM – 4:00 PM",
     image:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuCtOq2B1aqLQ1X2CvcWb3cpDp5zOIkJ1q_SJQHXLWNl6Fu_ZSXZzfyaJ9_SsiEd_1L8cb0gRMCErk0Nfbq7kE0hxVy0kq-hYDQ0-I_iG2cVIKJO2lKceHAb7uUnaRxIK8roZIkuSuO1e5_2DScCM1fEH4GO1DTuUtGnC3FvYthEFTHkt6AV3VNAuyTX_FEDEPYR9_h5KES0cGOLU9C9TeDzADM8PY4U0JWpFfIVfd36Gs-fq8znsPfx",
     description: "Free health check-ups, counselling and medication for the community.",
@@ -11,6 +21,7 @@ const events = [
   {
     title: "WORSHIP EVENING",
     date: "Fri, 21 Jun 2024",
+    time: "6:00 PM – 9:00 PM",
     image:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuCitBdOWdD8VaqWbrGi4ykjGSyAcdy7UsrWsYMKjoz6NtMBuTgqcNbCHEZmL7bTE08cL0VUMk5U_EjoX8fiArZ8zBz1AjYuwnxPPK6Cq8kQjd677ohDt6QIjX4wCi0FcYh3HSOy-tyg_Zo_BeJODlj5-OQR9hvco5NzaatRK5sxHDVRVnt_JVwNVhvJNjnCS2B6JN3UoCEiIaSPn2Zo7hsFQmAxVSlD4fhPbIqLbOiqUQ7AgvJRd8Hl",
     description: "An evening of praise, worship and encounter in God's presence.",
@@ -18,18 +29,23 @@ const events = [
   {
     title: "YOUTH CONFERENCE",
     date: "Sun, 30 Jun - Wed, 03 Jul",
+    time: "All Day Event",
     image:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuCKVfQbsW4qDO84a_T-Ri7pOXKw86HfWvI0Az5Pv5DSn3qDupXD_KqSjd4P_ven6NLohni4pwCwPFjr1XFGW1Zxn3ShvEk5tcTHqEVeSAiWJREvtFrdOTLrNurgku3rw7u0qbkt0gnVRxmV2KIYP5YhnDi8muqbRk6x1EFN5SLM232JBFUulBB9637o-w-5EScWmVTBQAhJnzYXYYNAblNGmAxXFsNX-CwVmJkusgu7HNyacbQ6j4Dc",
     description: "Three days of teaching, mentorship and fellowship for young people.",
   },
-  {
-    title: "PRAYER MEETING",
-    date: "Every Friday, 06:00 PM",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuBYyYn7n686lKpZZ6nWxbuhsdGfeeq6GDWwF9EIsJ5wjkE80ltVJIg9AeozofCBUFVjKAdgXvW9XWFAyuFmGGpK711M7Gp3jsy0vF8bYAplYyOwclQTC1ATGmp3DzyuIxEF74vW8BRyMkw27CDYA_Gzoeshj0RDt_Rz5-5Xp80ilISm62lg6V0VcO29d-NNWc5zc7KlorT3ZRtnjur90bTn3LM0DPIb8oU-bEJSLrhUStDSW6N1erWn",
-    description: "Corporate intercession for families, the church and the nation.",
-  },
 ];
+
+// Helper to extract day & month dynamically from date strings
+const parseDateBadge = (dateStr: string) => {
+  const dayMatch = dateStr.match(/\b\d{1,2}\b/);
+  const monthMatch = dateStr.match(/Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec/i);
+
+  return {
+    day: dayMatch ? dayMatch[0].padStart(2, "0") : "15",
+    month: monthMatch ? monthMatch[0].toUpperCase() : "EVENT",
+  };
+};
 
 interface EventsPreviewProps {
   title?: string;
@@ -41,31 +57,105 @@ function EventsPreview({
   showViewAll = true,
 }: EventsPreviewProps) {
   return (
-    <section className="bg-[#eeeef0] py-[120px]">
-      <div className="mx-auto max-w-[1280px] px-5 md:px-6">
-        <div className="mb-12 flex items-end justify-between">
-          <h2 className="text-[32px] font-bold uppercase tracking-tight text-[#310065]">{title}</h2>
-          {showViewAll ? (
-            <Link className="flex items-center gap-1 text-sm font-semibold uppercase tracking-[0.2em] text-[#ba002c] hover:underline" to="/events">
-              View all events <span className="material-symbols-outlined text-sm">arrow_outward</span>
+    <section className="bg-white py-20 md:py-28">
+      <div className="mx-auto max-w-[1240px] px-5 md:px-8">
+        
+        {/* Section Header */}
+        <div className="mb-12 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+          <div>
+            <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#310065]">
+              Don't Miss Out
+            </span>
+            <h2 className="mt-1 text-3xl font-black uppercase tracking-tight text-[#2b1055] sm:text-4xl">
+              {title}
+            </h2>
+            <div className="mt-2.5 h-1 w-14 rounded-full bg-[#f2a900]" />
+          </div>
+
+          {showViewAll && (
+            <Link
+              to="/events"
+              className="group inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#310065] transition-all hover:text-[#4a148c]"
+            >
+              <span>View all events</span>
+              <span className="material-symbols-outlined text-sm transition-transform duration-300 group-hover:translate-x-1">
+                arrow_forward
+              </span>
             </Link>
-          ) : null}
+          )}
         </div>
-        <div className="grid gap-6 md:grid-cols-4">
-          {events.map((event) => (
-            <div key={event.title} className="flex h-full flex-col overflow-hidden rounded-xl bg-white shadow-sm transition-all hover:shadow-lg">
-              <div className="h-40 overflow-hidden">
-                <img src={event.image} alt={event.title} className="h-full w-full object-cover" />
+
+        {/* Events Grid */}
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {events.slice(0, 3).map((event, index) => {
+            const { day, month } = parseDateBadge(event.date);
+
+            return (
+              <div
+                key={`${event.title}-${index}`}
+                className="group flex flex-col justify-between overflow-hidden rounded-3xl border border-gray-100 bg-white p-2.5 shadow-[0_10px_30px_rgba(107,114,128,0.16)] ring-1 ring-gray-100/80 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_16px_40px_rgba(107,114,128,0.2)]"
+              >
+                <div>
+                  {/* Image Container with Floating Badge */}
+                  <div className="relative h-52 w-full overflow-hidden rounded-2xl bg-slate-100">
+                    <img
+                      src={event.image}
+                      alt={event.title}
+                      className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    />
+
+                    {/* Floating Glassmorphic Date Badge */}
+                    <div className="absolute left-4 top-4 flex flex-col items-center justify-center rounded-2xl bg-[#2b1055]/90 px-4 py-2 text-white shadow-xl backdrop-blur-md ring-1 ring-white/10">
+                      <span className="text-2xl font-black leading-none tracking-tight">
+                        {day}
+                      </span>
+                      <span className="mt-1 text-[10px] font-bold uppercase tracking-widest text-purple-200">
+                        {month}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Body Content */}
+                  <div className="px-3 pt-5 pb-2">
+                    <h3 className="text-xl font-bold uppercase tracking-wide text-[#1a1c1d]">
+                      {event.title}
+                    </h3>
+
+                    {/* Meta Details */}
+                    <div className="mt-4 space-y-2 text-xs font-semibold text-slate-500">
+                      <div className="flex items-center gap-2.5">
+                        <span className="material-symbols-outlined text-base text-[#d4af37]">
+                          calendar_today
+                        </span>
+                        <span>{event.date}</span>
+                      </div>
+                      <div className="flex items-center gap-2.5">
+                        <span className="material-symbols-outlined text-base text-[#d4af37]">
+                          schedule
+                        </span>
+                        <span>{event.time || "Check schedule"}</span>
+                      </div>
+                    </div>
+
+                    {/* Description */}
+                    <p className="mt-4 text-xs leading-relaxed text-slate-600 line-clamp-2">
+                      {event.description}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Call to Action */}
+                <div className="p-2 pt-4">
+                  <Link
+                    to={event.link || "/register"}
+                    className="block w-full rounded-xl bg-[#310065] py-3.5 text-center text-xs font-bold uppercase tracking-widest text-white shadow-md shadow-gray-200 transition-all duration-300 hover:bg-[#d4af37] hover:text-[#310065] hover:shadow-lg hover:shadow-gray-300 active:scale-[0.98]"
+                  >
+                    REGISTER NOW
+                  </Link>
+                </div>
               </div>
-              <div className="flex-grow p-6">
-                <p className="mb-2 flex items-center gap-1 text-[12px] font-bold uppercase tracking-[0.2em] text-[#ba002c]">
-                  <span className="material-symbols-outlined text-sm">calendar_month</span> {event.date}
-                </p>
-                <h3 className="mb-2 text-[24px] font-semibold text-[#310065]">{event.title}</h3>
-                <p className="text-sm leading-7 text-[#4a4452]">{event.description}</p>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

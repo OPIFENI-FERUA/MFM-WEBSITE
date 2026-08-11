@@ -6,6 +6,7 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import { useState } from "react";
+import PageHero from "../components/layout/PageHero";
 
 function Giving() {
   const [copied, setCopied] = useState("");
@@ -20,36 +21,13 @@ function Giving() {
   }
 
   return (
-    <main className="min-h-screen bg-[#f8f7fa]">
+    <main className="min-h-screen bg-white">
 
-      {/* =========================================
-          PAGE HEADER
-      ========================================= */}
-      <section className="relative overflow-hidden bg-[#f8f7fa] px-6 py-16 md:py-20">
-
-        {/* Background Decorations */}
-        <div className="pointer-events-none absolute -left-20 -top-20 h-64 w-64 rounded-full bg-[#fabd00]/10 blur-3xl" />
-
-        <div className="pointer-events-none absolute -bottom-20 -right-20 h-72 w-72 rounded-full bg-[#310065]/5 blur-3xl" />
-
-        <div className="relative mx-auto max-w-3xl text-center">
-
-          <p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-[#310065]">
-            Give With Purpose
-          </p>
-
-          <h1 className="text-4xl font-bold text-[#310065] md:text-5xl">
-            Giving
-          </h1>
-
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-gray-600 md:text-lg">
-            Your generosity helps support ministry, outreach, evangelism,
-            and the work of the church. Thank you for partnering with us
-            as we advance God's Kingdom.
-          </p>
-
-        </div>
-      </section>
+      <PageHero
+        label="Give With Purpose"
+        title="Giving"
+        description="Your generosity helps support ministry, outreach, evangelism, and the work of the church. Thank you for partnering with us as we advance God's Kingdom."
+      />
 
 
       {/* =========================================

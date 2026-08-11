@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Calendar, User, PlayCircle, ArrowUpRight } from "lucide-react";
+import type { JSX } from "react/jsx-runtime";
 
 type Sermon = {
   title: string;
@@ -48,7 +49,7 @@ function SermonsPreview({
   showViewAll = true,
 }: SermonsPreviewProps): JSX.Element {
   return (
-    <section className="bg-[#faf9fc] py-20 md:py-28">
+    <section className="bg-white py-20 md:py-28">
 
       <div className="mx-auto max-w-[1280px] px-6">
 
@@ -139,11 +140,13 @@ function SermonsPreview({
                 border
                 border-gray-100
                 bg-white
-                shadow-[0_8px_30px_rgba(49,0,101,0.06)]
+                shadow-[0_10px_30px_rgba(107,114,128,0.16)]
+                ring-1
+                ring-gray-100/80
                 transition-all
                 duration-300
                 hover:-translate-y-1.5
-                hover:shadow-[0_20px_45px_rgba(49,0,101,0.14)]
+                hover:shadow-[0_16px_40px_rgba(107,114,128,0.2)]
               "
             >
 
@@ -334,7 +337,8 @@ function SermonsPreview({
                       text-white
                       transition-colors
                       duration-200
-                      hover:bg-[#4a148c]
+                      hover:bg-[#d4af37]
+                      hover:text-[#310065]
                     "
                   >
                     Watch
@@ -350,8 +354,7 @@ function SermonsPreview({
                     className="
                       flex-1
                       rounded-lg
-                      border
-                      border-gray-200
+                      bg-[#8b1e3f]
                       px-4
                       py-2.5
                       text-center
@@ -359,12 +362,13 @@ function SermonsPreview({
                       font-bold
                       uppercase
                       tracking-wider
-                      text-gray-600
-                      transition-colors
+                      text-white
+                      shadow-[0_8px_20px_rgba(15,23,42,0.08)]
+                      transition-all
                       duration-200
-                      hover:border-[#310065]/30
-                      hover:bg-gray-50
+                      hover:bg-[#d4af37]
                       hover:text-[#310065]
+                      hover:shadow-[0_10px_24px_rgba(15,23,42,0.12)]
                     "
                   >
                     Listen

@@ -51,6 +51,8 @@ function Hero() {
             />
           ))}
         </div>
+
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/10" />
       </div>
 
       {/* =====================================
@@ -287,13 +289,13 @@ function Hero() {
             >
 
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#ffd97a]/90">
-                Theme of the Year
+                Theme of the Year 2026
               </p>
 
               <h3 className="mt-4 text-3xl font-extrabold leading-tight text-[#ffffff]">
                 My Year of
                 <span className="block text-[#ffd97a]">
-                  Fresh Anointing & Glory
+                  Great Deliverance & fresh glory
                 </span>
               </h3>
 
