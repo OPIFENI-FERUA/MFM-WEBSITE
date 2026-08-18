@@ -63,10 +63,10 @@ function EventsPreview({
         {/* Section Header */}
         <div className="mb-12 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
           <div>
-            <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#310065]">
+            <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#540a8c]">
               Don't Miss Out
             </span>
-            <h2 className="mt-1 text-3xl font-black uppercase tracking-tight text-[#2b1055] sm:text-4xl">
+            <h2 className="mt-1 text-3xl font-black uppercase tracking-tight text-[#540a8c] sm:text-4xl">
               {title}
             </h2>
             <div className="mt-2.5 h-1 w-14 rounded-full bg-[#f2a900]" />
@@ -75,7 +75,7 @@ function EventsPreview({
           {showViewAll && (
             <Link
               to="/events"
-              className="group inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#310065] transition-all hover:text-[#4a148c]"
+              className="group inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#540a8c] transition-all hover:text-[#540a8c]"
             >
               <span>View all events</span>
               <span className="material-symbols-outlined text-sm transition-transform duration-300 group-hover:translate-x-1">
@@ -105,11 +105,11 @@ function EventsPreview({
                     />
 
                     {/* Floating Glassmorphic Date Badge */}
-                    <div className="absolute left-4 top-4 flex flex-col items-center justify-center rounded-2xl bg-[#2b1055]/90 px-4 py-2 text-white shadow-xl backdrop-blur-md ring-1 ring-white/10">
+                    <div className="absolute left-4 top-4 flex flex-col items-center justify-center rounded-2xl bg-[#540a8c]/90 px-4 py-2 text-white shadow-xl backdrop-blur-md ring-1 ring-white/10">
                       <span className="text-2xl font-black leading-none tracking-tight">
                         {day}
                       </span>
-                      <span className="mt-1 text-[10px] font-bold uppercase tracking-widest text-purple-200">
+                      <span className="mt-1 text-[10px] font-bold uppercase tracking-widest text-[#540a8c]">
                         {month}
                       </span>
                     </div>
@@ -117,7 +117,7 @@ function EventsPreview({
 
                   {/* Body Content */}
                   <div className="px-3 pt-5 pb-2">
-                    <h3 className="text-xl font-bold uppercase tracking-wide text-[#1a1c1d]">
+                    <h3 className="text-xl font-bold uppercase tracking-wide text-[#000000]">
                       {event.title}
                     </h3>
 
@@ -148,7 +148,7 @@ function EventsPreview({
                 <div className="p-2 pt-4">
                   <Link
                     to={event.link || "/register"}
-                    className="block w-full rounded-xl bg-[#310065] py-3.5 text-center text-xs font-bold uppercase tracking-widest text-white shadow-md shadow-gray-200 transition-all duration-300 hover:bg-[#d4af37] hover:text-[#310065] hover:shadow-lg hover:shadow-gray-300 active:scale-[0.98]"
+                    className="block w-full rounded-xl bg-[#540a8c] py-3.5 text-center text-xs font-bold uppercase tracking-widest text-white shadow-md shadow-gray-200 transition-all duration-300 hover:bg-[#d4af37] hover:text-[#540a8c] hover:shadow-lg hover:shadow-gray-300 active:scale-[0.98]"
                   >
                     REGISTER NOW
                   </Link>

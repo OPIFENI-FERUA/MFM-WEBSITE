@@ -58,14 +58,14 @@ function Giving() {
                 justify-center
                 rounded-full
                 bg-[#fabd00]/10
-                text-[#310065]
+                text-[#540a8c]
               ">
                 <Heart size={25} />
               </div>
 
               <div>
 
-                <h2 className="text-xl font-bold text-[#310065]">
+                <h2 className="text-xl font-bold text-[#540a8c]">
                   Thank You for Your Generosity
                 </h2>
 
@@ -95,11 +95,11 @@ function Giving() {
 
           <div className="mb-10 text-center">
 
-            <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-[#310065]">
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-[#540a8c]">
               Ways To Give
             </p>
 
-            <h2 className="text-3xl font-bold text-[#310065] md:text-4xl">
+            <h2 className="text-3xl font-bold text-[#540a8c] md:text-4xl">
               Choose Your Preferred Method
             </h2>
 
@@ -126,7 +126,7 @@ function Giving() {
               border-gray-100
               bg-white
               p-7
-              shadow-[0_15px_40px_rgba(49,0,101,0.07)]
+              shadow-[0_15px_40px_rgba(114,17,110,0.07)]
             ">
 
               {/* Card Header */}
@@ -139,15 +139,15 @@ function Giving() {
                   items-center
                   justify-center
                   rounded-xl
-                  bg-[#310065]/10
-                  text-[#310065]
+                  bg-[#540a8c]/10
+                  text-[#540a8c]
                 ">
                   <Building2 size={23} />
                 </div>
 
                 <div>
 
-                  <h3 className="text-xl font-bold text-[#310065]">
+                  <h3 className="text-xl font-bold text-[#540a8c]">
                     Bank Transfer
                   </h3>
 
@@ -219,9 +219,9 @@ function Giving() {
                         py-2
                         text-xs
                         font-medium
-                        text-[#310065]
+                        text-[#540a8c]
                         transition-colors
-                        hover:bg-[#310065]/10
+                        hover:bg-[#540a8c]/10
                       "
                     >
                       {copied === "bank" ? (
@@ -268,7 +268,7 @@ function Giving() {
               border-gray-100
               bg-white
               p-7
-              shadow-[0_15px_40px_rgba(49,0,101,0.07)]
+              shadow-[0_15px_40px_rgba(114,17,110,0.07)]
             ">
 
               {/* Card Header */}
@@ -282,14 +282,14 @@ function Giving() {
                   justify-center
                   rounded-xl
                   bg-[#fabd00]/15
-                  text-[#310065]
+                  text-[#540a8c]
                 ">
                   <Smartphone size={23} />
                 </div>
 
                 <div>
 
-                  <h3 className="text-xl font-bold text-[#310065]">
+                  <h3 className="text-xl font-bold text-[#540a8c]">
                     Mobile Money
                   </h3>
 
@@ -350,10 +350,10 @@ function Giving() {
                         py-2
                         text-xs
                         font-medium
-                        text-[#310065]
+                        text-[#540a8c]
                         shadow-sm
                         transition-colors
-                        hover:bg-[#310065]/10
+                        hover:bg-[#540a8c]/10
                       "
                     >
                       {copied === "mtn" ? (
@@ -419,10 +419,10 @@ function Giving() {
                         py-2
                         text-xs
                         font-medium
-                        text-[#310065]
+                        text-[#540a8c]
                         shadow-sm
                         transition-colors
-                        hover:bg-[#310065]/10
+                        hover:bg-[#540a8c]/10
                       "
                     >
                       {copied === "airtel" ? (
@@ -455,7 +455,7 @@ function Giving() {
           <div className="
             mt-8
             rounded-2xl
-            bg-[#310065]
+            bg-[#540a8c]
             px-6
             py-7
             text-center

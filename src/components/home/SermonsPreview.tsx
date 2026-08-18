@@ -64,14 +64,14 @@ function SermonsPreview({
 
               <span className="h-[2px] w-10 bg-[#d4af37]" />
 
-              <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#310065]">
+              <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#540a8c]">
                 Word &amp; Worship
               </span>
 
             </div>
 
 
-            <h2 className="text-3xl font-bold leading-tight text-[#310065] md:text-4xl">
+            <h2 className="text-3xl font-bold leading-tight text-[#540a8c] md:text-4xl">
               {title}
             </h2>
 
@@ -92,10 +92,10 @@ function SermonsPreview({
                 font-bold
                 uppercase
                 tracking-[0.15em]
-                text-[#310065]
+                text-[#540a8c]
                 transition-colors
                 duration-200
-                hover:text-[#4a148c]
+                hover:text-[#540a8c]
               "
             >
 
@@ -200,7 +200,7 @@ function SermonsPreview({
                     font-bold
                     uppercase
                     tracking-[0.15em]
-                    text-[#310065]
+                    text-[#540a8c]
                   "
                 >
                   Sunday Service
@@ -255,7 +255,7 @@ function SermonsPreview({
                     text-lg
                     font-bold
                     leading-snug
-                    text-[#1a1c1d]
+                    text-[#000000]
                   "
                 >
                   {sermon.title}
@@ -326,7 +326,7 @@ function SermonsPreview({
                     className="
                       flex-1
                       rounded-lg
-                      bg-[#310065]
+                      bg-[#540a8c]
                       px-4
                       py-2.5
                       text-center
@@ -338,7 +338,7 @@ function SermonsPreview({
                       transition-colors
                       duration-200
                       hover:bg-[#d4af37]
-                      hover:text-[#310065]
+                      hover:text-[#540a8c]
                     "
                   >
                     Watch
@@ -367,7 +367,7 @@ function SermonsPreview({
                       transition-all
                       duration-200
                       hover:bg-[#d4af37]
-                      hover:text-[#310065]
+                      hover:text-[#540a8c]
                       hover:shadow-[0_10px_24px_rgba(15,23,42,0.12)]
                     "
                   >

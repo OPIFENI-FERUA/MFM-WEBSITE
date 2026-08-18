@@ -17,7 +17,7 @@ function AboutPreview() {
           so the badge above can overflow upward freely)
       ========================================= */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -left-32 top-40 h-72 w-72 rounded-full bg-[#310065]/5 blur-3xl" />
+        <div className="absolute -left-32 top-40 h-72 w-72 rounded-full bg-[#540a8c]/5 blur-3xl" />
         <div className="absolute -right-32 bottom-20 h-96 w-96 rounded-full bg-[#d4af37]/15 blur-3xl" />
       </div>
 
@@ -38,9 +38,9 @@ function AboutPreview() {
   {/* Decorative Shapes */}
   <div className="absolute -left-6 -top-6 h-28 w-28 rounded-3xl bg-[#d4af37]/20" />
 
-  <div className="absolute -right-8 -bottom-8 h-44 w-44 rounded-full bg-[#310065]/10 blur-3xl" />
+  <div className="absolute -right-8 -bottom-8 h-44 w-44 rounded-full bg-[#540a8c]/10 blur-3xl" />
 
-  <div className="relative overflow-hidden rounded-3xl shadow-[0_25px_70px_rgba(49,0,101,0.18)]">
+  <div className="relative overflow-hidden rounded-3xl shadow-[0_25px_70px_rgba(114,17,110,0.18)]">
 
     {/* Image Container */}
     <div className="group relative overflow-hidden">
@@ -69,8 +69,8 @@ function AboutPreview() {
           absolute
           inset-0
           bg-gradient-to-t
-          from-[#220046]/95
-          via-[#220046]/30
+          from-[#540a8c]/95
+          via-[#540a8c]/30
           to-transparent
           opacity-0
           transition-opacity
@@ -97,7 +97,7 @@ function AboutPreview() {
           group-hover:translate-y-0
         "
       >
-        <span className="inline-block rounded-full bg-[#d4af37] px-3 py-1 text-[11px] font-bold uppercase tracking-[0.15em] text-[#310065]">
+        <span className="inline-block rounded-full bg-[#d4af37] px-3 py-1 text-[11px] font-bold uppercase tracking-[0.15em] text-[#540a8c]">
           Mega Regional Overseer
         </span>
 
@@ -105,7 +105,7 @@ function AboutPreview() {
           Pastor Benita
         </h3>
 
-        <p className="mt-2 text-sm leading-7 text-gray-200">
+        <p className="mt-2 text-sm leading-7 text-white">
           Mountain of Fire & Miracles Ministries
           <br />
           Kanyanya Mega Regional Headquarters
@@ -129,12 +129,12 @@ function AboutPreview() {
           <div className="mb-5 flex items-center gap-3">
             <span className="h-[2px] w-10 bg-[#d4af37]" />
 
-            <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#310065]">
+            <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#540a8c]">
               Who We Are
             </span>
           </div>
 
-          <h2 className="max-w-xl text-3xl font-bold leading-tight text-[#310065] md:text-4xl lg:text-5xl">
+          <h2 className="max-w-xl text-3xl font-bold leading-tight text-[#540a8c] md:text-4xl lg:text-5xl">
             A Family of Faith,
             <span className="block text-[#d4af37]">
               Prayer &amp; Purpose
@@ -200,11 +200,11 @@ function AboutPreview() {
                 transition-all
                 duration-300
                 hover:-translate-y-1
-                hover:border-[#310065]/20
+                hover:border-[#540a8c]/20
                 hover:shadow-[0_16px_40px_rgba(139,30,63,0.35)]
               "
             >
-              <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-white/30 text-white transition-colors group-hover:bg-white/40 group-hover:text-[#310065]">
+              <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-white/30 text-white transition-colors group-hover:bg-white/40 group-hover:text-[#540a8c]">
                 <Target size={22} />
               </div>
 
@@ -230,11 +230,11 @@ function AboutPreview() {
                 transition-all
                 duration-300
                 hover:-translate-y-1
-                hover:border-[#310065]/20
+                hover:border-[#540a8c]/20
                 hover:shadow-[0_16px_40px_rgba(211,157,0,0.35)]
               "
             >
-              <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-white/30 text-white transition-colors group-hover:bg-white/40 group-hover:text-[#310065]">
+              <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-white/30 text-white transition-colors group-hover:bg-white/40 group-hover:text-[#540a8c]">
                 <HeartHandshake size={22} />
               </div>
 
@@ -260,7 +260,7 @@ function AboutPreview() {
               items-center
               gap-3
               rounded-full
-              bg-[#310065]
+              bg-[#540a8c]
               px-7
               py-3.5
               text-xs
@@ -269,11 +269,11 @@ function AboutPreview() {
               tracking-[0.15em]
               text-white
               shadow-lg
-              shadow-[#310065]/20
+              shadow-[#540a8c]/20
               transition-all
               duration-300
               hover:-translate-y-1
-              hover:bg-[#4a148c]
+              hover:bg-[#540a8c]
               hover:shadow-xl
             "
           >

@@ -129,7 +129,7 @@ function Gallery() {
   };
 
   return (
-    <main className="min-h-screen bg-white text-[#1a1c1d] pt-24 md:pt-28">
+    <main className="min-h-screen bg-white text-[#000000] pt-24 md:pt-28">
       {/* Filter tabs */}
       <div className="mt-6 flex flex-wrap justify-center gap-2 md:gap-3 px-6 mb-14">
         {CATEGORIES.map((category) => {
@@ -141,7 +141,7 @@ function Gallery() {
               className={[
                 "px-5 py-2.5 rounded-md text-sm md:text-[15px] transition-all duration-200 border",
                 isActive
-                  ? "bg-[#E8AA2E] text-[#1a1c1d] border-[#E8AA2E] font-semibold shadow-sm"
+                  ? "bg-[#E8AA2E] text-[#000000] border-[#E8AA2E] font-semibold shadow-sm"
                   : "bg-transparent text-[#6b7280] border-transparent hover:text-[#0B6E4F]",
               ].join(" ")}
             >

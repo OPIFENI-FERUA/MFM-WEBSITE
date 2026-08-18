@@ -20,13 +20,12 @@ function Hero() {
 
   return (
     <section className="relative min-h-[110vh] overflow-hidden">
-
       {/* =====================================
           BACKGROUND IMAGE SLIDER
       ===================================== */}
       <div className="absolute inset-0 overflow-hidden">
         <div
-          className={`
+          className="
             absolute
             inset-0
             flex
@@ -34,9 +33,7 @@ function Hero() {
             transition-transform
             duration-[1200ms]
             ease-in-out
-            transform
-            ${activeSlide === 0 ? "translate-x-0" : ""}
-          `}
+          "
           style={{
             transform: `translateX(-${activeSlide * 100}%)`,
           }}
@@ -44,15 +41,32 @@ function Hero() {
           {slides.map((slide) => (
             <div
               key={slide}
-              className="relative flex-shrink-0 h-full w-full bg-cover bg-center"
+              className="
+                relative
+                h-full
+                w-full
+                flex-shrink-0
+                bg-cover
+                bg-center
+              "
               style={{
-                backgroundImage: `linear-gradient(to right, rgba(15, 2, 28, 0.97), rgba(29, 3, 46, 0.90) 50%, rgba(45, 7, 65, 0.72) 75%, rgba(20, 3, 35, 0.55)), url(${slide})`,
+                backgroundImage: `
+                  linear-gradient(
+                    to top right,
+                    rgba(84, 20, 130, 0.95),
+                    rgba(84, 20, 130, 0.82) 40%,
+                    rgba(84, 20, 130, 0.55) 70%,
+                    rgba(84, 20, 130, 0.25)
+                  ),
+                  url(${slide})
+                `,
               }}
             />
           ))}
         </div>
 
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/10" />
+        {/* Soft vertical overlay for a balanced look */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/10" />
       </div>
 
       {/* =====================================
@@ -84,7 +98,6 @@ function Hero() {
           HERO CONTENT
       ===================================== */}
       <div className="relative z-10 mx-auto max-w-[1280px] px-6">
-
         <div
           className="
             grid
@@ -96,27 +109,22 @@ function Hero() {
             lg:grid-cols-[1.1fr_0.9fr]
           "
         >
-
           {/* =====================================
               LEFT CONTENT
           ===================================== */}
           <div className="space-y-6 text-white">
-
-            {/* Calligraphic Welcome */}
+            {/* Welcome Text */}
             <p
               className="
+                font-heading
                 text-3xl
                 italic
                 text-[#ffd97a]
                 md:text-4xl
               "
-              style={{
-                fontFamily: "'Great Vibes', cursive",
-              }}
             >
               Welcome to
             </p>
-
 
             {/* Main Heading */}
             <h1
@@ -136,7 +144,6 @@ function Hero() {
               </span>
             </h1>
 
-
             {/* Description */}
             <p
               className="
@@ -155,7 +162,6 @@ function Hero() {
                 ACTION BUTTONS
             ===================================== */}
             <div className="mt-8 flex flex-wrap gap-4">
-
               {/* SERMONS */}
               <Link
                 to="/sermons"
@@ -186,7 +192,6 @@ function Hero() {
                 SERMONS
               </Link>
 
-
               {/* PLAN YOUR VISIT */}
               <Link
                 to="/about"
@@ -216,7 +221,6 @@ function Hero() {
 
                 PLAN YOUR VISIT
               </Link>
-
 
               {/* CONTACT US */}
               <Link
@@ -251,15 +255,11 @@ function Hero() {
 
                 CONTACT US
               </Link>
-
             </div>
-
           </div>
 
-
           {/* =====================================
-              RIGHT SIDE - SCRIPTURE CARD
-              BASE ALIGNED WITH BUTTONS
+              RIGHT SIDE - THEME CARD
           ===================================== */}
           <div
             className="
@@ -269,13 +269,11 @@ function Hero() {
               lg:flex
             "
           >
-
             <div
               className="
                 mb-0
                 w-full
                 max-w-[360px]
-                translate-x-8
                 translate-y-[90px]
                 rounded-3xl
                 border
@@ -287,27 +285,21 @@ function Hero() {
                 backdrop-blur-md
               "
             >
-
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#ffd97a]/90">
                 Theme of the Year 2026
               </p>
 
-              <h3 className="mt-4 text-3xl font-extrabold leading-tight text-[#ffffff]">
+              <h3 className="mt-4 text-3xl font-extrabold leading-tight text-white">
                 My Year of
+
                 <span className="block text-[#ffd97a]">
-                  Great Deliverance & fresh glory
+                  Great Deliverance &amp; Fresh Glory
                 </span>
               </h3>
-
-
             </div>
-
           </div>
-
         </div>
-
       </div>
-
     </section>
   );
 }

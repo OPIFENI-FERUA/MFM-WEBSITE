@@ -3,7 +3,7 @@ import PageHero from "../components/layout/PageHero";
 
 function Sermons() {
   return (
-    <main className="bg-white text-[#1a1c1d]">
+    <main className="bg-white text-[#000000]">
       <PageHero
         label="Sermons"
         title="All Sermons"

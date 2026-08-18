@@ -79,7 +79,7 @@ function ServicesPreview() {
                   Weekly Schedule
                 </p>
 
-                <h3 className="mt-3 text-3xl font-bold text-[#310065]">
+                <h3 className="mt-3 text-3xl font-bold text-[#540a8c]">
                   Join Us This Week
                 </h3>
               </div>
@@ -101,15 +101,15 @@ function ServicesPreview() {
                     className="flex items-center justify-between rounded-2xl border border-gray-100 bg-white p-5 shadow-[0_8px_25px_rgba(107,114,128,0.16)] transition hover:border-[#d4af37] hover:shadow-[0_10px_28px_rgba(107,114,128,0.2)]"
                   >
                     <div className="flex items-center gap-4">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#310065]/10">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#540a8c]/10">
                         <Icon
                           size={22}
-                          className="text-[#310065]"
+                          className="text-[#540a8c]"
                         />
                       </div>
 
                       <div>
-                        <h4 className="font-bold text-[#310065]">
+                        <h4 className="font-bold text-[#540a8c]">
                           {service.title}
                         </h4>
 
@@ -119,7 +119,7 @@ function ServicesPreview() {
                       </div>
                     </div>
 
-                    <span className="rounded-full bg-[#310065] px-4 py-2 text-sm font-semibold text-white">
+                    <span className="rounded-full bg-[#540a8c] px-4 py-2 text-sm font-semibold text-white">
                       {service.time}
                     </span>
                   </div>
@@ -131,7 +131,7 @@ function ServicesPreview() {
 
               <Link
                 to="/services"
-                className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#d4af37] px-6 py-3 text-sm font-bold uppercase tracking-wider text-[#310065] transition hover:scale-105"
+                className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#d4af37] px-6 py-3 text-sm font-bold uppercase tracking-wider text-[#540a8c] transition hover:scale-105"
               >
                 View All Services
                 <ArrowRight size={18} />

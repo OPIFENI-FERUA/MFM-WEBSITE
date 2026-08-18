@@ -1,9 +1,13 @@
 @import "tailwindcss";
 
+@theme {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Outfit", ui-sans-serif, system-ui, sans-serif;
+}
+
 :root {
-  
-  font-family: "Manrope", sans-serif;
-  color: #111827;
+  font-family: var(--font-sans);
+  color: #000000;
   background: #ffffff;
   line-height: 1.5;
   font-weight: 400;
@@ -17,7 +21,47 @@ body {
   margin: 0;
   min-height: 100vh;
   background: #ffffff;
-  color: #111827;
+  color: #000000;
+  font-family: var(--font-sans);
+  overflow-x: clip;
+}
+
+.scroll-reveal {
+  opacity: 0;
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+  transition-delay: var(--scroll-reveal-delay, 0ms);
+}
+
+.scroll-reveal-left {
+  transform: translateY(24px);
+}
+
+.scroll-reveal-right {
+  transform: translateY(24px);
+}
+
+.scroll-reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
 }
 
 * {
@@ -26,6 +70,7 @@ body {
 
 #root {
   min-height: 100vh;
+  overflow-x: clip;
 }
 
 .hide-scrollbar {
@@ -37,26 +82,30 @@ body {
   display: none;
 }
 
-.marquee {
-  animation: marquee-left 28s linear infinite;
-  min-width: 200%;
-}
-
-@keyframes marquee-left {
-  0% {
+@keyframes ministry-marquee {
+  from {
     transform: translateX(0);
   }
-  25% {
-    transform: translateX(-25%);
-  }
-  50% {
+
+  to {
     transform: translateX(-50%);
   }
-  75% {
-    transform: translateX(-75%);
+}
+
+.ministry-marquee {
+  animation: ministry-marquee 55s linear infinite;
+  will-change: transform;
+}
+
+@media (max-width: 768px) {
+  .ministry-marquee {
+    animation-duration: 65s;
   }
-  100% {
-    transform: translateX(-100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ministry-marquee {
+    animation: none;
   }
 }
 
@@ -91,4 +140,9 @@ body {
 
 .pause-marquee {
   animation-play-state: paused;
+}
+
+.navbar-font {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
 }

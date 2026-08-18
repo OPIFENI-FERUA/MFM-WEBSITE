@@ -1,9 +1,5 @@
 import { useEffect, useState } from "react";
-import {
-  NavLink,
-  Link,
-  useLocation,
-} from "react-router-dom";
+import { NavLink, Link, useLocation } from "react-router-dom";
 
 import mfmLogo from "../../assets/images/mfm-logo.png";
 
@@ -11,7 +7,7 @@ const links = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
   { to: "/ministries", label: "Ministries" },
-  { to: "/sermons", label: "Sermons" },
+  { to: "/Projects", label: "Projects" },
   { to: "/events", label: "Events" },
   { to: "/prayer-points", label: "Prayer Points" },
   { to: "/gallery", label: "Gallery" },
@@ -24,7 +20,6 @@ function Navbar() {
 
   const location = useLocation();
 
-  // Check if the current page is Home
   const isHomePage = location.pathname === "/";
 
   useEffect(() => {
@@ -36,49 +31,35 @@ function Navbar() {
       passive: true,
     });
 
-    // Check initial scroll position
     handleScroll();
 
     return () => {
-      window.removeEventListener(
-        "scroll",
-        handleScroll
-      );
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
-  /*
-    HOME PAGE
-    - At top: transparent Navbar over Hero
-    - On scroll: purple Navbar
-
-    OTHER PAGES
-    - Always purple Navbar
-  */
-
-  const isTransparent =
-    isHomePage && !scrolled;
+  const isTransparent = isHomePage && !scrolled;
 
   return (
     <>
-      {/* =========================================
+      {/* =====================================================
           MAIN NAVBAR
-      ========================================= */}
+      ===================================================== */}
       <header
         className={`
+          navbar-font
           fixed
           left-0
           right-0
           top-0
           z-50
-          border
           transition-all
           duration-300
 
           ${
             isTransparent
-              ? "border-white/10 bg-white/5 shadow-[0_12px_35px_-18px_rgba(0,0,0,0.55)] backdrop-blur-sm"
-              : "border-white/10 bg-[#310065]/95 shadow-lg backdrop-blur-md"
+              ? "border-transparent bg-transparent shadow-none"
+              : "border-transparent bg-[#540a8c] shadow-md"
           }
         `}
       >
@@ -86,49 +67,119 @@ function Navbar() {
           className="
             mx-auto
             flex
-            max-w-[1280px]
+            w-full
+            max-w-[1450px]
             items-center
             justify-between
-            px-5
-            py-5
+
+            px-4
+            py-3
+
+            sm:px-5
+            sm:py-4
+
             md:px-6
+            md:py-4
+
+            lg:px-7
+            lg:py-4
+
+            xl:px-10
+            xl:py-5
           "
         >
-
-          {/* =====================================
+          {/* =================================================
               LOGO
-          ===================================== */}
+          ================================================= */}
           <Link
             to="/"
             onClick={() => setIsOpen(false)}
-            className="flex items-center gap-2 rounded-none border-0 bg-transparent p-0"
+            className="
+              flex
+              shrink-0
+              items-center
+              gap-2
+
+              sm:gap-2.5
+              lg:gap-2.5
+              xl:gap-3
+            "
           >
             <img
               src={mfmLogo}
-              alt="MFM Greatlakes logo"
-              className="h-9 w-9 object-contain"
+              alt="MFM Uganda logo"
+              className="
+                h-8
+                w-8
+
+                sm:h-9
+                sm:w-9
+
+                lg:h-9
+                lg:w-9
+
+                xl:h-11
+                xl:w-11
+
+                object-contain
+              "
             />
 
             <div className="leading-tight">
-              <p className="text-sm font-bold uppercase tracking-[0.15em] text-white">
-                MFM Greatlakes Mega
+              <p
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  tracking-[0.12em]
+                  text-white
+
+                  sm:text-xs
+                  sm:tracking-[0.13em]
+
+                  lg:text-xs
+
+                  xl:text-sm
+                  xl:tracking-[0.14em]
+                "
+              >
+                MFM UGANDA
               </p>
 
-              <p className="text-xs font-bold uppercase tracking-[0.1em] text-white/70">
-                Regional Headquarters
+              <p
+                className="
+                  text-[8px]
+                  font-bold
+                  uppercase
+                  tracking-[0.06em]
+                  text-white
+
+                  sm:text-[9px]
+
+                  lg:text-[10px]
+
+                  xl:text-xs
+                  xl:tracking-[0.08em]
+                "
+              >
+                MEGA Regional Headquarters
               </p>
             </div>
           </Link>
 
-
-          {/* =====================================
+          {/* =================================================
               DESKTOP NAVIGATION
-          ===================================== */}
+          ================================================= */}
           <nav
             className="
               hidden
+              flex-1
               items-center
-              gap-4
+              justify-center
+
+              gap-2
+              px-3
+
               lg:flex
             "
             aria-label="Primary navigation"
@@ -139,22 +190,33 @@ function Navbar() {
                 to={link.to}
                 className={({ isActive }) =>
                   `
-                  relative
-                  rounded-full
-                  border
-                  border-transparent
-                  px-3
-                  py-2
-                  text-sm
-                  font-bold
-                  transition-all
-                  duration-200
+                    relative
+                    whitespace-nowrap
+                    rounded-full
+                    border
+                    border-transparent
 
-                  ${
-                    isActive
-                      ? "border-[#ffdf9e]/40 bg-white/10 text-[#ffdf9e]"
-                      : "text-white/80 hover:border-[#ffdf9e]/40 hover:bg-white/10 hover:text-white"
-                  }
+                    px-2
+                    py-1.5
+
+                    text-[11px]
+                    font-semibold
+
+                    transition-all
+                    duration-200
+
+                    xl:px-2.5
+                    xl:py-1.5
+                    xl:text-[11px]
+
+                    2xl:px-3
+                    2xl:text-[12px]
+
+                    ${
+                      isActive
+                        ? "border-white/40 bg-white/10 text-white"
+                        : "text-white hover:border-white/40 hover:bg-white/10 hover:text-white"
+                    }
                   `
                 }
               >
@@ -163,39 +225,63 @@ function Navbar() {
             ))}
           </nav>
 
-
-          {/* =====================================
+          {/* =================================================
               RIGHT SIDE
-          ===================================== */}
-          <div className="flex items-center gap-3">
+          ================================================= */}
+          <div
+            className="
+              flex
+              shrink-0
+              items-center
 
-            {/* Contact Us Button */}
+              gap-2
+
+              sm:gap-3
+
+              xl:gap-4
+            "
+          >
+            {/* CONTACT US */}
             <Link
               to="/contact"
               className="
                 hidden
                 rounded-full
-                bg-[#ffdf9e]
+                border
+                border-white
+                bg-white
+
                 px-4
-                py-1.5
+                py-2
+
                 text-sm
                 font-bold
-                text-[#261a00]
+                text-[#540a8c]
+
                 shadow-md
                 transition-all
                 duration-200
+
                 hover:scale-105
-                hover:bg-[#ffe9bd]
+                hover:bg-white/90
+
                 sm:inline-flex
+
+                lg:px-4
+                lg:py-2
+                lg:text-xs
+
+                xl:px-4
+                xl:py-2
+                xl:text-sm
               "
             >
               Contact Us
             </Link>
 
-
-            {/* =================================
+            {/* =================================================
                 MOBILE MENU BUTTON
-            ================================= */}
+            ================================================= */}
             <button
               type="button"
               onClick={() =>
@@ -221,21 +307,19 @@ function Navbar() {
                 text-white
                 transition-colors
                 hover:bg-white/10
+
                 lg:hidden
               "
             >
               {isOpen ? "×" : "☰"}
             </button>
-
           </div>
-
         </div>
       </header>
 
-
-      {/* =========================================
+      {/* =====================================================
           MOBILE BACKDROP
-      ========================================= */}
+      ===================================================== */}
       {isOpen && (
         <button
           type="button"
@@ -251,13 +335,13 @@ function Navbar() {
         />
       )}
 
-
-      {/* =========================================
+      {/* =====================================================
           MOBILE NAVIGATION
-      ========================================= */}
+      ===================================================== */}
       <div
         id="mobile-navigation"
         className={`
+          navbar-font
           fixed
           inset-y-0
           right-0
@@ -280,27 +364,35 @@ function Navbar() {
           }
         `}
       >
-
-        {/* Mobile Header */}
+        {/* =================================================
+            MOBILE HEADER
+        ================================================= */}
         <div
           className="
-            mb-8
+            mb-7
             flex
             items-center
             justify-between
           "
         >
-
-          {/* Mobile Logo */}
+          {/* MOBILE LOGO */}
           <Link
             to="/"
             onClick={() => setIsOpen(false)}
-            className="flex items-center gap-2"
+            className="
+              flex
+              items-center
+              gap-2
+            "
           >
             <img
               src={mfmLogo}
-              alt="MFM Greatlakes"
-              className="h-9 w-9 object-contain"
+              alt="MFM Uganda logo"
+              className="
+                h-9
+                w-9
+                object-contain
+              "
             />
 
             <div>
@@ -310,20 +402,25 @@ function Navbar() {
                   font-bold
                   uppercase
                   tracking-wider
-                  text-[#310065]
+                  text-[#540a8c]
                 "
               >
-                MFM Greatlakes Mega
+                MFM UGANDA
               </p>
 
-              <p className="text-xs font-bold text-gray-500">
-                Regional Headquarters
+              <p
+                className="
+                  text-xs
+                  font-bold
+                  text-gray-500
+                "
+              >
+                MEGA Regional Headquarters
               </p>
             </div>
           </Link>
 
-
-          {/* Close Button */}
+          {/* CLOSE BUTTON */}
           <button
             type="button"
             onClick={() => setIsOpen(false)}
@@ -338,25 +435,22 @@ function Navbar() {
               border
               border-gray-300
               text-lg
-              text-[#310065]
+              text-[#540a8c]
               transition-colors
-              hover:bg-[#f5f3ff]
+              hover:bg-[#f3ebfa]
             "
           >
             ×
           </button>
-
         </div>
 
-
-        {/* =====================================
+        {/* =================================================
             MOBILE LINKS
-        ===================================== */}
+        ================================================= */}
         <nav
           className="flex flex-col"
           aria-label="Mobile navigation"
         >
-
           {links.map((link) => (
             <NavLink
               key={link.to}
@@ -364,20 +458,22 @@ function Navbar() {
               onClick={() => setIsOpen(false)}
               className={({ isActive }) =>
                 `
-                border-b
-                border-gray-100
-                px-3
-                py-3
-                text-sm
-                font-bold
+                  border-b
+                  border-gray-100
 
-                transition-all
+                  px-3
+                  py-3.5
 
-                ${
-                  isActive
-                    ? "border-l-4 border-l-[#310065] bg-[#f7f3ff] text-[#310065]"
-                    : "text-gray-600 hover:bg-gray-50 hover:text-[#310065]"
-                }
+                  text-sm
+                  font-bold
+
+                  transition-all
+
+                  ${
+                    isActive
+                      ? "border-l-4 border-l-[#540a8c] bg-[#f3ebfa] text-[#540a8c]"
+                      : "text-gray-600 hover:bg-gray-50 hover:text-[#540a8c]"
+                  }
                 `
               }
             >
@@ -385,32 +481,29 @@ function Navbar() {
             </NavLink>
           ))}
 
-
-          {/* ===================================
+          {/* =================================================
               MOBILE CONTACT BUTTON
-          =================================== */}
+          ================================================= */}
           <Link
             to="/contact"
             onClick={() => setIsOpen(false)}
             className="
               mt-6
               rounded-full
-              bg-[#310065]
+              bg-[#540a8c]
               px-5
-              py-2.5
+              py-3
               text-center
-              text-sm
-              font-bold
+              text-base
+              font-semibold
               text-white
               transition
-              hover:bg-[#45098a]
+              hover:bg-[#43076f]
             "
           >
             Contact Us
           </Link>
-
         </nav>
-
       </div>
     </>
   );

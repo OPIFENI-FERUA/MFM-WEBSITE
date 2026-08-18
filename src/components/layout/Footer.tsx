@@ -39,13 +39,13 @@ const Footer = () => {
                   <h2 className="text-sm font-bold uppercase tracking-wider text-[#ffdf9e]">
                     Mountain of Fire
                   </h2>
-                  <p className="text-xs font-semibold text-gray-400">
+                  <p className="text-xs font-semibold text-white">
                     & Miracles Ministries – Uganda
                   </p>
                 </div>
               </div>
 
-              <p className="text-sm leading-relaxed text-gray-300">
+              <p className="text-sm leading-relaxed text-white">
                 We are a Holy Ghost-filled, fire-brand ministry committed to deliverance,
                 prayer, and the transformation of lives through the power of God’s Word.
               </p>
@@ -53,26 +53,26 @@ const Footer = () => {
 
             {/* Social Icons */}
             <div className="mt-6">
-              <h4 className="mb-3 text-xs font-semibold uppercase text-gray-400">Connect With Us</h4>
+              <h4 className="mb-3 text-xs font-semibold uppercase text-white">Connect With Us</h4>
               <div className="flex gap-3">
                 <a
                   href="#"
                   aria-label="YouTube"
-                  className="flex h-9 w-9 items-center justify-center rounded-full bg-[#1a1a1a] text-gray-300 transition-all hover:bg-[#ba002c] hover:text-white"
+                  className="flex h-9 w-9 items-center justify-center rounded-full bg-[#1a1a1a] text-white transition-all hover:bg-[#ba002c] hover:text-white"
                 >
                   <FaYoutube size={16} />
                 </a>
                 <a
                   href="#"
                   aria-label="Facebook"
-                  className="flex h-9 w-9 items-center justify-center rounded-full bg-[#1a1a1a] text-gray-300 transition-all hover:bg-[#ba002c] hover:text-white"
+                  className="flex h-9 w-9 items-center justify-center rounded-full bg-[#1a1a1a] text-white transition-all hover:bg-[#ba002c] hover:text-white"
                 >
                   <FaFacebook size={14} />
                 </a>
                 <a
                   href="#"
                   aria-label="Instagram"
-                  className="flex h-9 w-9 items-center justify-center rounded-full bg-[#1a1a1a] text-gray-300 transition-all hover:bg-[#ba002c] hover:text-white"
+                  className="flex h-9 w-9 items-center justify-center rounded-full bg-[#1a1a1a] text-white transition-all hover:bg-[#ba002c] hover:text-white"
                 >
                   <FaInstagram size={16} />
                 </a>
@@ -86,7 +86,7 @@ const Footer = () => {
               <h3 className="mb-4 text-[11px] font-bold uppercase tracking-[0.25em] text-[#ffdf9e]">
                 Quick Links
               </h3>
-              <nav className="grid grid-cols-2 gap-2 text-sm text-gray-300">
+              <nav className="grid grid-cols-2 gap-2 text-sm text-white">
                 {quickLinks.map((link) => (
                   <Link
                     key={link.to}
@@ -105,11 +105,11 @@ const Footer = () => {
                 <Clock size={14} />
                 <span>Service Times</span>
               </div>
-              <ul className="space-y-2 text-xs text-gray-300">
+              <ul className="space-y-2 text-xs text-white">
                 {serviceTimes.map((item, index) => (
                   <li key={index} className="border-b border-white/10 pb-2 last:border-0 last:pb-0">
                     <p className="font-semibold text-white">{item.day}</p>
-                    <p className="mt-0.5 text-gray-400">{item.time}</p>
+                    <p className="mt-0.5 text-white">{item.time}</p>
                   </li>
                 ))}
               </ul>
@@ -122,7 +122,7 @@ const Footer = () => {
               Get In Touch
             </h3>
 
-            <div className="space-y-4 text-sm text-gray-300">
+            <div className="space-y-4 text-sm text-white">
               <div className="flex gap-3">
                 <MapPin size={18} className="mt-1 shrink-0 text-[#ffdf9e]" />
                 <p className="leading-7">
@@ -175,7 +175,7 @@ const Footer = () => {
               href="https://maps.google.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-2 inline-flex items-center gap-1 text-xs text-gray-400 transition duration-200 hover:text-[#ffdf9e]"
+              className="mt-2 inline-flex items-center gap-1 text-xs text-white transition duration-200 hover:text-[#ffdf9e]"
             >
               Open in Google Maps <ExternalLink size={12} />
             </a>
@@ -186,7 +186,7 @@ const Footer = () => {
 
       {/* Bottom Footer Bar */}
       <div className="border-t border-white/10 bg-[#040404]">
-        <div className="mx-auto flex max-w-[1280px] flex-col items-center justify-between gap-3 px-6 py-4 text-xs text-gray-500 sm:flex-row sm:px-8 lg:px-10">
+        <div className="mx-auto flex max-w-[1280px] flex-col items-center justify-between gap-3 px-6 py-4 text-xs text-white sm:flex-row sm:px-8 lg:px-10">
           <p>© {new Date().getFullYear()} Mountain of Fire and Miracles Ministries – Uganda. All rights reserved.</p>
           <p className="flex items-center gap-1">
             Part of the Global MFM Ministry Network
