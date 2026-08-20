@@ -1,5 +1,4 @@
 import {
-  Building2,
   Smartphone,
   Heart,
   Copy,
@@ -7,22 +6,47 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import PageHero from "../components/layout/PageHero";
+import mtnIcon from "../assets/icons/MTN1.jpg";
+import airtelIcon from "../assets/icons/AIRTEL.png";
 
 function Giving() {
   const [copied, setCopied] = useState("");
 
-  function copyToClipboard(text: string, label: string) {
-    navigator.clipboard.writeText(text);
-    setCopied(label);
+  async function copyToClipboard(text: string, label: string) {
+    try {
+      if (navigator.clipboard?.writeText && window.isSecureContext) {
+        await navigator.clipboard.writeText(text);
+      } else {
+        const textArea = document.createElement("textarea");
+        textArea.value = text;
+        textArea.setAttribute("readonly", "");
+        textArea.style.position = "fixed";
+        textArea.style.opacity = "0";
+        document.body.appendChild(textArea);
+        textArea.select();
 
-    setTimeout(() => {
-      setCopied("");
-    }, 2000);
+        const didCopy = document.execCommand("copy");
+        document.body.removeChild(textArea);
+
+        if (!didCopy) {
+          throw new Error("Copy command was not successful");
+        }
+      }
+
+      setCopied(label);
+      window.setTimeout(() => setCopied(""), 2000);
+    } catch {
+      setCopied(`${label}-error`);
+      window.setTimeout(() => setCopied(""), 2500);
+    }
   }
 
   return (
     <main className="min-h-screen bg-white">
 
+      {/* =========================================
+          PAGE HERO
+      ========================================= */}
       <PageHero
         label="Give With Purpose"
         title="Giving"
@@ -33,43 +57,69 @@ function Giving() {
       {/* =========================================
           INTRODUCTION
       ========================================= */}
-      <section className="px-6 pb-12">
+      <section className="px-4 pb-12 sm:px-6 sm:pb-14 lg:px-8">
 
-        <div className="mx-auto max-w-[1000px]">
+        <div className="mx-auto max-w-[1200px]">
 
-          <div className="
-            rounded-2xl
-            border
-            border-[#fabd00]/20
-            bg-white
-            p-6
-            shadow-[0_10px_30px_rgba(0,0,0,0.05)]
-            md:p-8
-          ">
+          <div
+            className="
+              rounded-2xl
+              border
+              border-[#D9A441]/20
+              bg-white
+              p-5
+              shadow-[0_12px_35px_rgba(0,0,0,0.07)]
+              sm:p-7
+              sm:p-8
+              md:p-10
+            "
+          >
 
-            <div className="flex flex-col gap-5 md:flex-row md:items-center">
+            <div className="flex flex-col gap-5 sm:gap-6 md:flex-row md:items-center">
 
-              <div className="
-                flex
-                h-14
-                w-14
-                shrink-0
-                items-center
-                justify-center
-                rounded-full
-                bg-[#fabd00]/10
-                text-[#540a8c]
-              ">
-                <Heart size={25} />
+              {/* Icon */}
+              <div
+                className="
+                  flex
+                  h-16
+                  w-16
+                  shrink-0
+                  items-center
+                  justify-center
+                  rounded-full
+                  bg-[#D9A441]/10
+                  text-[#540a8c]
+                "
+              >
+                <Heart size={29} />
               </div>
 
+
+              {/* Text */}
               <div>
 
-                <h2 className="text-xl font-bold text-[#540a8c]">
+                <h2
+                  className="
+                    text-xl
+                    font-bold
+                    text-[#540a8c]
+                    sm:text-2xl
+                    md:text-3xl
+                  "
+                >
                   Thank You for Your Generosity
                 </h2>
 
-                <p className="mt-2 text-sm leading-7 text-gray-600">
+                <p
+                  className="
+                    mt-3
+                    text-base
+                    font-medium
+                    leading-7
+                    text-gray-900
+                    md:text-lg
+                  "
+                >
                   Every gift, no matter the size, makes a difference.
                   Your giving enables us to reach people with the Gospel,
                   support ministry activities, and serve our community.
@@ -89,146 +139,241 @@ function Giving() {
       {/* =========================================
           GIVING METHODS
       ========================================= */}
-      <section className="px-6 pb-20">
+      <section className="px-4 pb-16 sm:px-6 sm:pb-20 lg:px-8">
 
-        <div className="mx-auto max-w-[1000px]">
+        <div className="mx-auto max-w-[1200px]">
 
-          <div className="mb-10 text-center">
 
-            <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-[#540a8c]">
-              Ways To Give
-            </p>
+          {/* =========================================
+              SECTION INTRO
+          ========================================= */}
+          <div className="mb-9 grid gap-7 sm:mb-12 sm:gap-8 md:grid-cols-2">
 
-            <h2 className="text-3xl font-bold text-[#540a8c] md:text-4xl">
-              Choose Your Preferred Method
-            </h2>
+            <div>
 
-            <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-gray-600">
-              You can support the ministry through bank transfer or
-              mobile money using the details below.
-            </p>
+              <p
+                className="
+                  mb-3
+                  text-sm
+                  font-bold
+                  uppercase
+                  tracking-[0.2em]
+                  text-[#540a8c]
+                "
+              >
+                Local Bank Transfers
+              </p>
+
+              <p
+                className="
+                  text-base
+                  font-medium
+                  leading-7
+                  text-gray-900
+                  md:text-lg
+                "
+              >
+                For our local congregation in Uganda, you can transfer
+                your tithes, offerings, and vows directly into any of
+                our official church accounts below.
+              </p>
+
+            </div>
+
+
+            <div>
+
+              <p
+                className="
+                  mb-3
+                  text-sm
+                  font-bold
+                  uppercase
+                  tracking-[0.2em]
+                  text-[#540a8c]
+                "
+              >
+                Online & International
+              </p>
+
+              <p
+                className="
+                  text-base
+                  font-medium
+                  leading-7
+                  text-gray-900
+                  md:text-lg
+                "
+              >
+                Securely give using your credit card or send directly
+                to our official PayPal address.
+              </p>
+
+            </div>
 
           </div>
 
 
-          {/* =====================================
-              GIVING CARDS
-          ===================================== */}
-          <div className="grid gap-6 md:grid-cols-2">
+          {/* =========================================
+              MAIN GIVING LAYOUT
+          ========================================= */}
+          <div className="grid gap-8 lg:grid-cols-2">
 
 
-            {/* ===================================
-                BANK DETAILS
-            =================================== */}
-            <div className="
-              rounded-2xl
-              border
-              border-gray-100
-              bg-white
-              p-7
-              shadow-[0_15px_40px_rgba(114,17,110,0.07)]
-            ">
+            {/* =======================================
+                BANK TRANSFER
+            ======================================= */}
+            <div
+              className="
+                rounded-2xl
+                border
+                border-gray-100
+                border-l-[5px]
+                border-l-[#540a8c]
+                bg-white
+                p-5
+                shadow-[0_18px_45px_rgba(84,10,140,0.10)]
+                transition
+                hover:shadow-[0_22px_55px_rgba(84,10,140,0.14)]
+                sm:p-7
+                md:p-8
+              "
+            >
 
-              {/* Card Header */}
-              <div className="mb-7 flex items-center gap-4">
+              {/* Header */}
+              <div className="mb-7">
 
-                <div className="
-                  flex
-                  h-12
-                  w-12
-                  items-center
-                  justify-center
-                  rounded-xl
-                  bg-[#540a8c]/10
-                  text-[#540a8c]
-                ">
-                  <Building2 size={23} />
-                </div>
+                <p
+                  className="
+                    text-sm
+                    font-bold
+                    uppercase
+                    tracking-[0.15em]
+                    text-[#540a8c]
+                  "
+                >
+                  Bank Transfer
+                </p>
 
-                <div>
-
-                  <h3 className="text-xl font-bold text-[#540a8c]">
-                    Bank Transfer
-                  </h3>
-
-                  <p className="text-sm text-gray-500">
-                    Give through your bank
-                  </p>
-
-                </div>
+                <h3
+                  className="
+                    mt-2
+                    text-2xl
+                    font-bold
+                    text-black
+                  "
+                >
+                  UBA (United Bank for Africa)
+                </h3>
 
               </div>
 
 
-              {/* Bank Details */}
-              <div className="space-y-4">
-
-                <div className="border-b border-gray-100 pb-4">
-
-                  <p className="text-xs font-semibold uppercase tracking-wider text-gray-400">
-                    Bank Name
-                  </p>
-
-                  <p className="mt-1 font-medium text-gray-700">
-                    YOUR BANK NAME
-                  </p>
-
-                </div>
+              {/* Details */}
+              <div className="space-y-6">
 
 
-                <div className="border-b border-gray-100 pb-4">
+                {/* Account Name */}
+                <div>
 
-                  <p className="text-xs font-semibold uppercase tracking-wider text-gray-400">
+                  <p
+                    className="
+                      text-xs
+                      font-bold
+                      uppercase
+                      tracking-wider
+                      text-black
+                    "
+                  >
                     Account Name
                   </p>
 
-                  <p className="mt-1 font-medium text-gray-700">
-                    MFM KANYANYA
+                  <p
+                    className="
+                      mt-2
+                      text-base
+                      font-bold
+                      leading-6
+                      text-black
+                      md:text-lg
+                    "
+                  >
+                    MOUNTAIN OF FIRE AND MIRACLES
+                    <br />
+                    MINISTRIES
                   </p>
 
                 </div>
 
 
-                <div className="border-b border-gray-100 pb-4">
+                {/* UGX */}
+                <div>
 
-                  <p className="text-xs font-semibold uppercase tracking-wider text-gray-400">
-                    Account Number
+                  <p
+                    className="
+                      text-xs
+                      font-bold
+                      uppercase
+                      tracking-wider
+                      text-black
+                    "
+                  >
+                    Account Number (UGX)
                   </p>
 
-                  <div className="mt-1 flex items-center justify-between gap-3">
+                  <div
+                    className="
+                      mt-2
+                      flex flex-col
+                      items-center
+                      gap-3
+                      sm:flex-row
+                      sm:justify-between
+                      sm:gap-4
+                    "
+                  >
 
-                    <p className="font-medium text-gray-700">
-                      000000000000
+                    <p
+                      className="
+                        break-all
+                        text-lg
+                        font-bold
+                        text-black
+                        md:text-xl
+                      "
+                    >
+                      0531000098
                     </p>
 
                     <button
                       type="button"
                       onClick={() =>
                         copyToClipboard(
-                          "000000000000",
-                          "bank"
+                          "0531000098",
+                          "bank-ugx"
                         )
                       }
-                      className="
+                      className={`
                         flex
+                        shrink-0
                         items-center
                         gap-1.5
                         rounded-lg
-                        bg-gray-50
                         px-3
                         py-2
                         text-xs
-                        font-medium
-                        text-[#540a8c]
-                        transition-colors
-                        hover:bg-[#540a8c]/10
-                      "
+                        font-bold
+                        transition
+                        ${copied === "bank-ugx" ? "bg-green-600 text-white hover:bg-green-700" : "bg-gray-50 text-[#540a8c] hover:bg-[#5F0C1B]/10"}
+                      `}
                     >
-                      {copied === "bank" ? (
+                      {copied === "bank-ugx" ? (
                         <>
                           <CheckCircle2 size={14} />
                           Copied
                         </>
+                      ) : copied === "bank-ugx-error" ? (
+                        <>Unable to copy</>
                       ) : (
                         <>
                           <Copy size={14} />
@@ -242,15 +387,83 @@ function Giving() {
                 </div>
 
 
+                {/* USD */}
                 <div>
 
-                  <p className="text-xs font-semibold uppercase tracking-wider text-gray-400">
-                    Branch
+                  <p
+                    className="
+                      text-xs
+                      font-bold
+                      uppercase
+                      tracking-wider
+                      text-gray-500
+                    "
+                  >
+                    Account Number (USD)
                   </p>
 
-                  <p className="mt-1 font-medium text-gray-700">
-                    YOUR BANK BRANCH
-                  </p>
+                  <div
+                    className="
+                      mt-2
+                      flex flex-col
+                      items-center
+                      gap-3
+                      sm:flex-row
+                      sm:justify-between
+                      sm:gap-4
+                    "
+                  >
+
+                    <p
+                      className="
+                        break-all
+                        text-lg
+                        font-bold
+                        text-gray-950
+                        md:text-xl
+                      "
+                    >
+                      0513000010G
+                    </p>
+
+                    <button
+                      type="button"
+                      onClick={() =>
+                        copyToClipboard(
+                          "0513000010G",
+                          "bank-usd"
+                        )
+                      }
+                      className={`
+                        flex
+                        shrink-0
+                        items-center
+                        gap-1.5
+                        rounded-lg
+                        px-3
+                        py-2
+                        text-xs
+                        font-bold
+                        transition
+                        ${copied === "bank-usd" ? "bg-green-600 text-white hover:bg-green-700" : "bg-gray-50 text-[#540a8c] hover:bg-[#5F0C1B]/10"}
+                      `}
+                    >
+                      {copied === "bank-usd" ? (
+                        <>
+                          <CheckCircle2 size={14} />
+                          Copied
+                        </>
+                      ) : copied === "bank-usd-error" ? (
+                        <>Unable to copy</>
+                      ) : (
+                        <>
+                          <Copy size={14} />
+                          Copy
+                        </>
+                      )}
+                    </button>
+
+                  </div>
 
                 </div>
 
@@ -259,42 +472,242 @@ function Giving() {
             </div>
 
 
-            {/* ===================================
-                MOBILE MONEY
-            =================================== */}
-            <div className="
-              rounded-2xl
-              border
-              border-gray-100
-              bg-white
-              p-7
-              shadow-[0_15px_40px_rgba(114,17,110,0.07)]
-            ">
+            {/* =======================================
+                PAYPAL
+            ======================================= */}
+            <div
+              className="
+                flex
+                flex-col
+                items-center
+                justify-center
+                rounded-2xl
+                border
+                border-gray-100
+                bg-gradient-to-br
+                from-blue-50
+                via-white
+                to-white
+                p-5
+                text-center
+                shadow-[0_18px_45px_rgba(0,0,0,0.09)]
+                transition
+                hover:shadow-[0_22px_55px_rgba(0,0,0,0.13)]
+                sm:p-8
+                md:p-10
+              "
+            >
 
-              {/* Card Header */}
-              <div className="mb-7 flex items-center gap-4">
-
-                <div className="
+              {/* PayPal Logo */}
+              <div
+                className="
+                  mb-5
                   flex
-                  h-12
-                  w-12
+                  h-20
+                  w-20
+                  items-center
+                  justify-center
+                  rounded-full
+                  bg-white
+                  shadow-md
+                "
+              >
+
+                <svg
+                  viewBox="0 0 24 24"
+                  className="h-12 w-12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+
+                  <text
+                    x="12"
+                    y="16"
+                    textAnchor="middle"
+                    fill="#0070BA"
+                    fontSize="18"
+                    fontWeight="bold"
+                    fontFamily="Arial"
+                  >
+                    PP
+                  </text>
+
+                </svg>
+
+              </div>
+
+
+              <p
+                className="
+                  text-sm
+                  font-bold
+                  uppercase
+                  tracking-[0.15em]
+                  text-[#0070BA]
+                "
+              >
+                Online Giving
+              </p>
+
+
+              <h3
+                className="
+                  mt-2
+                  text-2xl
+                  font-bold
+                  text-gray-950
+                "
+              >
+                PayPal Transfer
+              </h3>
+
+
+              <p
+                className="
+                  mt-3
+                  max-w-md
+                  text-base
+                  font-medium
+                  leading-7
+                  text-gray-900
+                "
+              >
+                Give your tithes or offerings directly through our
+                official PayPal link.
+              </p>
+
+
+              {/* PayPal Button */}
+              <a
+                href="https://www.paypal.com/donate/?hosted_button_id=YOUR_BUTTON_ID"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+                  mt-7
+                  inline-flex
+                  w-full
+                  max-w-sm
                   items-center
                   justify-center
                   rounded-xl
-                  bg-[#fabd00]/15
-                  text-[#540a8c]
-                ">
-                  <Smartphone size={23} />
+                  bg-[#0070BA]
+                  px-6
+                  py-4
+                  text-base
+                  font-bold
+                  text-white
+                  shadow-md
+                  transition-all
+                  duration-200
+                  hover:bg-[#005EA6]
+                  hover:shadow-lg
+                  hover:-translate-y-0.5
+                "
+              >
+                Give with PayPal
+              </a>
+
+
+              {/* Security */}
+              <div
+                className="
+                  mt-6
+                  flex
+                  items-center
+                  gap-2
+                  text-xs
+                  font-bold
+                  text-green-700
+                "
+              >
+                <CheckCircle2 size={15} />
+                256-BIT SSL ENCRYPTED
+              </div>
+
+            </div>
+
+
+            {/* =======================================
+                MOBILE MONEY — FULL WIDTH
+            ======================================= */}
+            <div
+              className="
+                lg:col-span-2
+                rounded-2xl
+                border
+                border-gray-100
+                bg-white
+                p-5
+                shadow-[0_20px_50px_rgba(84,10,140,0.11)]
+                transition
+                hover:shadow-[0_25px_60px_rgba(84,10,140,0.15)]
+                sm:p-7
+                md:p-9
+              "
+            >
+
+              {/* Mobile Money Header */}
+              <div
+                className="
+                  mb-8
+                  flex flex-col
+                  items-center
+                  gap-4
+                  sm:flex-row
+                "
+              >
+
+                <div
+                  className="
+                    flex
+                    h-14
+                    w-14
+                    shrink-0
+                    items-center
+                    justify-center
+                    rounded-xl
+                    bg-[#D9A441]/15
+                    text-[#540a8c]
+                  "
+                >
+                  <Smartphone size={27} />
                 </div>
+
 
                 <div>
 
-                  <h3 className="text-xl font-bold text-[#540a8c]">
+                  <p
+                    className="
+                      text-sm
+                      font-bold
+                      uppercase
+                      tracking-[0.15em]
+                      text-[#540a8c]
+                    "
+                  >
+                    Mobile Giving
+                  </p>
+
+                  <h3
+                    className="
+                      mt-1
+                      text-2xl
+                      font-bold
+                      text-gray-950
+                    "
+                  >
                     Mobile Money
                   </h3>
 
-                  <p className="text-sm text-gray-500">
-                    Give using mobile money
+                  <p
+                    className="
+                      mt-1
+                      text-base
+                      font-medium
+                      text-gray-600
+                    "
+                  >
+                    Give conveniently using MTN or Airtel Money.
                   </p>
 
                 </div>
@@ -302,140 +715,398 @@ function Giving() {
               </div>
 
 
-              {/* Mobile Money Details */}
-              <div className="space-y-4">
+              {/* =====================================
+                  MTN + AIRTEL
+              ===================================== */}
+              <div
+                className="
+                  grid
+                  gap-6
+                  md:grid-cols-2
+                "
+              >
 
-                {/* MTN */}
-                <div className="
-                  rounded-xl
-                  border
-                  border-gray-100
-                  bg-gray-50
-                  p-4
-                ">
 
-                  <div className="flex items-center justify-between">
+                {/* =================================
+                    MTN
+                ================================= */}
+                <div
+                  className="
+                    rounded-2xl
+                    border
+                    border-gray-100
+                    bg-gray-50
+                    p-5
+                    shadow-sm
+                    transition
+                    hover:shadow-md
+                    sm:p-6
+                    md:p-7
+                  "
+                >
 
-                    <div>
+                  <div
+                    className="
+                    flex flex-col
+                    items-start
+                    gap-4
+                    sm:flex-row
+                    sm:justify-between
+                    sm:gap-5
+                    "
+                  >
 
-                      <p className="text-xs font-semibold uppercase tracking-wider text-gray-400">
-                        MTN Mobile Money
-                      </p>
-
-                      <p className="mt-1 text-lg font-bold text-gray-700">
-                        +256 XXX XXX XXX
-                      </p>
-
-                      <p className="mt-1 text-xs text-gray-500">
-                        Account Name: MFM Kanyanya
-                      </p>
-
-                    </div>
-
-                    <button
-                      type="button"
-                      onClick={() =>
-                        copyToClipboard(
-                          "+256 XXX XXX XXX",
-                          "mtn"
-                        )
-                      }
+                    <div
                       className="
-                        flex
-                        items-center
-                        gap-1.5
-                        rounded-lg
-                        bg-white
-                        px-3
-                        py-2
-                        text-xs
-                        font-medium
-                        text-[#540a8c]
-                        shadow-sm
-                        transition-colors
-                        hover:bg-[#540a8c]/10
+                      flex flex-col
+                      items-start
+                      gap-4
+                      min-[420px]:flex-row
                       "
                     >
-                      {copied === "mtn" ? (
-                        <>
-                          <CheckCircle2 size={14} />
-                          Copied
-                        </>
-                      ) : (
-                        <>
-                          <Copy size={14} />
-                          Copy
-                        </>
-                      )}
-                    </button>
+
+                      {/* MTN Logo */}
+                      <div
+                        className="
+                          flex
+                          h-12
+                          w-12
+                          shrink-0
+                          items-center
+                          justify-center
+                          overflow-hidden
+                          rounded-xl
+                          bg-white
+                          shadow-sm
+                        "
+                      >
+
+                        <img
+                          src={mtnIcon}
+                          alt="MTN"
+                          className="h-10 w-10 object-contain"
+                        />
+
+                      </div>
+
+
+                      <div>
+
+                        <p
+                          className="
+                            text-sm
+                            font-bold
+                            uppercase
+                            tracking-wider
+                            text-gray-500
+                          "
+                        >
+                          MTN Mobile Money
+                        </p>
+
+                        <div className="mt-2 flex flex-wrap items-center gap-2">
+                          <p className="text-2xl font-bold text-gray-950 md:text-3xl">
+                            0783 830 514
+                          </p>
+                          <button
+                            type="button"
+                            onClick={() => copyToClipboard("0783 830 514", "mtn-number")}
+                            className={`rounded-md px-2.5 py-1.5 text-xs font-bold shadow-sm transition ${copied === "mtn-number" ? "bg-green-600 text-white hover:bg-green-700" : "bg-white text-[#540a8c] hover:bg-[#5F0C1B]/10"}`}
+                          >
+                            {copied === "mtn-number" ? "Copied" : copied === "mtn-number-error" ? "Unable to copy" : "Copy number"}
+                          </button>
+                        </div>
+
+                        <p
+                          className="
+                            mt-2
+                            text-base
+                            font-medium
+                            leading-6
+                            text-gray-900
+                          "
+                        >
+                          Account Name:
+                          <br />
+                          MOUNTAIN OF FIRE AND MIRACLES MINISTRIES
+                        </p>
+
+
+                        {/* Merchant Codes */}
+                        <div
+                          className="
+                            mt-5
+                            border-t
+                            border-gray-200
+                            pt-4
+                          "
+                        >
+
+                          <p
+                            className="
+                              text-sm
+                              font-bold
+                              uppercase
+                              tracking-wider
+                              text-gray-500
+                            "
+                          >
+                            Merchant Codes
+                          </p>
+
+                          <p className="mt-1 text-sm font-medium text-gray-600">
+                            Dial <span className="font-bold text-[#540a8c]">*165*3#</span> and enter the merchant code.
+                          </p>
+
+                          <div
+                            className="
+                              mt-3
+                              space-y-2
+                              text-base
+                              font-medium
+                              text-gray-900
+                            "
+                          >
+
+                            <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                              <p>
+                                <span className="font-bold">Tithe:</span>{" "}
+                                149156
+                              </p>
+                              <button
+                                type="button"
+                                onClick={() => copyToClipboard("149156", "mtn-tithe")}
+                                className={`rounded-md px-2.5 py-1.5 text-xs font-bold shadow-sm transition ${copied === "mtn-tithe" ? "bg-green-600 text-white hover:bg-green-700" : "bg-white text-[#540a8c] hover:bg-[#5F0C1B]/10"}`}
+                              >
+                                {copied === "mtn-tithe" ? "Copied" : copied === "mtn-tithe-error" ? "Unable to copy" : "Copy"}
+                              </button>
+                            </div>
+
+                            <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                              <p>
+                                <span className="font-bold">Offertory:</span>{" "}
+                                149155
+                              </p>
+                              <button
+                                type="button"
+                                onClick={() => copyToClipboard("149155", "mtn-offertory")}
+                                className={`rounded-md px-2.5 py-1.5 text-xs font-bold shadow-sm transition ${copied === "mtn-offertory" ? "bg-green-600 text-white hover:bg-green-700" : "bg-white text-[#540a8c] hover:bg-[#5F0C1B]/10"}`}
+                              >
+                                {copied === "mtn-offertory" ? "Copied" : copied === "mtn-offertory-error" ? "Unable to copy" : "Copy"}
+                              </button>
+                            </div>
+
+                            <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                              <p>
+                                <span className="font-bold">First Fruit:</span>{" "}
+                                149154
+                              </p>
+                              <button
+                                type="button"
+                                onClick={() => copyToClipboard("149154", "mtn-first-fruit")}
+                                className={`rounded-md px-2.5 py-1.5 text-xs font-bold shadow-sm transition ${copied === "mtn-first-fruit" ? "bg-green-600 text-white hover:bg-green-700" : "bg-white text-[#540a8c] hover:bg-[#5F0C1B]/10"}`}
+                              >
+                                {copied === "mtn-first-fruit" ? "Copied" : copied === "mtn-first-fruit-error" ? "Unable to copy" : "Copy"}
+                              </button>
+                            </div>
+
+                          </div>
+
+                        </div>
+
+                      </div>
+
+                    </div>
 
                   </div>
 
                 </div>
 
 
-                {/* Airtel */}
-                <div className="
-                  rounded-xl
-                  border
-                  border-gray-100
-                  bg-gray-50
-                  p-4
-                ">
+                {/* =================================
+                    AIRTEL
+                ================================= */}
+                <div
+                  className="
+                    rounded-2xl
+                    border
+                    border-gray-100
+                    bg-gray-50
+                    p-5
+                    shadow-sm
+                    transition
+                    hover:shadow-md
+                    sm:p-6
+                    md:p-7
+                  "
+                >
 
-                  <div className="flex items-center justify-between">
+                  <div
+                    className="
+                    flex flex-col
+                    items-start
+                    gap-4
+                    sm:flex-row
+                    sm:justify-between
+                    sm:gap-5
+                    "
+                  >
 
-                    <div>
+                    <div
+                      className="
+                      flex flex-col
+                      items-start
+                      gap-4
+                      min-[420px]:flex-row
+                      "
+                    >
 
-                      <p className="text-xs font-semibold uppercase tracking-wider text-gray-400">
-                        Airtel Money
-                      </p>
+                      {/* Airtel Logo */}
+                      <div
+                        className="
+                          flex
+                          h-12
+                          w-12
+                          shrink-0
+                          items-center
+                          justify-center
+                          overflow-hidden
+                          rounded-xl
+                          bg-white
+                          shadow-sm
+                        "
+                      >
 
-                      <p className="mt-1 text-lg font-bold text-gray-700">
-                        +256 XXX XXX XXX
-                      </p>
+                        <img
+                          src={airtelIcon}
+                          alt="Airtel"
+                          className="h-10 w-10 object-contain"
+                        />
 
-                      <p className="mt-1 text-xs text-gray-500">
-                        Account Name: MFM Kanyanya
-                      </p>
+                      </div>
+
+
+                      <div>
+
+                        <p
+                          className="
+                            text-sm
+                            font-bold
+                            uppercase
+                            tracking-wider
+                            text-gray-500
+                          "
+                        >
+                          Airtel Money
+                        </p>
+
+                        <p
+                          className="
+                            mt-2
+                            text-2xl
+                            font-bold
+                            text-gray-950
+                            md:text-3xl
+                          "
+                        >
+                          Merchant ID: 4362830
+                        </p>
+
+                        <p
+                          className="
+                            mt-2
+                            text-sm
+                            font-medium
+                            leading-6
+                            text-gray-900
+                          "
+                        >
+                          Account Name:
+                          <br />
+                          MOUNTAIN OF FIRE AND MIRACLES MINISTRIES
+                        </p>
+
+
+                        {/* Merchant Code */}
+                        <div
+                          className="
+                            mt-5
+                            border-t
+                            border-gray-200
+                            pt-4
+                          "
+                        >
+
+                          <p
+                            className="
+                              text-sm
+                              font-bold
+                              uppercase
+                              tracking-wider
+                              text-gray-500
+                            "
+                          >
+                            Merchant Code
+                          </p>
+
+                          <p
+                            className="
+                              mt-2
+                              text-xl
+                              font-bold
+                              text-gray-950
+                            "
+                          >
+                            *185*9#
+                          </p>
+
+                        </div>
+
+                      </div>
 
                     </div>
 
+
+                    {/* Copy */}
                     <button
                       type="button"
                       onClick={() =>
                         copyToClipboard(
-                          "+256 XXX XXX XXX",
+                          "*4362830",
                           "airtel"
                         )
                       }
-                      className="
+                      className={`
                         flex
+                        self-start
+                        shrink-0
                         items-center
                         gap-1.5
                         rounded-lg
-                        bg-white
                         px-3
                         py-2
                         text-xs
-                        font-medium
-                        text-[#540a8c]
+                        font-bold
                         shadow-sm
-                        transition-colors
-                        hover:bg-[#540a8c]/10
-                      "
+                        transition
+                        ${copied === "airtel" ? "bg-green-600 text-white hover:bg-green-700" : "bg-white text-[#540a8c] hover:bg-[#5F0C1B]/10"}
+                      `}
                     >
+
                       {copied === "airtel" ? (
                         <>
                           <CheckCircle2 size={14} />
                           Copied
                         </>
+                      ) : copied === "airtel-error" ? (
+                        <>Unable to copy</>
                       ) : (
                         <>
                           <Copy size={14} />
                           Copy
                         </>
                       )}
+
                     </button>
 
                   </div>
@@ -449,30 +1120,63 @@ function Giving() {
           </div>
 
 
-          {/* =====================================
+          {/* =========================================
               GIVING NOTE
-          ===================================== */}
-          <div className="
-            mt-8
-            rounded-2xl
-            bg-[#540a8c]
-            px-6
-            py-7
-            text-center
-            md:px-10
-          ">
+          ========================================= */}
+          <div
+            className="
+              mt-10
+              rounded-2xl
+              bg-[#7A1022]
+              px-5
+              py-7
+              text-center
+              shadow-[0_15px_40px_rgba(84,10,140,0.15)]
+              sm:px-6
+              sm:py-8
+              md:px-10
+              md:py-9
+            "
+          >
 
-            <h3 className="text-lg font-bold text-white">
+            <h3
+              className="
+                text-xl
+                font-bold
+                text-white
+                md:text-2xl
+              "
+            >
               Give Freely, Give Cheerfully
             </h3>
 
-            <p className="mx-auto mt-3 max-w-2xl text-sm leading-7 text-white/70">
+            <p
+              className="
+                mx-auto
+                mt-4
+                max-w-2xl
+                text-base
+                font-medium
+                leading-7
+                text-white/80
+                md:text-lg
+              "
+            >
               "Each of you should give what you have decided in your heart
               to give, not reluctantly or under compulsion, for God loves
               a cheerful giver."
             </p>
 
-            <p className="mt-3 text-xs font-bold uppercase tracking-[0.2em] text-[#fabd00]">
+            <p
+              className="
+                mt-4
+                text-sm
+                font-bold
+                uppercase
+                tracking-[0.2em]
+                text-[#D9A441]
+              "
+            >
               2 Corinthians 9:7
             </p>
 

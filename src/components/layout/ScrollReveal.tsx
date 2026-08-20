@@ -30,9 +30,9 @@ function ScrollReveal() {
         });
       },
       {
-        threshold: 0,
-        rootMargin: "0px 0px 0px 0px",
-      },
+        threshold: 0.05,
+        rootMargin: "0px 0px -3% 0px",
+      }
     );
 
     const registerElements = () => {
@@ -46,14 +46,17 @@ function ScrollReveal() {
         registeredElements.add(element);
 
         element.classList.add("scroll-reveal");
+
         element.classList.add(
           index % 2 === 0
             ? "scroll-reveal-left"
-            : "scroll-reveal-right",
+            : "scroll-reveal-right"
         );
+
+        // Much smaller delay
         element.style.setProperty(
           "--scroll-reveal-delay",
-          `${(index % 4) * 25}ms`,
+          `${(index % 3) * 10}ms`
         );
 
         if (isInViewport(element)) {

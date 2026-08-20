@@ -167,6 +167,7 @@ function Navbar() {
             </div>
           </Link>
 
+
           {/* =================================================
               DESKTOP NAVIGATION
           ================================================= */}
@@ -196,21 +197,21 @@ function Navbar() {
                     border
                     border-transparent
 
-                    px-2
-                    py-1.5
+                    px-3
+                    py-2
 
-                    text-[11px]
-                    font-semibold
+                    text-sm
+                    font-bold
 
                     transition-all
                     duration-200
 
-                    xl:px-2.5
-                    xl:py-1.5
-                    xl:text-[11px]
+                    xl:px-3.5
+                    xl:py-2
+                    xl:text-[15px]
 
-                    2xl:px-3
-                    2xl:text-[12px]
+                    2xl:px-4
+                    2xl:text-[15px]
 
                     ${
                       isActive
@@ -224,6 +225,7 @@ function Navbar() {
               </NavLink>
             ))}
           </nav>
+
 
           {/* =================================================
               RIGHT SIDE
@@ -241,7 +243,9 @@ function Navbar() {
               xl:gap-4
             "
           >
-            {/* CONTACT US */}
+            {/* =================================================
+                CONTACT US
+            ================================================= */}
             <Link
               to="/contact"
               className="
@@ -256,7 +260,7 @@ function Navbar() {
 
                 text-sm
                 font-bold
-                text-[#540a8c]
+                text-[#000000]
 
                 shadow-md
                 transition-all
@@ -279,14 +283,13 @@ function Navbar() {
               Contact Us
             </Link>
 
+
             {/* =================================================
                 MOBILE MENU BUTTON
             ================================================= */}
             <button
               type="button"
-              onClick={() =>
-                setIsOpen((prev) => !prev)
-              }
+              onClick={() => setIsOpen((prev) => !prev)}
               aria-expanded={isOpen}
               aria-controls="mobile-navigation"
               aria-label={
@@ -317,6 +320,7 @@ function Navbar() {
         </div>
       </header>
 
+
       {/* =====================================================
           MOBILE BACKDROP
       ===================================================== */}
@@ -334,6 +338,7 @@ function Navbar() {
           "
         />
       )}
+
 
       {/* =====================================================
           MOBILE NAVIGATION
@@ -364,6 +369,7 @@ function Navbar() {
           }
         `}
       >
+
         {/* =================================================
             MOBILE HEADER
         ================================================= */}
@@ -375,6 +381,7 @@ function Navbar() {
             justify-between
           "
         >
+
           {/* MOBILE LOGO */}
           <Link
             to="/"
@@ -420,6 +427,7 @@ function Navbar() {
             </div>
           </Link>
 
+
           {/* CLOSE BUTTON */}
           <button
             type="button"
@@ -442,7 +450,9 @@ function Navbar() {
           >
             ×
           </button>
+
         </div>
+
 
         {/* =================================================
             MOBILE LINKS
@@ -464,7 +474,7 @@ function Navbar() {
                   px-3
                   py-3.5
 
-                  text-sm
+                  text-lg
                   font-bold
 
                   transition-all
@@ -480,6 +490,7 @@ function Navbar() {
               {link.label}
             </NavLink>
           ))}
+
 
           {/* =================================================
               MOBILE CONTACT BUTTON
@@ -503,7 +514,9 @@ function Navbar() {
           >
             Contact Us
           </Link>
+
         </nav>
+
       </div>
     </>
   );

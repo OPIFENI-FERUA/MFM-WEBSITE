@@ -58,10 +58,10 @@ function EventsPreview({
 }: EventsPreviewProps) {
   return (
     <section className="bg-white py-20 md:py-28">
-      <div className="mx-auto max-w-[1240px] px-5 md:px-8">
+      <div className="mx-auto max-w-[1240px] px-5 text-center md:px-8">
         
         {/* Section Header */}
-        <div className="mb-12 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+        <div className="mb-12 flex flex-col items-center justify-center gap-4">
           <div>
             <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#540a8c]">
               Don't Miss Out
@@ -69,7 +69,7 @@ function EventsPreview({
             <h2 className="mt-1 text-3xl font-black uppercase tracking-tight text-[#540a8c] sm:text-4xl">
               {title}
             </h2>
-            <div className="mt-2.5 h-1 w-14 rounded-full bg-[#f2a900]" />
+            <div className="mx-auto mt-2.5 h-1 w-14 rounded-full bg-[#f2a900]" />
           </div>
 
           {showViewAll && (
@@ -116,7 +116,7 @@ function EventsPreview({
                   </div>
 
                   {/* Body Content */}
-                  <div className="px-3 pt-5 pb-2">
+                  <div className="px-3 pt-5 pb-2 text-left">
                     <h3 className="text-xl font-bold uppercase tracking-wide text-[#000000]">
                       {event.title}
                     </h3>

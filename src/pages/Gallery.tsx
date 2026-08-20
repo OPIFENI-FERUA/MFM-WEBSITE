@@ -141,8 +141,8 @@ function Gallery() {
               className={[
                 "px-5 py-2.5 rounded-md text-sm md:text-[15px] transition-all duration-200 border",
                 isActive
-                  ? "bg-[#E8AA2E] text-[#000000] border-[#E8AA2E] font-semibold shadow-sm"
-                  : "bg-transparent text-[#6b7280] border-transparent hover:text-[#0B6E4F]",
+                  ? "bg-[#D9A441] text-[#000000] border-[#D9A441] font-semibold shadow-sm"
+                  : "bg-transparent text-[#6b7280] border-transparent hover:text-[#540a8c]",
               ].join(" ")}
             >
               {category}
@@ -161,7 +161,7 @@ function Gallery() {
             <button
               key={item.id}
               onClick={() => setLightbox(item)}
-              className="group relative overflow-hidden rounded-lg aspect-[4/3.1] text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0B6E4F]"
+              className="group relative overflow-hidden rounded-lg aspect-[4/3.1] text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#7A1022]"
             >
               <img
                 src={item.img}
@@ -172,7 +172,7 @@ function Gallery() {
               />
               <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/85 to-transparent" />
               <div className="absolute left-0 right-0 bottom-0 p-4">
-                <p className="text-[11px] uppercase tracking-[0.15em] text-[#F2C75C] font-semibold mb-1">
+                <p className="text-[11px] uppercase tracking-[0.15em] text-[#D9A441] font-semibold mb-1">
                   {item.category}
                 </p>
                 <p className="text-white text-lg font-bold uppercase tracking-wide">
@@ -213,7 +213,7 @@ function Gallery() {
               className="w-full max-h-[75vh] object-contain rounded-md"
             />
             <div className="mt-4 text-center">
-              <p className="text-[11px] uppercase tracking-[0.15em] text-[#E8AA2E] font-semibold mb-1">
+              <p className="text-[11px] uppercase tracking-[0.15em] text-[#D9A441] font-semibold mb-1">
                 {lightbox.category}
               </p>
               <p className="text-white text-lg">

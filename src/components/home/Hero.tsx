@@ -112,7 +112,7 @@ function Hero() {
           {/* =====================================
               LEFT CONTENT
           ===================================== */}
-          <div className="space-y-6 text-white">
+          <div className="space-y-6 text-center text-white">
             {/* Welcome Text */}
             <p
               className="
@@ -161,7 +161,7 @@ function Hero() {
             {/* =====================================
                 ACTION BUTTONS
             ===================================== */}
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-8 flex flex-wrap justify-center gap-4">
               {/* SERMONS */}
               <Link
                 to="/sermons"
@@ -265,7 +265,7 @@ function Hero() {
             className="
               hidden
               items-end
-              justify-end
+              justify-center
               lg:flex
             "
           >
@@ -280,6 +280,7 @@ function Hero() {
                 border-white/20
                 bg-white/[0.08]
                 p-7
+                text-center
                 text-white
                 shadow-2xl
                 backdrop-blur-md

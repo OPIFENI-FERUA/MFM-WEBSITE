@@ -124,9 +124,9 @@ function AboutPreview() {
         {/* =======================================
             RIGHT - ABOUT CONTENT
         ======================================= */}
-        <div className="flex flex-col">
+        <div className="flex flex-col text-center">
 
-          <div className="mb-5 flex items-center gap-3">
+          <div className="mb-5 flex items-center justify-center gap-3">
             <span className="h-[2px] w-10 bg-[#d4af37]" />
 
             <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#540a8c]">
@@ -134,14 +134,14 @@ function AboutPreview() {
             </span>
           </div>
 
-          <h2 className="max-w-xl text-3xl font-bold leading-tight text-[#540a8c] md:text-4xl lg:text-5xl">
+          <h2 className="mx-auto max-w-xl text-3xl font-bold leading-tight text-[#540a8c] md:text-4xl lg:text-5xl">
             A Family of Faith,
             <span className="block text-[#d4af37]">
               Prayer &amp; Purpose
             </span>
           </h2>
 
-          <p className="mt-6 max-w-2xl text-base leading-8 text-gray-600 md:text-lg">
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-gray-600 md:text-lg">
             MFM Kanyanya Mega Regional HQ is a growing family of believers
             passionate about worship, the Word, and prayer. We welcome
             everyone — whether you are exploring faith for the first time
@@ -202,6 +202,7 @@ function AboutPreview() {
                 hover:-translate-y-1
                 hover:border-[#540a8c]/20
                 hover:shadow-[0_16px_40px_rgba(139,30,63,0.35)]
+                text-left
               "
             >
               <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-white/30 text-white transition-colors group-hover:bg-white/40 group-hover:text-[#540a8c]">
@@ -232,6 +233,7 @@ function AboutPreview() {
                 hover:-translate-y-1
                 hover:border-[#540a8c]/20
                 hover:shadow-[0_16px_40px_rgba(211,157,0,0.35)]
+                text-left
               "
             >
               <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-white/30 text-white transition-colors group-hover:bg-white/40 group-hover:text-[#540a8c]">
@@ -255,7 +257,7 @@ function AboutPreview() {
             className="
               mt-8
               
-              mr-auto
+              mx-auto
               inline-flex
               items-center
               gap-3

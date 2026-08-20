@@ -44,7 +44,7 @@
                     {/* CONTACT INFORMATION */}
                     <div className="rounded-2xl border border-gray-100 bg-white p-7 shadow-[0_15px_40px_rgba(114,17,110,0.07)]">
                       <div className="mb-6 flex items-center gap-4">
-                        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#540a8c]/10 text-[#540a8c]">
+                        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#7A1022]/10 text-[#540a8c]">
                           <Phone size={22} />
                         </div>
 
@@ -67,7 +67,7 @@
                         >
                           <Phone
                             size={20}
-                            className="mt-1 shrink-0 text-[#fabd00]"
+                            className="mt-1 shrink-0 text-[#D9A441]"
                           />
 
                           <div>
@@ -88,7 +88,7 @@
                         >
                           <Mail
                             size={20}
-                            className="mt-1 shrink-0 text-[#fabd00]"
+                            className="mt-1 shrink-0 text-[#D9A441]"
                           />
 
                           <div>
@@ -107,7 +107,7 @@
                     {/* VISIT US */}
                     <div className="rounded-2xl border border-gray-100 bg-white p-7 shadow-[0_15px_40px_rgba(114,17,110,0.07)]">
                       <div className="mb-6 flex items-center gap-4">
-                        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#540a8c]/10 text-[#540a8c]">
+                        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#7A1022]/10 text-[#540a8c]">
                           <MapPin size={22} />
                         </div>
 
@@ -126,7 +126,7 @@
                         <div className="flex items-start gap-4 rounded-xl p-3">
                           <MapPin
                             size={20}
-                            className="mt-1 shrink-0 text-[#fabd00]"
+                            className="mt-1 shrink-0 text-[#D9A441]"
                           />
 
                           <div>
@@ -143,7 +143,7 @@
                         <div className="flex items-start gap-4 rounded-xl p-3">
                           <Clock
                             size={20}
-                            className="mt-1 shrink-0 text-[#fabd00]"
+                            className="mt-1 shrink-0 text-[#D9A441]"
                           />
 
                           <div>
@@ -208,7 +208,7 @@
                     required
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-800 outline-none transition-all placeholder:text-gray-400 focus:border-[#540a8c] focus:bg-white focus:ring-2 focus:ring-[#540a8c]/10"
+                    className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-800 outline-none transition-all placeholder:text-gray-400 focus:border-[#7A1022] focus:bg-white focus:ring-2 focus:ring-[#7A1022]/10"
                     placeholder="Enter your full name"
                   />
                 </div>
@@ -228,7 +228,7 @@
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-800 outline-none transition-all placeholder:text-gray-400 focus:border-[#540a8c] focus:bg-white focus:ring-2 focus:ring-[#540a8c]/10"
+                    className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-800 outline-none transition-all placeholder:text-gray-400 focus:border-[#7A1022] focus:bg-white focus:ring-2 focus:ring-[#7A1022]/10"
                     placeholder="you@example.com"
                   />
                 </div>
@@ -248,7 +248,7 @@
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     rows={5}
-                    className="w-full resize-none rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-800 outline-none transition-all placeholder:text-gray-400 focus:border-[#540a8c] focus:bg-white focus:ring-2 focus:ring-[#540a8c]/10"
+                    className="w-full resize-none rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-800 outline-none transition-all placeholder:text-gray-400 focus:border-[#7A1022] focus:bg-white focus:ring-2 focus:ring-[#7A1022]/10"
                     placeholder="How can we help you?"
                   />
                 </div>
@@ -256,7 +256,7 @@
                 {/* SUBMIT BUTTON */}
                 <button
                   type="submit"
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#540a8c] px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-[#540a8c]/15 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#540a8c] hover:shadow-xl"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#7A1022] px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-[#540a8c]/15 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#5F0C1B] hover:shadow-xl"
                 >
                   <Send size={17} />
                   Send Message

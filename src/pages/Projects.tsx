@@ -20,7 +20,7 @@ function ProjectGallery({
   const [hero, ...rest] = project.photos;
 
   return (
-    <div className="border-t border-gray-100 bg-[#faf8fc] p-5 md:p-7">
+    <div className="border-t border-gray-100 bg-[#FAF8F5] p-5 md:p-7">
       <p className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-[#540a8c]">
         Photographs
       </p>
@@ -57,7 +57,7 @@ function Projects() {
   );
 
   return (
-    <main className="min-h-screen bg-[#faf8fc] text-[#000000]">
+    <main className="min-h-screen bg-[#FAF8F5] text-[#000000]">
       <PageHero
         label="Our Work"
         title="Projects"
@@ -83,7 +83,7 @@ function Projects() {
       <section className="px-6 pb-10">
         <div className="mx-auto max-w-7xl">
           <div className="mb-10">
-            <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#d9a441]">
+            <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#D9A441]">
               Completed work
             </p>
             <h2 className="mt-3 text-3xl font-bold text-[#540a8c] md:text-4xl">
@@ -121,7 +121,7 @@ function Projects() {
                     </button>
 
                     <div className="flex flex-col justify-center p-8 md:p-12">
-                      <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#d9a441]">
+                      <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#D9A441]">
                         {project.category}
                       </p>
                       <h3 className="mt-3 text-2xl font-bold leading-tight text-[#540a8c] md:text-4xl">
@@ -156,7 +156,7 @@ function Projects() {
       <section className="px-6 py-16 md:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="mb-10">
-            <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#d9a441]">
+            <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#D9A441]">
               Still in progress
             </p>
             <h2 className="mt-3 text-3xl font-bold text-[#540a8c] md:text-4xl">
@@ -184,16 +184,16 @@ function Projects() {
                       alt={hero.alt}
                       className="h-64 w-full object-cover md:h-72"
                     />
-                    <span className="absolute left-5 top-5 rounded-full bg-[#540a8c] px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-white">
+                    <span className="absolute left-5 top-5 rounded-full bg-[#7A1022] px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-white">
                       Ongoing
                     </span>
                   </div>
 
                   <div className="flex flex-1 flex-col p-8">
-                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-[#540a8c]/10 text-[#540a8c]">
+                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-[#7A1022]/10 text-[#540a8c]">
                       <Icon size={22} />
                     </div>
-                    <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#d9a441]">
+                    <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#D9A441]">
                       {project.category}
                     </p>
                     <h3 className="mt-2 text-2xl font-bold text-[#540a8c] md:text-3xl">
@@ -225,8 +225,8 @@ function Projects() {
       </section>
 
       <section className="px-6 pb-24">
-        <div className="mx-auto max-w-4xl overflow-hidden rounded-[28px] bg-[#540a8c] px-8 py-14 text-center text-white md:px-16">
-          <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#fabd00]">
+        <div className="mx-auto max-w-4xl overflow-hidden rounded-[28px] bg-[#7A1022] px-8 py-14 text-center text-white md:px-16">
+          <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#D9A441]">
             Partner with us
           </p>
           <h2 className="mt-4 text-3xl font-bold md:text-4xl">
@@ -240,7 +240,7 @@ function Projects() {
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link
               to="/giving"
-              className="rounded-full bg-[#fabd00] px-7 py-3 text-sm font-bold uppercase tracking-wider text-[#540a8c] transition hover:bg-[#ffd45c]"
+              className="rounded-full bg-[#D9A441] px-7 py-3 text-sm font-bold uppercase tracking-wider text-[#540a8c] transition hover:bg-[#D9A441]"
             >
               Give towards a project
             </Link>
@@ -278,7 +278,7 @@ function Projects() {
             <p className="mt-4 text-center text-sm text-white/80">
               {lightbox.alt}
             </p>
-            <p className="mt-1 text-center text-base font-semibold text-[#fabd00]">
+            <p className="mt-1 text-center text-base font-semibold text-[#D9A441]">
               {lightbox.title}
             </p>
           </div>

@@ -8,7 +8,7 @@ const quickLinks = [
   { to: "/about", label: "About Us" },
   { to: "/sermons", label: "Sermons & Media" },
   { to: "/events", label: "Upcoming Events" },
-  { to: "/give", label: "Online Giving" },
+  { to: "/giving", label: "Online Giving" },
   { to: "/contact", label: "Contact Us" },
 ];
 

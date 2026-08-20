@@ -3,7 +3,7 @@ import AboutPreview from "../components/home/AboutPreview";
 import ServicesPreview from "../components/home/ServicesPreview";
 import SermonsPreview from "../components/home/SermonsPreview";
 import EventsPreview from "../components/home/EventsPreview";
-import MinistriesPreview from "../components/home/MinistriesPreview";
+import ProjectPreview from "../components/home/ProjectPreview";
 
 
 
@@ -18,7 +18,7 @@ export default function Home() {
       <AboutPreview />
       <ServicesPreview />
       <SermonsPreview />
-      <MinistriesPreview />
+      <ProjectPreview />
       <EventsPreview />
     </main>
   );
