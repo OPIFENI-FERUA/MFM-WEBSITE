@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -73,7 +72,7 @@ function ProjectsPreview() {
       window.setTimeout(() => {
         setActiveProject((current) => (current + 1) % projects.length);
         setIsChanging(false);
-      }, 650);
+      }, 850);
     }, 7000);
 
     return () => {
@@ -87,18 +86,13 @@ function ProjectsPreview() {
   const changeProject = (index: number) => {
     if (index === activeProject || isChanging) return;
 
-    if (index > activeProject) {
-      setSlideDirection("left");
-    } else {
-      setSlideDirection("right");
-    }
-
+    setSlideDirection(index > activeProject ? "left" : "right");
     setIsChanging(true);
 
     window.setTimeout(() => {
       setActiveProject(index);
       setIsChanging(false);
-    }, 650);
+    }, 850);
   };
 
   return (
@@ -107,7 +101,7 @@ function ProjectsPreview() {
         relative
         min-h-[700px]
         overflow-hidden
-        bg-[#fce8df]
+        bg-[#7e099e]
         py-16
         sm:py-20
         lg:min-h-[720px]
@@ -115,49 +109,20 @@ function ProjectsPreview() {
       "
     >
       {/* =====================================================
-          BACKGROUND DECORATION
-          This stays fixed while the project content slides.
+          SUBTLE BACKGROUND GLOW
       ===================================================== */}
 
       <div
         className="
           pointer-events-none
           absolute
-          -left-32
-          -top-32
-          h-[520px]
-          w-[520px]
-          rounded-full
-          border
-          border-white/40
-        "
-      />
-
-      <div
-        className="
-          pointer-events-none
-          absolute
-          -left-20
-          -top-20
-          h-[420px]
-          w-[420px]
-          rounded-full
-          border
-          border-white/30
-        "
-      />
-
-      <div
-        className="
-          pointer-events-none
-          absolute
-          right-[-180px]
-          top-[-180px]
+          -left-40
+          -top-40
           h-[500px]
           w-[500px]
           rounded-full
-          border
-          border-white/30
+          bg-white/[0.035]
+          blur-3xl
         "
       />
 
@@ -165,12 +130,12 @@ function ProjectsPreview() {
         className="
           pointer-events-none
           absolute
-          bottom-[-250px]
-          right-[-150px]
+          -bottom-40
+          -right-40
           h-[500px]
           w-[500px]
           rounded-full
-          bg-white/20
+          bg-[#eb3492]/10
           blur-3xl
         "
       />
@@ -192,8 +157,6 @@ function ProjectsPreview() {
       >
         {/* ===================================================
             SLIDING PROJECT SCENE
-
-            Everything inside this container moves together.
         =================================================== */}
 
         <div
@@ -203,10 +166,9 @@ function ProjectsPreview() {
             min-h-[560px]
             w-full
             items-center
-            transition-transform
-            transition-opacity
-            duration-[650ms]
-            ease-in-out
+            transition-all
+            duration-[850ms]
+            ease-[cubic-bezier(0.22,1,0.36,1)]
 
             ${
               isChanging
@@ -259,7 +221,7 @@ function ProjectsPreview() {
                 font-bold
                 leading-[0.95]
                 tracking-tight
-                text-[#5b2419]
+                text-white
                 sm:text-4xl
                 md:text-5xl
                 lg:text-[3.75rem]
@@ -276,7 +238,7 @@ function ProjectsPreview() {
                 max-w-lg
                 text-sm
                 leading-7
-                text-[#6d514a]
+                text-white/80
                 sm:text-base
                 sm:leading-8
               "
@@ -290,29 +252,38 @@ function ProjectsPreview() {
               <Link
                 to="/projects"
                 className="
+                  group
                   inline-flex
                   items-center
                   gap-3
-                  bg-[#5b2419]
+                  bg-[#f0a51a]
                   px-7
                   py-4
                   text-[10px]
                   font-bold
                   uppercase
                   tracking-[0.18em]
-                  text-white
+                  text-[#4a1b08]
                   shadow-lg
                   transition-all
                   duration-300
                   hover:-translate-y-1
-                  hover:bg-[#431a12]
-                  hover:shadow-xl
+                  hover:bg-[#d89408]
+                  hover:shadow-2xl
                   active:scale-95
                 "
               >
                 Read More
 
-                <span className="material-symbols-outlined text-base">
+                <span
+                  className="
+                    material-symbols-outlined
+                    text-base
+                    transition-transform
+                    duration-300
+                    group-hover:translate-x-1
+                  "
+                >
                   arrow_forward
                 </span>
               </Link>
@@ -337,8 +308,8 @@ function ProjectsPreview() {
 
                     ${
                       index === activeProject
-                        ? "w-12 bg-[#5b2419]"
-                        : "w-5 bg-[#5b2419]/20 hover:bg-[#5b2419]/50"
+                        ? "w-12 bg-[#f0a51a]"
+                        : "w-5 bg-white/30 hover:bg-white/60"
                     }
                   `}
                 />
@@ -350,7 +321,7 @@ function ProjectsPreview() {
                   text-[10px]
                   font-bold
                   tracking-[0.15em]
-                  text-[#5b2419]/50
+                  text-white/50
                 "
               >
                 0{activeProject + 1} / 0{projects.length}
@@ -376,7 +347,9 @@ function ProjectsPreview() {
             "
           >
             {/* =================================================
-                LARGE CIRCULAR IMAGE
+                LARGE CLEAN CIRCULAR IMAGE
+
+                No colored circle/ring around image.
             ================================================= */}
 
             <div
@@ -384,42 +357,39 @@ function ProjectsPreview() {
                 absolute
                 inset-0
                 animate-project-spin
+                overflow-hidden
                 rounded-full
-                bg-[#f6d5c8]
-                p-[8px]
               "
             >
-              <div className="h-full w-full overflow-hidden rounded-full">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  draggable={false}
-                  loading="eager"
-                  decoding="async"
-                  className="
-                    block
-                    h-full
-                    w-full
-                    object-cover
-                  "
-                />
-              </div>
+              <img
+                src={project.image}
+                alt={project.title}
+                draggable={false}
+                loading="eager"
+                decoding="async"
+                className="
+                  block
+                  h-full
+                  w-full
+                  object-cover
+                "
+              />
+
+              {/* Image overlay */}
+
+              <div
+                className="
+                  pointer-events-none
+                  absolute
+                  inset-0
+                  rounded-full
+                  bg-gradient-to-tr
+                  from-black/20
+                  via-transparent
+                  to-white/10
+                "
+              />
             </div>
-
-            {/* Image overlay */}
-
-            <div
-              className="
-                pointer-events-none
-                absolute
-                inset-0
-                rounded-full
-                bg-gradient-to-tr
-                from-black/10
-                via-transparent
-                to-white/10
-              "
-            />
 
             {/* =================================================
                 CENTER PROJECT CIRCLE
@@ -439,9 +409,9 @@ function ProjectsPreview() {
                 justify-center
                 rounded-full
                 border
-                border-white/70
-                bg-white/75
-                shadow-[0_20px_80px_rgba(91,36,25,0.12)]
+                border-white
+                bg-white/90
+                shadow-[0_20px_80px_rgba(0,0,0,0.20)]
                 backdrop-blur-xl
               "
             >
@@ -453,7 +423,7 @@ function ProjectsPreview() {
                   inset-4
                   rounded-full
                   border
-                  border-[#f0a51a]/30
+                  border-[#f0a51a]/40
                 "
               />
 
@@ -535,7 +505,7 @@ function ProjectsPreview() {
             </div>
 
             {/* =================================================
-                DECORATIVE DOT
+                DECORATIVE GOLD DOT
             ================================================= */}
 
             <div
@@ -584,26 +554,36 @@ function ProjectsPreview() {
                   absolute
                   inset-0
                   animate-project-spin
+                  overflow-hidden
                   rounded-full
-                  bg-[#f6d5c8]
-                  p-2
                 "
               >
-                <div className="h-full w-full overflow-hidden rounded-full">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    draggable={false}
-                    loading="eager"
-                    decoding="async"
-                    className="
-                      block
-                      h-full
-                      w-full
-                      object-cover
-                    "
-                  />
-                </div>
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  draggable={false}
+                  loading="eager"
+                  decoding="async"
+                  className="
+                    block
+                    h-full
+                    w-full
+                    object-cover
+                  "
+                />
+
+                <div
+                  className="
+                    pointer-events-none
+                    absolute
+                    inset-0
+                    rounded-full
+                    bg-gradient-to-tr
+                    from-black/20
+                    via-transparent
+                    to-white/10
+                  "
+                />
               </div>
 
               {/* Mobile center circle */}
@@ -622,10 +602,10 @@ function ProjectsPreview() {
                   justify-center
                   rounded-full
                   border
-                  border-white/70
-                  bg-white/75
+                  border-white
+                  bg-white/90
                   text-center
-                  shadow-xl
+                  shadow-[0_15px_50px_rgba(0,0,0,0.20)]
                   backdrop-blur-xl
                   sm:h-[200px]
                   sm:w-[200px]
@@ -694,7 +674,7 @@ function ProjectsPreview() {
           h-24
           w-full
           bg-gradient-to-t
-          from-black/[0.02]
+          from-black/[0.05]
           to-transparent
         "
       />
