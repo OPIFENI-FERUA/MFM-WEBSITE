@@ -12,67 +12,81 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: "ELDERLY COMMUNITY SUPPORT",
+    shortTitle: "Elderly Support",
+    description:
+      "We reach out to elderly people in our communities, sharing love, practical support, and essential items while reminding them that they are valued and not forgotten.",
+    icon: "volunteer_activism",
+    image:
+      "https://images.unsplash.com/photo-1513159446162-54eb8bdaa79b?auto=format&fit=crop&w=1200&q=85",
+    label: "Caring for Our Elders",
+  },
+  {
+    title: "SKILLS TRAINING",
+    shortTitle: "Skills Training",
+    description:
+      "Through a series of practical skills training sessions, we equip people with useful skills such as baking, candle making, and other activities that can create opportunities for income and self-reliance.",
+    icon: "construction",
+    image:
+      "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=85",
+    label: "Equipping for Life",
+  },
+  {
     title: "COMMUNITY OUTREACH",
     shortTitle: "Community Outreach",
     description:
-      "Reaching communities with practical support, hope, and the love of Christ.",
-    icon: "volunteer_activism",
+      "We take the Gospel beyond the church walls through community evangelism, preaching the Word, serving people, and providing clothing and other practical support to those in need.",
+    icon: "public",
     image:
       "https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=1200&q=85",
     label: "Serving Communities",
   },
   {
-    title: "YOUTH DEVELOPMENT",
-    shortTitle: "Youth Development",
+    title: "BUSINESS SKILLS TRAINING",
+    shortTitle: "Business Training",
     description:
-      "Creating opportunities for young people to discover purpose, develop skills, and grow in faith.",
-    icon: "groups",
+      "Our business skills training helps participants understand entrepreneurship, develop practical business skills, and discover ways to create sustainable opportunities for themselves and their families.",
+    icon: "business_center",
     image:
-      "https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=1200&q=85",
-    label: "Investing in the Next Generation",
+      "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=85",
+    label: "Building Entrepreneurs",
   },
   {
-    title: "EDUCATION PROJECT",
-    shortTitle: "Education Project",
+    title: "MFM FARM PROJECT",
+    shortTitle: "Church Farm",
     description:
-      "Supporting children and young people through education, mentorship, and meaningful opportunities.",
-    icon: "school",
+      "The church farm is part of our vision for practical development, productivity, and self-reliance while creating opportunities that can contribute to the wider ministry and community.",
+    icon: "agriculture",
     image:
-      "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=85",
-    label: "Building Futures",
+      "https://images.unsplash.com/photo-1500076656116-558758c991c1?auto=format&fit=crop&w=1200&q=85",
+    label: "Growing for Impact",
   },
   {
-    title: "MISSIONS",
-    shortTitle: "Missions",
+    title: "MFM SACCO",
+    shortTitle: "MFM SACCO",
     description:
-      "Taking the Gospel beyond our walls and partnering with communities to bring lasting transformation.",
-    icon: "public",
+      "Through the church SACCO, members are encouraged to save, support one another financially, and build a stronger foundation for personal and community economic growth.",
+    icon: "savings",
     image:
-      "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=1200&q=85",
-    label: "Taking Hope Further",
+      "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1200&q=85",
+    label: "Building Financial Strength",
   },
 ];
 
 function ProjectsPreview() {
   const [activeProject, setActiveProject] = useState<number>(0);
   const [isChanging, setIsChanging] = useState<boolean>(false);
-  const [slideDirection, setSlideDirection] =
-    useState<"left" | "right">("left");
 
   const project = projects[activeProject];
 
-  /*
-   * Automatically change projects.
-   */
   useEffect(() => {
     const interval = window.setInterval(() => {
-      setSlideDirection("left");
       setIsChanging(true);
 
       window.setTimeout(() => {
         setActiveProject((current) => (current + 1) % projects.length);
         setIsChanging(false);
-      }, 850);
+      }, 600);
     }, 7000);
 
     return () => {
@@ -80,36 +94,32 @@ function ProjectsPreview() {
     };
   }, []);
 
-  /*
-   * Manually change projects.
-   */
   const changeProject = (index: number) => {
     if (index === activeProject || isChanging) return;
 
-    setSlideDirection(index > activeProject ? "left" : "right");
     setIsChanging(true);
 
     window.setTimeout(() => {
       setActiveProject(index);
       setIsChanging(false);
-    }, 850);
+    }, 600);
   };
 
   return (
     <section
       className="
         relative
-        min-h-[700px]
+        min-h-[650px]
         overflow-hidden
         bg-[#7e099e]
         py-16
         sm:py-20
-        lg:min-h-[720px]
-        lg:py-20
+        lg:min-h-[760px]
+        lg:py-24
       "
     >
       {/* =====================================================
-          SUBTLE BACKGROUND GLOW
+          BACKGROUND GLOW
       ===================================================== */}
 
       <div
@@ -132,8 +142,8 @@ function ProjectsPreview() {
           absolute
           -bottom-40
           -right-40
-          h-[500px]
-          w-[500px]
+          h-[600px]
+          w-[600px]
           rounded-full
           bg-[#eb3492]/10
           blur-3xl
@@ -141,7 +151,7 @@ function ProjectsPreview() {
       />
 
       {/* =====================================================
-          MAIN VIEWPORT
+          MAIN CONTAINER
       ===================================================== */}
 
       <div
@@ -149,33 +159,30 @@ function ProjectsPreview() {
           relative
           mx-auto
           max-w-7xl
-          overflow-hidden
-          px-6
-          sm:px-8
+          px-4
+          sm:px-6
           lg:px-12
         "
       >
-        {/* ===================================================
-            SLIDING PROJECT SCENE
-        =================================================== */}
-
         <div
           className={`
             relative
             flex
-            min-h-[560px]
+            min-h-[520px]
             w-full
+            flex-row
             items-center
+            gap-5
             transition-all
-            duration-[850ms]
+            duration-[600ms]
             ease-[cubic-bezier(0.22,1,0.36,1)]
-
+            sm:gap-8
+            lg:min-h-[580px]
+            lg:gap-0
             ${
               isChanging
-                ? slideDirection === "left"
-                  ? "-translate-x-full opacity-0"
-                  : "translate-x-full opacity-0"
-                : "translate-x-0 opacity-100"
+                ? "scale-[0.97] opacity-0 blur-[2px]"
+                : "scale-100 opacity-100 blur-0"
             }
           `}
         >
@@ -186,61 +193,101 @@ function ProjectsPreview() {
           <div
             className="
               relative
-              z-20
-              w-full
-              lg:w-[48%]
+              z-30
+              min-w-0
+              flex-1
+              lg:w-[52%]
+              lg:flex-none
             "
           >
-            {/* Small label */}
+            {/* Small heading */}
 
             <span
               className="
-                mb-6
+                mb-4
                 inline-flex
                 items-center
                 gap-2
-                text-xs
+                text-[8px]
                 font-bold
                 uppercase
-                tracking-[0.2em]
+                tracking-[0.18em]
                 text-[#f0a51a]
+                sm:mb-6
+                sm:text-[10px]
+                lg:mb-7
+                lg:text-xs
+                lg:tracking-[0.22em]
               "
             >
-              <span className="h-[2px] w-8 bg-[#f0a51a]" />
+              <span className="h-[2px] w-6 bg-[#f0a51a] sm:w-8 lg:w-10" />
 
               Our Projects
             </span>
 
-            {/* Main title */}
+            {/* Main heading */}
 
             <h2
               className="
-                max-w-lg
+                max-w-[310px]
                 font-serif
-                text-3xl
+                text-[2.1rem]
                 font-bold
-                leading-[0.95]
+                leading-[0.94]
                 tracking-tight
                 text-white
+                sm:max-w-[420px]
                 sm:text-4xl
                 md:text-5xl
-                lg:text-[3.75rem]
+                lg:max-w-[600px]
+                lg:text-[4.4rem]
+                xl:text-[5rem]
               "
             >
-              {project.title}
+              Making an
+              <br />
+              <span className="text-[#f0a51a]">Impact</span>
+              <br />
+              Beyond the Church
             </h2>
+
+            {/* Project title */}
+
+            <div className="mt-7 lg:mt-9">
+              <h3
+                className="
+                  max-w-[380px]
+                  text-lg
+                  font-bold
+                  uppercase
+                  leading-tight
+                  tracking-wide
+                  text-white
+                  sm:text-xl
+                  lg:text-2xl
+                "
+              >
+                {project.title}
+              </h3>
+            </div>
 
             {/* Description */}
 
             <p
               className="
-                mt-7
-                max-w-lg
-                text-sm
-                leading-7
-                text-white/80
-                sm:text-base
-                sm:leading-8
+                mt-4
+                max-w-[380px]
+                text-[11px]
+                leading-5
+                text-white/75
+                sm:mt-5
+                sm:max-w-[450px]
+                sm:text-sm
+                sm:leading-7
+                lg:mt-5
+                lg:max-w-[510px]
+                lg:text-base
+                lg:leading-8
               "
             >
               {project.description}
@@ -248,40 +295,47 @@ function ProjectsPreview() {
 
             {/* CTA */}
 
-            <div className="mt-9">
+            <div className="mt-6 sm:mt-7 lg:mt-8">
               <Link
                 to="/projects"
                 className="
                   group
                   inline-flex
                   items-center
-                  gap-3
+                  gap-2
                   bg-[#f0a51a]
-                  px-7
-                  py-4
-                  text-[10px]
+                  px-5
+                  py-3
+                  text-[8px]
                   font-bold
                   uppercase
-                  tracking-[0.18em]
+                  tracking-[0.15em]
                   text-[#4a1b08]
-                  shadow-lg
+                  shadow-xl
                   transition-all
                   duration-300
                   hover:-translate-y-1
                   hover:bg-[#d89408]
                   hover:shadow-2xl
                   active:scale-95
+                  sm:px-6
+                  sm:py-3.5
+                  sm:text-[9px]
+                  lg:px-7
+                  lg:py-4
+                  lg:text-[10px]
                 "
               >
-                Read More
+                Explore Our Projects
 
                 <span
                   className="
                     material-symbols-outlined
-                    text-base
+                    text-sm
                     transition-transform
                     duration-300
                     group-hover:translate-x-1
+                    sm:text-base
                   "
                 >
                   arrow_forward
@@ -289,9 +343,19 @@ function ProjectsPreview() {
               </Link>
             </div>
 
-            {/* Project navigation */}
+            {/* Navigation */}
 
-            <div className="mt-12 flex items-center gap-3">
+            <div
+              className="
+                mt-8
+                flex
+                items-center
+                gap-2
+                sm:mt-10
+                sm:gap-3
+                lg:mt-12
+              "
+            >
               {projects.map((item, index) => (
                 <button
                   key={item.title}
@@ -300,16 +364,17 @@ function ProjectsPreview() {
                   aria-label={`View ${item.shortTitle}`}
                   disabled={isChanging}
                   className={`
-                    h-1.5
+                    h-1
                     rounded-full
                     transition-all
                     duration-500
+                    sm:h-1.5
                     disabled:cursor-not-allowed
 
                     ${
                       index === activeProject
-                        ? "w-12 bg-[#f0a51a]"
-                        : "w-5 bg-white/30 hover:bg-white/60"
+                        ? "w-8 bg-[#f0a51a] sm:w-10 lg:w-12"
+                        : "w-3 bg-white/30 hover:bg-white/60 sm:w-4 lg:w-5"
                     }
                   `}
                 />
@@ -317,220 +382,34 @@ function ProjectsPreview() {
 
               <span
                 className="
-                  ml-2
-                  text-[10px]
+                  ml-1
+                  text-[8px]
                   font-bold
-                  tracking-[0.15em]
+                  tracking-[0.12em]
                   text-white/50
+                  sm:ml-2
+                  sm:text-[9px]
+                  lg:text-[10px]
                 "
               >
-                0{activeProject + 1} / 0{projects.length}
+                {String(activeProject + 1).padStart(2, "0")} /{" "}
+                {String(projects.length).padStart(2, "0")}
               </span>
             </div>
           </div>
 
           {/* =================================================
-              RIGHT SIDE - DESKTOP
+              MOBILE / TABLET IMAGE
           ================================================= */}
 
           <div
             className="
-              absolute
-              right-[-70px]
-              top-1/2
-              hidden
-              h-[560px]
-              w-[560px]
-              -translate-y-1/2
-              lg:block
-              xl:right-[-20px]
-            "
-          >
-            {/* =================================================
-                LARGE CLEAN CIRCULAR IMAGE
-
-                No colored circle/ring around image.
-            ================================================= */}
-
-            <div
-              className="
-                absolute
-                inset-0
-                animate-project-spin
-                overflow-hidden
-                rounded-full
-              "
-            >
-              <img
-                src={project.image}
-                alt={project.title}
-                draggable={false}
-                loading="eager"
-                decoding="async"
-                className="
-                  block
-                  h-full
-                  w-full
-                  object-cover
-                "
-              />
-
-              {/* Image overlay */}
-
-              <div
-                className="
-                  pointer-events-none
-                  absolute
-                  inset-0
-                  rounded-full
-                  bg-gradient-to-tr
-                  from-black/20
-                  via-transparent
-                  to-white/10
-                "
-              />
-            </div>
-
-            {/* =================================================
-                CENTER PROJECT CIRCLE
-            ================================================= */}
-
-            <div
-              className="
-                absolute
-                left-1/2
-                top-1/2
-                flex
-                h-[270px]
-                w-[270px]
-                -translate-x-1/2
-                -translate-y-1/2
-                items-center
-                justify-center
-                rounded-full
-                border
-                border-white
-                bg-white/90
-                shadow-[0_20px_80px_rgba(0,0,0,0.20)]
-                backdrop-blur-xl
-              "
-            >
-              {/* Inner ring */}
-
-              <div
-                className="
-                  absolute
-                  inset-4
-                  rounded-full
-                  border
-                  border-[#f0a51a]/40
-                "
-              />
-
-              {/* Content */}
-
-              <div
-                className="
-                  relative
-                  z-10
-                  flex
-                  flex-col
-                  items-center
-                  text-center
-                "
-              >
-                {/* Icon */}
-
-                <div
-                  className="
-                    mb-5
-                    flex
-                    h-14
-                    w-14
-                    items-center
-                    justify-center
-                    rounded-full
-                    bg-[#f0a51a]/10
-                    text-[#f0a51a]
-                  "
-                >
-                  <span className="material-symbols-outlined text-3xl">
-                    {project.icon}
-                  </span>
-                </div>
-
-                {/* Label */}
-
-                <span
-                  className="
-                    text-[9px]
-                    font-bold
-                    uppercase
-                    tracking-[0.2em]
-                    text-[#f0a51a]
-                  "
-                >
-                  Project
-                </span>
-
-                {/* Title */}
-
-                <h3
-                  className="
-                    mt-2
-                    max-w-[190px]
-                    text-lg
-                    font-bold
-                    leading-tight
-                    text-[#5b2419]
-                  "
-                >
-                  {project.shortTitle}
-                </h3>
-
-                {/* Tagline */}
-
-                <p
-                  className="
-                    mt-3
-                    max-w-[180px]
-                    text-[11px]
-                    leading-5
-                    text-[#6d514a]
-                  "
-                >
-                  {project.label}
-                </p>
-              </div>
-            </div>
-
-            {/* =================================================
-                DECORATIVE GOLD DOT
-            ================================================= */}
-
-            <div
-              className="
-                absolute
-                bottom-[80px]
-                left-[60px]
-                h-4
-                w-4
-                rounded-full
-                bg-[#f0a51a]
-                shadow-lg
-              "
-            />
-          </div>
-
-          {/* =================================================
-              MOBILE IMAGE
-          ================================================= */}
-
-          <div
-            className="
-              mt-12
+              relative
               flex
-              w-full
+              w-[43vw]
+              max-w-[300px]
+              shrink-0
+              items-center
               justify-center
               lg:hidden
             "
@@ -538,16 +417,11 @@ function ProjectsPreview() {
             <div
               className="
                 relative
-                h-[82vw]
-                w-[82vw]
-                max-h-[380px]
-                max-w-[380px]
-                shrink-0
-                sm:h-[380px]
-                sm:w-[380px]
+                aspect-square
+                w-full
               "
             >
-              {/* Circular image */}
+              {/* Main spinning image */}
 
               <div
                 className="
@@ -556,6 +430,7 @@ function ProjectsPreview() {
                   animate-project-spin
                   overflow-hidden
                   rounded-full
+                  shadow-[0_25px_70px_rgba(0,0,0,0.3)]
                 "
               >
                 <img
@@ -572,6 +447,8 @@ function ProjectsPreview() {
                   "
                 />
 
+                {/* Image overlay */}
+
                 <div
                   className="
                     pointer-events-none
@@ -579,14 +456,16 @@ function ProjectsPreview() {
                     inset-0
                     rounded-full
                     bg-gradient-to-tr
-                    from-black/20
+                    from-black/40
                     via-transparent
                     to-white/10
                   "
                 />
               </div>
 
-              {/* Mobile center circle */}
+              {/* =================================================
+                  CENTER BLURRED CIRCLE
+              ================================================= */}
 
               <div
                 className="
@@ -594,76 +473,281 @@ function ProjectsPreview() {
                   left-1/2
                   top-1/2
                   flex
-                  h-[170px]
-                  w-[170px]
+                  h-[42%]
+                  w-[42%]
                   -translate-x-1/2
                   -translate-y-1/2
                   items-center
                   justify-center
                   rounded-full
                   border
-                  border-white
-                  bg-white/90
+                  border-white/30
+                  bg-black/25
+                  p-3
                   text-center
-                  shadow-[0_15px_50px_rgba(0,0,0,0.20)]
-                  backdrop-blur-xl
-                  sm:h-[200px]
-                  sm:w-[200px]
+                  shadow-[0_10px_40px_rgba(0,0,0,0.35)]
+                  backdrop-blur-md
                 "
               >
                 <div>
-                  {/* Icon */}
-
                   <span
                     className="
                       material-symbols-outlined
-                      text-3xl
+                      mb-1
+                      text-xl
                       text-[#f0a51a]
+                      sm:text-2xl
                     "
                   >
                     {project.icon}
                   </span>
 
-                  {/* Label */}
-
                   <p
                     className="
-                      mt-2
-                      text-[9px]
+                      text-[7px]
                       font-bold
                       uppercase
-                      tracking-[0.18em]
-                      text-[#f0a51a]
+                      leading-tight
+                      tracking-[0.12em]
+                      text-white
+                      sm:text-[9px]
                     "
                   >
-                    Project
+                    {project.label}
                   </p>
-
-                  {/* Title */}
-
-                  <h3
-                    className="
-                      mt-1
-                      max-w-[130px]
-                      text-sm
-                      font-bold
-                      text-[#5b2419]
-                      sm:max-w-[160px]
-                      sm:text-base
-                    "
-                  >
-                    {project.shortTitle}
-                  </h3>
                 </div>
               </div>
+
+              {/* Gold accent */}
+
+              <div
+                className="
+                  absolute
+                  bottom-1
+                  left-1
+                  flex
+                  h-9
+                  w-9
+                  items-center
+                  justify-center
+                  rounded-full
+                  bg-[#f0a51a]
+                  text-[#4a1b08]
+                  shadow-lg
+                  sm:bottom-2
+                  sm:left-2
+                  sm:h-11
+                  sm:w-11
+                "
+              >
+                <span className="material-symbols-outlined text-base sm:text-lg">
+                  arrow_forward
+                </span>
+              </div>
+
+              {/* Pink accent */}
+
+              <div
+                className="
+                  absolute
+                  right-2
+                  top-2
+                  h-2.5
+                  w-2.5
+                  rounded-full
+                  bg-[#eb3492]
+                  shadow-lg
+                  sm:right-4
+                  sm:top-4
+                  sm:h-3
+                  sm:w-3
+                "
+              />
             </div>
+          </div>
+
+          {/* =================================================
+              DESKTOP IMAGE
+          ================================================= */}
+
+          <div
+            className="
+              absolute
+              right-[-130px]
+              top-1/2
+              hidden
+              h-[620px]
+              w-[620px]
+              -translate-y-1/2
+              lg:block
+              xl:right-[-60px]
+            "
+          >
+            {/* Outer decorative ring */}
+
+            <div
+              className="
+                absolute
+                inset-[-15px]
+                rounded-full
+                border
+                border-white/10
+              "
+            />
+
+            {/* Main spinning image */}
+
+            <div
+              className="
+                absolute
+                inset-0
+                animate-project-spin
+                overflow-hidden
+                rounded-full
+                shadow-[0_35px_110px_rgba(0,0,0,0.3)]
+              "
+            >
+              <img
+                src={project.image}
+                alt={project.title}
+                draggable={false}
+                loading="eager"
+                decoding="async"
+                className="
+                  block
+                  h-full
+                  w-full
+                  object-cover
+                "
+              />
+
+              {/* Dark image overlay */}
+
+              <div
+                className="
+                  pointer-events-none
+                  absolute
+                  inset-0
+                  rounded-full
+                  bg-gradient-to-tr
+                  from-black/40
+                  via-transparent
+                  to-white/10
+                "
+              />
+            </div>
+
+            {/* =================================================
+                CENTER BLURRED GLASS CIRCLE
+            ================================================= */}
+
+            <div
+              className="
+                absolute
+                left-1/2
+                top-1/2
+                flex
+                h-[260px]
+                w-[260px]
+                -translate-x-1/2
+                -translate-y-1/2
+                items-center
+                justify-center
+                rounded-full
+                border
+                border-white/30
+                bg-black/25
+                text-center
+                shadow-[0_20px_70px_rgba(0,0,0,0.4)]
+                backdrop-blur-xl
+              "
+            >
+              <div className="max-w-[170px]">
+                <span
+                  className="
+                    material-symbols-outlined
+                    mb-3
+                    text-4xl
+                    text-[#f0a51a]
+                  "
+                >
+                  {project.icon}
+                </span>
+
+                <p
+                  className="
+                    text-[11px]
+                    font-bold
+                    uppercase
+                    leading-relaxed
+                    tracking-[0.18em]
+                    text-white
+                  "
+                >
+                  {project.label}
+                </p>
+
+                <div className="mx-auto mt-4 h-[2px] w-8 bg-[#f0a51a]" />
+
+                <p
+                  className="
+                    mt-3
+                    text-[9px]
+                    uppercase
+                    tracking-[0.12em]
+                    text-white/60
+                  "
+                >
+                  MFM Victory Center
+                </p>
+              </div>
+            </div>
+
+            {/* Gold accent */}
+
+            <div
+              className="
+                absolute
+                bottom-[65px]
+                left-[40px]
+                flex
+                h-16
+                w-16
+                items-center
+                justify-center
+                rounded-full
+                bg-[#f0a51a]
+                text-[#4a1b08]
+                shadow-[0_10px_35px_rgba(0,0,0,0.3)]
+                transition-transform
+                duration-300
+                hover:scale-110
+              "
+            >
+              <span className="material-symbols-outlined text-2xl">
+                arrow_forward
+              </span>
+            </div>
+
+            {/* Pink decorative dot */}
+
+            <div
+              className="
+                absolute
+                right-[60px]
+                top-[55px]
+                h-5
+                w-5
+                rounded-full
+                bg-[#eb3492]
+                shadow-[0_0_25px_rgba(235,52,146,0.5)]
+              "
+            />
           </div>
         </div>
       </div>
 
-      {/* =====================================================
-          BOTTOM FADE
-      ===================================================== */}
+      {/* Bottom fade */}
 
       <div
         className="
@@ -671,10 +755,10 @@ function ProjectsPreview() {
           absolute
           bottom-0
           left-0
-          h-24
+          h-28
           w-full
           bg-gradient-to-t
-          from-black/[0.05]
+          from-black/[0.06]
           to-transparent
         "
       />

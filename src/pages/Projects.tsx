@@ -21,7 +21,7 @@ function ProjectGallery({
 
   return (
     <div className="border-t border-gray-100 bg-[#FAF8F5] p-5 md:p-7">
-      <p className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-[#540a8c]">
+      <p className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-[#7e099e]">
         Photographs
       </p>
       <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
@@ -66,10 +66,10 @@ function Projects() {
 
       <section className="px-6 py-16 md:py-20">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#540a8c]">
+          <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#7e099e]">
             MFM Kanyanya
           </p>
-          <h2 className="mt-4 text-3xl font-bold text-[#540a8c] md:text-4xl">
+          <h2 className="mt-4 text-3xl font-bold text-[#7e099e] md:text-4xl">
             Ministry that reaches beyond the pulpit
           </h2>
           <p className="mt-4 text-base leading-8 text-gray-600 md:text-lg">
@@ -86,7 +86,7 @@ function Projects() {
             <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#D9A441]">
               Completed work
             </p>
-            <h2 className="mt-3 text-3xl font-bold text-[#540a8c] md:text-4xl">
+            <h2 className="mt-3 text-3xl font-bold text-[#7e099e] md:text-4xl">
               Main projects
             </h2>
           </div>
@@ -124,11 +124,11 @@ function Projects() {
                       <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#D9A441]">
                         {project.category}
                       </p>
-                      <h3 className="mt-3 text-2xl font-bold leading-tight text-[#540a8c] md:text-4xl">
+                      <h3 className="mt-3 text-2xl font-bold leading-tight text-[#7e099e] md:text-4xl">
                         {project.title}
                       </h3>
                       <p className="mt-3 flex items-center gap-2 text-sm font-medium text-gray-500">
-                        <MapPin size={16} className="text-[#540a8c]" />
+                        <MapPin size={16} className="text-[#7e099e]" />
                         {project.location}
                       </p>
                       <p className="mt-5 text-base leading-8 text-gray-600">
@@ -159,7 +159,7 @@ function Projects() {
             <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#D9A441]">
               Still in progress
             </p>
-            <h2 className="mt-3 text-3xl font-bold text-[#540a8c] md:text-4xl">
+            <h2 className="mt-3 text-3xl font-bold text-[#7e099e] md:text-4xl">
               Ongoing projects
             </h2>
             <p className="mt-4 max-w-2xl text-base leading-8 text-gray-600">
@@ -190,17 +190,17 @@ function Projects() {
                   </div>
 
                   <div className="flex flex-1 flex-col p-8">
-                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-[#7A1022]/10 text-[#540a8c]">
+                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-[#7A1022]/10 text-[#7e099e]">
                       <Icon size={22} />
                     </div>
                     <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#D9A441]">
                       {project.category}
                     </p>
-                    <h3 className="mt-2 text-2xl font-bold text-[#540a8c] md:text-3xl">
+                    <h3 className="mt-2 text-2xl font-bold text-[#7e099e] md:text-3xl">
                       {project.title}
                     </h3>
                     <p className="mt-3 flex items-center gap-2 text-sm font-medium text-gray-500">
-                      <MapPin size={16} className="text-[#540a8c]" />
+                      <MapPin size={16} className="text-[#7e099e]" />
                       {project.location}
                     </p>
                     <p className="mt-4 text-base leading-8 text-gray-600">
@@ -240,7 +240,7 @@ function Projects() {
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link
               to="/giving"
-              className="rounded-full bg-[#D9A441] px-7 py-3 text-sm font-bold uppercase tracking-wider text-[#540a8c] transition hover:bg-[#D9A441]"
+              className="rounded-full bg-[#D9A441] px-7 py-3 text-sm font-bold uppercase tracking-wider text-[#7e099e] transition hover:bg-[#D9A441]"
             >
               Give towards a project
             </Link>

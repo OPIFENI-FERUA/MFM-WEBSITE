@@ -59,7 +59,7 @@ function Navbar() {
           ${
             isTransparent
               ? "border-transparent bg-transparent shadow-none"
-              : "border-transparent bg-[#540a8c] shadow-md"
+              : "border-transparent bg-[#7e099e] shadow-md"
           }
         `}
       >
@@ -409,7 +409,7 @@ function Navbar() {
                   font-bold
                   uppercase
                   tracking-wider
-                  text-[#540a8c]
+                  text-[#7e099e]
                 "
               >
                 MFM UGANDA
@@ -443,7 +443,7 @@ function Navbar() {
               border
               border-gray-300
               text-lg
-              text-[#540a8c]
+              text-[#7e099e]
               transition-colors
               hover:bg-[#f3ebfa]
             "
@@ -481,8 +481,8 @@ function Navbar() {
 
                   ${
                     isActive
-                      ? "border-l-4 border-l-[#540a8c] bg-[#f3ebfa] text-[#540a8c]"
-                      : "text-gray-600 hover:bg-gray-50 hover:text-[#540a8c]"
+                      ? "border-l-4 border-l-[#7e099e] bg-[#f3ebfa] text-[#7e099e]"
+                      : "text-gray-600 hover:bg-gray-50 hover:text-[#7e099e]"
                   }
                 `
               }
@@ -501,7 +501,7 @@ function Navbar() {
             className="
               mt-6
               rounded-full
-              bg-[#540a8c]
+              bg-[#7e099e]
               px-5
               py-3
               text-center

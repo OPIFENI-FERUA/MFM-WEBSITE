@@ -34,12 +34,12 @@ function SermonsPreview({
             <div className="mb-3 flex items-center justify-center gap-3">
               <span className="h-[2px] w-10 bg-[#d4af37]" />
 
-              <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#540a8c]">
+              <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#7e099e]">
                 Word &amp; Worship
               </span>
             </div>
 
-            <h2 className="text-3xl font-bold leading-tight text-[#540a8c] md:text-4xl">
+            <h2 className="text-3xl font-bold leading-tight text-[#7e099e] md:text-4xl">
               {title}
             </h2>
           </div>
@@ -56,7 +56,7 @@ function SermonsPreview({
                 font-bold
                 uppercase
                 tracking-[0.15em]
-                text-[#540a8c]
+                text-[#7e099e]
                 transition-colors
                 duration-200
                 hover:text-[#d4af37]
@@ -82,7 +82,7 @@ function SermonsPreview({
           <div className="flex justify-center py-20">
             <Loader2
               size={32}
-              className="animate-spin text-[#540a8c]"
+              className="animate-spin text-[#7e099e]"
             />
           </div>
         )}
@@ -164,7 +164,7 @@ function SermonsPreview({
                       font-bold
                       uppercase
                       tracking-[0.15em]
-                      text-[#540a8c]
+                      text-[#7e099e]
                     "
                   >
                     Latest Sermon
@@ -255,7 +255,7 @@ function SermonsPreview({
                         items-center
                         justify-center
                         rounded-lg
-                        bg-[#540a8c]
+                        bg-[#7e099e]
                         px-4
                         py-2.5
                         text-center
@@ -267,7 +267,7 @@ function SermonsPreview({
                         transition-colors
                         duration-200
                         hover:bg-[#d4af37]
-                        hover:text-[#540a8c]
+                        hover:text-[#7e099e]
                       "
                     >
                       Watch
@@ -296,7 +296,7 @@ function SermonsPreview({
                         transition-all
                         duration-200
                         hover:bg-[#d4af37]
-                        hover:text-[#540a8c]
+                        hover:text-[#7e099e]
                       "
                     >
                       Listen

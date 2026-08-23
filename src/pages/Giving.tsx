@@ -88,7 +88,7 @@ function Giving() {
                   justify-center
                   rounded-full
                   bg-[#D9A441]/10
-                  text-[#540a8c]
+                  text-[#7e099e]
                 "
               >
                 <Heart size={29} />
@@ -102,7 +102,7 @@ function Giving() {
                   className="
                     text-xl
                     font-bold
-                    text-[#540a8c]
+                    text-[#7e099e]
                     sm:text-2xl
                     md:text-3xl
                   "
@@ -158,7 +158,7 @@ function Giving() {
                   font-bold
                   uppercase
                   tracking-[0.2em]
-                  text-[#540a8c]
+                  text-[#7e099e]
                 "
               >
                 Local Bank Transfers
@@ -190,7 +190,7 @@ function Giving() {
                   font-bold
                   uppercase
                   tracking-[0.2em]
-                  text-[#540a8c]
+                  text-[#7e099e]
                 "
               >
                 Online & International
@@ -229,7 +229,7 @@ function Giving() {
                 border
                 border-gray-100
                 border-l-[5px]
-                border-l-[#540a8c]
+                border-l-[#7e099e]
                 bg-white
                 p-5
                 shadow-[0_18px_45px_rgba(84,10,140,0.10)]
@@ -249,7 +249,7 @@ function Giving() {
                     font-bold
                     uppercase
                     tracking-[0.15em]
-                    text-[#540a8c]
+                    text-[#7e099e]
                   "
                 >
                   Bank Transfer
@@ -364,7 +364,7 @@ function Giving() {
                         text-xs
                         font-bold
                         transition
-                        ${copied === "bank-ugx" ? "bg-green-600 text-white hover:bg-green-700" : "bg-gray-50 text-[#540a8c] hover:bg-[#5F0C1B]/10"}
+                        ${copied === "bank-ugx" ? "bg-green-600 text-white hover:bg-green-700" : "bg-gray-50 text-[#7e099e] hover:bg-[#5F0C1B]/10"}
                       `}
                     >
                       {copied === "bank-ugx" ? (
@@ -445,7 +445,7 @@ function Giving() {
                         text-xs
                         font-bold
                         transition
-                        ${copied === "bank-usd" ? "bg-green-600 text-white hover:bg-green-700" : "bg-gray-50 text-[#540a8c] hover:bg-[#5F0C1B]/10"}
+                        ${copied === "bank-usd" ? "bg-green-600 text-white hover:bg-green-700" : "bg-gray-50 text-[#7e099e] hover:bg-[#5F0C1B]/10"}
                       `}
                     >
                       {copied === "bank-usd" ? (
@@ -667,7 +667,7 @@ function Giving() {
                     justify-center
                     rounded-xl
                     bg-[#D9A441]/15
-                    text-[#540a8c]
+                    text-[#7e099e]
                   "
                 >
                   <Smartphone size={27} />
@@ -682,7 +682,7 @@ function Giving() {
                       font-bold
                       uppercase
                       tracking-[0.15em]
-                      text-[#540a8c]
+                      text-[#7e099e]
                     "
                   >
                     Mobile Giving
@@ -811,7 +811,7 @@ function Giving() {
                           <button
                             type="button"
                             onClick={() => copyToClipboard("0783 830 514", "mtn-number")}
-                            className={`rounded-md px-2.5 py-1.5 text-xs font-bold shadow-sm transition ${copied === "mtn-number" ? "bg-green-600 text-white hover:bg-green-700" : "bg-white text-[#540a8c] hover:bg-[#5F0C1B]/10"}`}
+                            className={`rounded-md px-2.5 py-1.5 text-xs font-bold shadow-sm transition ${copied === "mtn-number" ? "bg-green-600 text-white hover:bg-green-700" : "bg-white text-[#7e099e] hover:bg-[#5F0C1B]/10"}`}
                           >
                             {copied === "mtn-number" ? "Copied" : copied === "mtn-number-error" ? "Unable to copy" : "Copy number"}
                           </button>
@@ -855,7 +855,7 @@ function Giving() {
                           </p>
 
                           <p className="mt-1 text-sm font-medium text-gray-600">
-                            Dial <span className="font-bold text-[#540a8c]">*165*3#</span> and enter the merchant code.
+                            Dial <span className="font-bold text-[#7e099e]">*165*3#</span> and enter the merchant code.
                           </p>
 
                           <div
@@ -876,7 +876,7 @@ function Giving() {
                               <button
                                 type="button"
                                 onClick={() => copyToClipboard("149156", "mtn-tithe")}
-                                className={`rounded-md px-2.5 py-1.5 text-xs font-bold shadow-sm transition ${copied === "mtn-tithe" ? "bg-green-600 text-white hover:bg-green-700" : "bg-white text-[#540a8c] hover:bg-[#5F0C1B]/10"}`}
+                                className={`rounded-md px-2.5 py-1.5 text-xs font-bold shadow-sm transition ${copied === "mtn-tithe" ? "bg-green-600 text-white hover:bg-green-700" : "bg-white text-[#7e099e] hover:bg-[#5F0C1B]/10"}`}
                               >
                                 {copied === "mtn-tithe" ? "Copied" : copied === "mtn-tithe-error" ? "Unable to copy" : "Copy"}
                               </button>
@@ -890,7 +890,7 @@ function Giving() {
                               <button
                                 type="button"
                                 onClick={() => copyToClipboard("149155", "mtn-offertory")}
-                                className={`rounded-md px-2.5 py-1.5 text-xs font-bold shadow-sm transition ${copied === "mtn-offertory" ? "bg-green-600 text-white hover:bg-green-700" : "bg-white text-[#540a8c] hover:bg-[#5F0C1B]/10"}`}
+                                className={`rounded-md px-2.5 py-1.5 text-xs font-bold shadow-sm transition ${copied === "mtn-offertory" ? "bg-green-600 text-white hover:bg-green-700" : "bg-white text-[#7e099e] hover:bg-[#5F0C1B]/10"}`}
                               >
                                 {copied === "mtn-offertory" ? "Copied" : copied === "mtn-offertory-error" ? "Unable to copy" : "Copy"}
                               </button>
@@ -904,7 +904,7 @@ function Giving() {
                               <button
                                 type="button"
                                 onClick={() => copyToClipboard("149154", "mtn-first-fruit")}
-                                className={`rounded-md px-2.5 py-1.5 text-xs font-bold shadow-sm transition ${copied === "mtn-first-fruit" ? "bg-green-600 text-white hover:bg-green-700" : "bg-white text-[#540a8c] hover:bg-[#5F0C1B]/10"}`}
+                                className={`rounded-md px-2.5 py-1.5 text-xs font-bold shadow-sm transition ${copied === "mtn-first-fruit" ? "bg-green-600 text-white hover:bg-green-700" : "bg-white text-[#7e099e] hover:bg-[#5F0C1B]/10"}`}
                               >
                                 {copied === "mtn-first-fruit" ? "Copied" : copied === "mtn-first-fruit-error" ? "Unable to copy" : "Copy"}
                               </button>
@@ -1089,7 +1089,7 @@ function Giving() {
                         font-bold
                         shadow-sm
                         transition
-                        ${copied === "airtel" ? "bg-green-600 text-white hover:bg-green-700" : "bg-white text-[#540a8c] hover:bg-[#5F0C1B]/10"}
+                        ${copied === "airtel" ? "bg-green-600 text-white hover:bg-green-700" : "bg-white text-[#7e099e] hover:bg-[#5F0C1B]/10"}
                       `}
                     >
 

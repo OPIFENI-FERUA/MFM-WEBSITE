@@ -142,7 +142,7 @@ function Gallery() {
                 "px-5 py-2.5 rounded-md text-sm md:text-[15px] transition-all duration-200 border",
                 isActive
                   ? "bg-[#D9A441] text-[#000000] border-[#D9A441] font-semibold shadow-sm"
-                  : "bg-transparent text-[#6b7280] border-transparent hover:text-[#540a8c]",
+                  : "bg-transparent text-[#6b7280] border-transparent hover:text-[#7e099e]",
               ].join(" ")}
             >
               {category}

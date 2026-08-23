@@ -1,11 +1,21 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import worshipBg from "../../assets/images/worship.jpg";
-import worshipBg2 from "../../assets/images/worship-2.jpg";
-import worshipBg3 from "../../assets/images/worship-3.jpg";
+import worshipBg from "../../assets/images/hero3.jpg";
+import worshipBg2 from "../../assets/images/hero4.jpg";
+import worshipBg3 from "../../assets/images/hero6.jpg";
+import worshipBg4 from "../../assets/images/hero2.jpg";
+import worshipBg5 from "../../assets/images/hero.jpg";
+import worshipBg6 from "../../assets/images/hero5.jpg";
 
-const slides = [worshipBg, worshipBg2, worshipBg3];
+const slides = [
+  worshipBg,
+  worshipBg2,
+  worshipBg3,
+  worshipBg4,
+  worshipBg5,
+  worshipBg6,
+];
 
 function Hero() {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -19,23 +29,23 @@ function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-[110vh] overflow-hidden">
+    <section className="relative min-h-[110vh] overflow-hidden bg-[#541482]">
       {/* =====================================
-          BACKGROUND IMAGE SLIDER
+          CHAIN IMAGE SLIDER
       ===================================== */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden bg-[#541482]">
         <div
           className="
-            absolute
-            inset-0
             flex
             h-full
+            w-max
+            will-change-transform
             transition-transform
             duration-[1200ms]
             ease-in-out
           "
           style={{
-            transform: `translateX(-${activeSlide * 100}%)`,
+            transform: `translate3d(-${activeSlide * 100}vw, 0, 0)`,
           }}
         >
           {slides.map((slide) => (
@@ -44,7 +54,7 @@ function Hero() {
               className="
                 relative
                 h-full
-                w-full
+                w-screen
                 flex-shrink-0
                 bg-cover
                 bg-center
@@ -65,7 +75,7 @@ function Hero() {
           ))}
         </div>
 
-        {/* Soft vertical overlay for a balanced look */}
+        {/* Soft vertical overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/10" />
       </div>
 
@@ -112,7 +122,7 @@ function Hero() {
           {/* =====================================
               LEFT CONTENT
           ===================================== */}
-          <div className="space-y-6 text-center text-white">
+          <div className="space-y-6 text-center text-white lg:text-left">
             {/* Welcome Text */}
             <p
               className="
@@ -161,7 +171,7 @@ function Hero() {
             {/* =====================================
                 ACTION BUTTONS
             ===================================== */}
-            <div className="mt-8 flex flex-wrap justify-center gap-4">
+            <div className="mt-8 flex flex-wrap justify-center gap-4 lg:justify-start">
               {/* SERMONS */}
               <Link
                 to="/sermons"
@@ -286,11 +296,27 @@ function Hero() {
                 backdrop-blur-md
               "
             >
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#ffd97a]/90">
+              <p
+                className="
+                  text-xs
+                  font-semibold
+                  uppercase
+                  tracking-[0.3em]
+                  text-[#ffd97a]/90
+                "
+              >
                 Theme of the Year 2026
               </p>
 
-              <h3 className="mt-4 text-3xl font-extrabold leading-tight text-white">
+              <h3
+                className="
+                  mt-4
+                  text-3xl
+                  font-extrabold
+                  leading-tight
+                  text-white
+                "
+              >
                 My Year of
 
                 <span className="block text-[#ffd97a]">

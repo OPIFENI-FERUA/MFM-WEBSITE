@@ -45,7 +45,7 @@ function PrayerPoints() {
                 font-semibold
                 uppercase
                 tracking-[0.2em]
-                text-[#540a8c]
+                text-[#7e099e]
               "
             >
               Prayer Points
@@ -93,7 +93,7 @@ function PrayerPoints() {
                       bg-[#7A1022]/10
                       text-sm
                       font-bold
-                      text-[#540a8c]
+                      text-[#7e099e]
                     "
                   >
                     {String(topic.id).padStart(2, "0")}
@@ -203,7 +203,7 @@ function PrayerPoints() {
                   py-3
                   text-sm
                   font-semibold
-                  text-[#540a8c]
+                  text-[#7e099e]
                 "
               >
                 {mobileSelectedTopic.scripture}
@@ -255,7 +255,7 @@ function PrayerPoints() {
                   font-semibold
                   uppercase
                   tracking-[0.2em]
-                  text-[#540a8c]
+                  text-[#7e099e]
                 "
               >
                 Prayer Focus
@@ -289,8 +289,8 @@ function PrayerPoints() {
                         transition-colors
                         ${
                           isSelected
-                            ? "bg-[#7A1022]/5 font-semibold text-[#540a8c]"
-                            : "text-gray-600 hover:bg-gray-50 hover:text-[#540a8c]"
+                            ? "bg-[#7A1022]/5 font-semibold text-[#7e099e]"
+                            : "text-gray-600 hover:bg-gray-50 hover:text-[#7e099e]"
                         }
                       `}
                     >
@@ -350,7 +350,7 @@ function PrayerPoints() {
                   font-semibold
                   uppercase
                   tracking-[0.18em]
-                  text-[#540a8c]
+                  text-[#7e099e]
                 "
               >
                 Prayer Point {selectedTopic.id}
@@ -473,7 +473,7 @@ function PrayerPoints() {
                     mt-3
                     text-lg
                     font-semibold
-                    text-[#540a8c]
+                    text-[#7e099e]
                   "
                 >
                   {selectedTopic.scripture}

@@ -108,7 +108,7 @@ function About() {
   );
 
   return (
-    <main className="bg-[#FAF8F5] text-[#540a8c]">
+    <main className="bg-[#FAF8F5] text-[#7e099e]">
       {/* ==================================================
           HERO
       ================================================== */}
@@ -130,7 +130,7 @@ function About() {
               Discover MFM Kanyanya
             </span>
 
-            <h2 className="mt-3 text-4xl font-bold text-[#540a8c] md:text-5xl">
+            <h2 className="mt-3 text-4xl font-bold text-[#7e099e] md:text-5xl">
               Our Ministry
             </h2>
 
@@ -183,7 +183,7 @@ function About() {
                         className={`relative z-10 flex h-12 w-12 items-center justify-center rounded-full border-4 border-white text-xs font-bold shadow-lg transition-all duration-300 ${
                           isActive
                             ? "scale-110 bg-[#7A1022] text-white ring-2 ring-[#D9A441]"
-                            : "bg-[#FAF8F5] text-[#540a8c] ring-1 ring-[#7A1022]/20 group-hover:scale-110 group-hover:bg-[#5F0C1B] group-hover:text-white"
+                            : "bg-[#FAF8F5] text-[#7e099e] ring-1 ring-[#7A1022]/20 group-hover:scale-110 group-hover:bg-[#5F0C1B] group-hover:text-white"
                         }`}
                       >
                         {index + 1}
@@ -194,7 +194,7 @@ function About() {
                         className={`mt-4 flex min-h-[52px] w-full items-center justify-center rounded-full px-3 py-3 text-center text-[10px] font-bold uppercase leading-4 tracking-[0.06em] transition-all duration-300 sm:text-xs ${
                           isActive
                             ? "bg-[#7A1022] text-white shadow-lg"
-                            : "bg-[#FAF8F5] text-[#540a8c] group-hover:bg-[#5F0C1B]/10"
+                            : "bg-[#FAF8F5] text-[#7e099e] group-hover:bg-[#5F0C1B]/10"
                         }`}
                       >
                         {branch.label}
@@ -243,7 +243,7 @@ function About() {
                   </p>
 
                   {/* TITLE */}
-                  <h3 className="mt-3 text-center text-3xl font-bold text-[#540a8c] md:text-4xl">
+                  <h3 className="mt-3 text-center text-3xl font-bold text-[#7e099e] md:text-4xl">
                     {activeContent.title}
                   </h3>
 
@@ -285,7 +285,7 @@ function About() {
                       <button
                         type="button"
                         onClick={() => setActiveBranch("about")}
-                        className="inline-flex items-center justify-center gap-2 rounded-full border border-[#7A1022]/20 px-7 py-3 text-xs font-bold uppercase tracking-[0.15em] text-[#540a8c] transition duration-200 hover:bg-[#5F0C1B] hover:text-white"
+                        className="inline-flex items-center justify-center gap-2 rounded-full border border-[#7A1022]/20 px-7 py-3 text-xs font-bold uppercase tracking-[0.15em] text-[#7e099e] transition duration-200 hover:bg-[#5F0C1B] hover:text-white"
                       >
                         ← Back to About Us
                       </button>

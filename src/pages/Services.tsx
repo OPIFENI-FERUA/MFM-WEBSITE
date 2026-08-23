@@ -83,7 +83,7 @@ function Services() {
             Join Our Community
           </p>
 
-          <h2 className="mt-4 text-3xl font-bold text-[#540a8c] md:text-5xl">
+          <h2 className="mt-4 text-3xl font-bold text-[#7e099e] md:text-5xl">
             Our Church Services
           </h2>
 
@@ -135,7 +135,7 @@ function Services() {
                       justify-center
                       rounded-2xl
                       bg-[#7A1022]/10
-                      text-[#540a8c]
+                      text-[#7e099e]
                       transition-transform
                       duration-300
                       group-hover:scale-110

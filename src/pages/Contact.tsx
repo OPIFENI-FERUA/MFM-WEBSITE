@@ -44,12 +44,12 @@
                     {/* CONTACT INFORMATION */}
                     <div className="rounded-2xl border border-gray-100 bg-white p-7 shadow-[0_15px_40px_rgba(114,17,110,0.07)]">
                       <div className="mb-6 flex items-center gap-4">
-                        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#7A1022]/10 text-[#540a8c]">
+                        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#7A1022]/10 text-[#7e099e]">
                           <Phone size={22} />
                         </div>
 
                         <div>
-                          <h2 className="text-xl font-bold text-[#540a8c]">
+                          <h2 className="text-xl font-bold text-[#7e099e]">
                             Contact Information
                           </h2>
 
@@ -107,12 +107,12 @@
                     {/* VISIT US */}
                     <div className="rounded-2xl border border-gray-100 bg-white p-7 shadow-[0_15px_40px_rgba(114,17,110,0.07)]">
                       <div className="mb-6 flex items-center gap-4">
-                        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#7A1022]/10 text-[#540a8c]">
+                        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#7A1022]/10 text-[#7e099e]">
                           <MapPin size={22} />
                         </div>
 
                         <div>
-                          <h2 className="text-xl font-bold text-[#540a8c]">
+                          <h2 className="text-xl font-bold text-[#7e099e]">
                             Visit Us
                           </h2>
 
@@ -174,11 +174,11 @@
             {/* MESSAGE US */}
             <div>
               <div className="mb-8">
-                <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-[#540a8c]">
+                <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-[#7e099e]">
                   Send Us A Message
                 </p>
 
-                <h2 className="text-3xl font-bold text-[#540a8c] md:text-4xl">
+                <h2 className="text-3xl font-bold text-[#7e099e] md:text-4xl">
                   How Can We Help You?
                 </h2>
 
@@ -256,7 +256,7 @@
                 {/* SUBMIT BUTTON */}
                 <button
                   type="submit"
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#7A1022] px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-[#540a8c]/15 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#5F0C1B] hover:shadow-xl"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#7A1022] px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-[#7e099e]/15 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#5F0C1B] hover:shadow-xl"
                 >
                   <Send size={17} />
                   Send Message
@@ -267,11 +267,11 @@
             {/* LOCATION + GOOGLE MAP */}
             <div>
               <div className="mb-8">
-                <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-[#540a8c]">
+                <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-[#7e099e]">
                   Find Us
                 </p>
 
-                <h2 className="text-3xl font-bold text-[#540a8c] md:text-4xl">
+                <h2 className="text-3xl font-bold text-[#7e099e] md:text-4xl">
                   Our Location
                 </h2>
 
