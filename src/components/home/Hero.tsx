@@ -107,7 +107,7 @@ function Hero() {
       {/* =====================================
           HERO CONTENT
       ===================================== */}
-      <div className="relative z-10 mx-auto max-w-[1280px] px-6">
+      <div className="relative z-10 mx-auto w-full max-w-[1440px] px-4 sm:px-6 xl:px-10">
         <div
           className="
             grid
@@ -139,10 +139,10 @@ function Hero() {
             {/* Main Heading */}
             <h1
               className="
-                text-4xl
+                max-w-[900px]
+                text-[clamp(2.8rem,5vw,7rem)]
                 font-extrabold
-                leading-tight
-                md:text-6xl
+                leading-[0.92]
               "
             >
               Mountain of Fire &amp;
@@ -157,10 +157,11 @@ function Hero() {
             {/* Description */}
             <p
               className="
-                max-w-2xl
-                text-lg
+                max-w-[760px]
+                text-base
                 leading-8
                 text-[#fff9f2]
+                md:text-lg
               "
             >
               A house of prayer for all people.
@@ -294,6 +295,7 @@ function Hero() {
                 text-white
                 shadow-2xl
                 backdrop-blur-md
+                xl:max-w-[420px]
               "
             >
               <p

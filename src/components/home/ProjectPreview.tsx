@@ -158,10 +158,12 @@ function ProjectsPreview() {
         className="
           relative
           mx-auto
-          max-w-7xl
+          w-full
+          max-w-[1440px]
           px-4
           sm:px-6
-          lg:px-12
+          lg:px-10
+          xl:px-12
         "
       >
         <div
@@ -231,17 +233,14 @@ function ProjectsPreview() {
               className="
                 max-w-[310px]
                 font-serif
-                text-[2.1rem]
+                text-[clamp(2.1rem,4vw,5rem)]
                 font-bold
                 leading-[0.94]
                 tracking-tight
                 text-white
                 sm:max-w-[420px]
-                sm:text-4xl
-                md:text-5xl
+                md:text-[clamp(2.8rem,3.8vw,4.6rem)]
                 lg:max-w-[600px]
-                lg:text-[4.4rem]
-                xl:text-[5rem]
               "
             >
               Making an
@@ -257,14 +256,14 @@ function ProjectsPreview() {
               <h3
                 className="
                   max-w-[380px]
-                  text-lg
+                  text-[clamp(1.05rem,2vw,2rem)]
                   font-bold
                   uppercase
                   leading-tight
                   tracking-wide
                   text-white
                   sm:text-xl
-                  lg:text-2xl
+                  lg:max-w-[480px]
                 "
               >
                 {project.title}
@@ -406,8 +405,7 @@ function ProjectsPreview() {
             className="
               relative
               flex
-              w-[43vw]
-              max-w-[300px]
+              w-[clamp(210px,43vw,300px)]
               shrink-0
               items-center
               justify-center
@@ -573,14 +571,14 @@ function ProjectsPreview() {
           <div
             className="
               absolute
-              right-[-130px]
+              right-[-6vw]
               top-1/2
               hidden
-              h-[620px]
-              w-[620px]
+              h-[min(52vw,620px)]
+              w-[min(52vw,620px)]
               -translate-y-1/2
               lg:block
-              xl:right-[-60px]
+              xl:right-[-2vw]
             "
           >
             {/* Outer decorative ring */}
@@ -647,8 +645,8 @@ function ProjectsPreview() {
                 left-1/2
                 top-1/2
                 flex
-                h-[260px]
-                w-[260px]
+                h-[clamp(180px,22vw,260px)]
+                w-[clamp(180px,22vw,260px)]
                 -translate-x-1/2
                 -translate-y-1/2
                 items-center
@@ -698,7 +696,7 @@ function ProjectsPreview() {
                     text-white/60
                   "
                 >
-                  MFM Victory Center
+                  MFM KANYANYA
                 </p>
               </div>
             </div>
