@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+
 import { Link } from "react-router-dom";
 import {
   Church,
@@ -7,7 +7,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 
-import worshipImage from "../../assets/images/service.jpg";
+import worshipImage from "../../assets/images/service.webp";
 
 interface Service {
   title: string;
@@ -34,105 +34,70 @@ const services: Service[] = [
   {
     title: "Youth Fellowship",
     time: "06:00 PM - 08:00 PM",
-    description: "Happens every Friday",
+    description: "Happens every Friday.",
   },
 ];
 
 function ServicesPreview() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const [imageOffset, setImageOffset] = useState(0);
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(min-width: 768px)");
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    let animationFrame: number | null = null;
-
-    const updateOffset = () => {
-      animationFrame = null;
-
-      if (!mediaQuery.matches || reduceMotion.matches || !sectionRef.current) {
-        setImageOffset(0);
-        return;
-      }
-
-      const rect = sectionRef.current.getBoundingClientRect();
-      const travel = Math.min(96, window.innerHeight * 0.12);
-      const progress = Math.max(
-        0,
-        Math.min(1, (window.innerHeight - rect.top) / (window.innerHeight + rect.height))
-      );
-
-      setImageOffset((progress - 0.5) * travel);
-    };
-
-    const onScroll = () => {
-      if (animationFrame === null) {
-        animationFrame = window.requestAnimationFrame(updateOffset);
-      }
-    };
-
-    updateOffset();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
-    mediaQuery.addEventListener("change", onScroll);
-    reduceMotion.addEventListener("change", onScroll);
-
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
-      mediaQuery.removeEventListener("change", onScroll);
-      reduceMotion.removeEventListener("change", onScroll);
-
-      if (animationFrame !== null) {
-        window.cancelAnimationFrame(animationFrame);
-      }
-    };
-  }, []);
-
   return (
-    <section
-      ref={sectionRef}
-      data-no-scroll-reveal
-      className="grid md:grid-cols-2"
-    >
+    <section className="grid bg-white md:grid-cols-2">
 
       {/* =====================================
-          LEFT — FIXED / PARALLAX IMAGE
+          LEFT — IMAGE SECTION
       ====================================== */}
 
       <div
         className="
-          relative
-          h-[500px]
-          overflow-hidden
-          md:sticky
-          md:top-0
-          md:h-screen
-          md:self-start
+          bg-white
+          px-4
+          py-4
+          sm:px-6
+          sm:py-6
+          md:pl-10
+          md:pr-6
+          md:py-10
+          lg:pl-16
+          lg:pr-8
+          lg:py-16
+          xl:pl-20
+          xl:pr-10
         "
       >
+        {/* IMAGE CONTAINER */}
 
+        <div
+          className="
+            relative
+            aspect-[4/5]
+            w-full
+            max-h-[620px]
+            rounded-3xl
+            overflow-hidden
+            bg-gray-200
+            shadow-[0_25px_70px_rgba(114,17,110,0.18)]
+          "
+        >
           {/* IMAGE */}
 
-          <div
+          <img
+            src={worshipImage}
+            alt="MFM worship service"
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
             className="
               absolute
-              -inset-y-24
-              inset-x-0
-              bg-cover
-              bg-center
-              bg-no-repeat
-              will-change-transform
+              inset-0
+              h-full
+              w-full
+              object-cover
+              object-center
             "
-            style={{
-              backgroundImage: `url(${worshipImage})`,
-              transform: `translate3d(0, ${imageOffset}px, 0)`,
-            }}
           />
 
           {/* DARK OVERLAY */}
 
-          <div className="absolute inset-0 bg-black/20" />
+          <div className="absolute inset-0 bg-black/30" />
 
           {/* IMAGE CONTENT */}
 
@@ -144,53 +109,68 @@ function ServicesPreview() {
               h-full
               items-center
               justify-center
-              px-6
+              px-4
               text-center
+              sm:px-6
             "
           >
             <div
               className="
+                w-full
                 max-w-lg
-                rounded-[2rem]
                 border
                 border-white/20
                 bg-black/35
-                px-7
-                py-8
+                px-5
+                py-7
                 text-white
                 shadow-[0_10px_30px_rgba(0,0,0,0.25)]
                 backdrop-blur-[2px]
+                sm:px-8
+                sm:py-9
               "
             >
+              {/* LABEL */}
+
               <p
                 className="
                   text-xs
                   font-semibold
                   uppercase
-                  tracking-[0.35em]
+                  tracking-[0.3em]
                   text-[#d4af37]
                 "
               >
                 Our Services
               </p>
 
+              {/* TITLE */}
+
               <h2
                 className="
-                  mt-5
-                  text-4xl
+                  mt-4
+                  text-2xl
                   font-bold
                   uppercase
-                  md:text-5xl
+                  leading-tight
+                  sm:text-3xl
+                  md:text-4xl
+                  lg:text-5xl
                 "
               >
                 Experience Worship and Community
               </h2>
 
+              {/* DESCRIPTION */}
+
               <p
                 className="
-                  mt-6
-                  leading-8
+                  mt-5
+                  text-sm
+                  leading-6
                   text-white/90
+                  sm:text-base
+                  sm:leading-8
                 "
               >
                 Join us every week as we worship together,
@@ -199,35 +179,32 @@ function ServicesPreview() {
               </p>
             </div>
           </div>
-
+        </div>
       </div>
 
-
       {/* =====================================
-          RIGHT — SCROLLING CONTENT
+          RIGHT — SERVICES CONTENT
       ====================================== */}
 
       <div
         className="
           bg-white
-          px-6
-          py-16
-          md:px-12
-          lg:px-20
+          px-4
+          py-14
+          sm:px-6
+          sm:py-16
+          md:px-10
+          md:py-20
+          lg:px-16
           lg:py-24
+          xl:px-20
         "
       >
-
         <div className="w-full">
 
           {/* HEADER */}
 
-          <div
-            className="
-              mb-10
-              text-center
-            "
-          >
+          <div className="mb-10 text-center">
             <p
               className="
                 text-xs
@@ -243,9 +220,10 @@ function ServicesPreview() {
             <h3
               className="
                 mt-3
-                text-3xl
+                text-2xl
                 font-bold
                 text-[#7e099e]
+                sm:text-3xl
                 md:text-4xl
               "
             >
@@ -253,11 +231,9 @@ function ServicesPreview() {
             </h3>
           </div>
 
-
           {/* SERVICES */}
 
-          <div className="space-y-6">
-
+          <div className="space-y-5 sm:space-y-6">
             {services.map((service) => {
               const Icon =
                 service.title.includes("Sunday")
@@ -273,11 +249,10 @@ function ServicesPreview() {
                     flex
                     flex-col
                     gap-5
-                    rounded-2xl
                     border
                     border-gray-100
                     bg-white
-                    p-6
+                    p-5
                     text-left
                     shadow-[0_8px_25px_rgba(107,114,128,0.14)]
                     transition-all
@@ -285,13 +260,12 @@ function ServicesPreview() {
                     hover:-translate-y-1
                     hover:border-[#d4af37]
                     hover:shadow-[0_15px_35px_rgba(107,114,128,0.18)]
-
-                    sm:flex-row
-                    sm:items-center
-                    sm:justify-between
+                    sm:p-6
+                    md:flex-row
+                    md:items-center
+                    md:justify-between
                   "
                 >
-
                   {/* SERVICE INFORMATION */}
 
                   <div
@@ -302,12 +276,10 @@ function ServicesPreview() {
                       flex-col
                       items-center
                       gap-4
-
                       sm:flex-row
                       sm:items-center
                     "
                   >
-
                     {/* ICON */}
 
                     <div
@@ -318,7 +290,6 @@ function ServicesPreview() {
                         shrink-0
                         items-center
                         justify-center
-                        rounded-xl
                         bg-[#7e099e]/10
                       "
                     >
@@ -327,7 +298,6 @@ function ServicesPreview() {
                         className="text-[#7e099e]"
                       />
                     </div>
-
 
                     {/* TEXT */}
 
@@ -341,6 +311,7 @@ function ServicesPreview() {
                       <h4
                         className="
                           font-bold
+                          leading-snug
                           text-[#7e099e]
                         "
                       >
@@ -358,43 +329,36 @@ function ServicesPreview() {
                         {service.description}
                       </p>
                     </div>
-
                   </div>
 
-
-                  {/* TIME — RIGHT */}
+                  {/* TIME */}
 
                   <span
                     className="
                       mx-auto
                       w-fit
                       shrink-0
-                      rounded-full
                       bg-[#7e099e]
                       px-4
                       py-2
                       text-center
-                      text-sm
+                      text-xs
                       font-semibold
                       text-white
-
-                      sm:mx-0
+                      sm:text-sm
+                      md:mx-0
                     "
                   >
                     {service.time}
                   </span>
-
                 </div>
               );
             })}
-
           </div>
-
 
           {/* BUTTON */}
 
           <div className="mt-10 text-center">
-
             <Link
               to="/services"
               className="
@@ -403,7 +367,6 @@ function ServicesPreview() {
                 items-center
                 justify-center
                 gap-2
-                rounded-full
                 bg-[#d4af37]
                 px-6
                 py-3
@@ -413,8 +376,8 @@ function ServicesPreview() {
                 tracking-wider
                 text-[#7e099e]
                 transition
+                duration-300
                 hover:scale-105
-
                 sm:w-auto
               "
             >
@@ -422,12 +385,9 @@ function ServicesPreview() {
 
               <ArrowRight size={18} />
             </Link>
-
           </div>
-
         </div>
       </div>
-
     </section>
   );
 }

@@ -123,14 +123,16 @@ function SermonsPreview({
                 "
               >
                 {/* IMAGE */}
-                <div className="relative h-56 shrink-0 overflow-hidden">
+                <div className="relative aspect-video shrink-0 overflow-hidden bg-gray-100">
                   <img
                     src={sermon.image}
                     alt={sermon.title}
                     className="
+                      block
                       h-full
                       w-full
                       object-cover
+                      object-center
                       transition-transform
                       duration-700
                       ease-out

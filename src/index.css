@@ -1,20 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
 @import "tailwindcss";
 
-@theme {
-  --font-sans: ui-sans-serif, system-ui, sans-serif;
-  --font-heading: ui-sans-serif, system-ui, sans-serif;
-}
+/* =========================================================
+   GLOBAL
+========================================================= */
 
 :root {
-  font-family: var(--font-sans);
+  font-family: "Inter", sans-serif;
   color: #000000;
   background: #ffffff;
   line-height: 1.5;
   font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 html {
   scroll-behavior: smooth;
+  font-family: "Inter", sans-serif;
 }
 
 body {
@@ -22,9 +30,51 @@ body {
   min-height: 100vh;
   background: #ffffff;
   color: #000000;
-  font-family: var(--font-sans);
+  font-family: "Inter", sans-serif;
   overflow-x: clip;
 }
+
+#root {
+  min-height: 100vh;
+  overflow-x: clip;
+}
+
+/* =========================================================
+   TYPOGRAPHY
+   ONE FONT THROUGHOUT THE WEBSITE
+========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+button,
+input,
+textarea,
+select {
+  font-family: "Inter", sans-serif;
+}
+
+/* Allow text to wrap naturally */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
 
 .scroll-reveal {
   opacity: 0;
@@ -55,6 +105,11 @@ body {
     transition: none;
   }
 }
+
+/* =========================================================
+   PROJECT SPIN
+========================================================= */
+
 @keyframes project-spin {
   from {
     transform: rotate(0deg);
@@ -68,23 +123,10 @@ body {
 .animate-project-spin {
   animation: project-spin 35s linear infinite;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-heading);
-}
 
-* {
-  box-sizing: border-box;
-}
-
-#root {
-  min-height: 100vh;
-  overflow-x: clip;
-}
+/* =========================================================
+   SCROLLBAR
+========================================================= */
 
 .hide-scrollbar {
   -ms-overflow-style: none;
@@ -94,6 +136,10 @@ h6 {
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+/* =========================================================
+   MINISTRY MARQUEE
+========================================================= */
 
 @keyframes ministry-marquee {
   from {
@@ -122,6 +168,10 @@ h6 {
   }
 }
 
+/* =========================================================
+   GLASS PANEL
+========================================================= */
+
 .glass-panel {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(12px);
@@ -129,19 +179,38 @@ h6 {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* =========================================================
+   MATERIAL SYMBOLS
+   This is an icon font, not a website text font.
+========================================================= */
+
 .material-symbols-outlined {
   font-family: "Material Symbols Outlined";
-  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
   vertical-align: middle;
 }
+
+/* =========================================================
+   TEXT SHADOW
+========================================================= */
 
 .text-shadow-sm {
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+/* =========================================================
+   GENERAL MARQUEE
+========================================================= */
+
 @keyframes marquee {
   0% {
     transform: translateX(0%);
   }
+
   100% {
     transform: translateX(-50%);
   }
@@ -155,7 +224,12 @@ h6 {
   animation-play-state: paused;
 }
 
+/* =========================================================
+   NAVBAR
+   Use Inter instead of Helvetica Neue.
+========================================================= */
+
 .navbar-font {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 700;
 }

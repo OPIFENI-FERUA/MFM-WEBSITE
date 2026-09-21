@@ -4,10 +4,10 @@ import { Mail, MapPin, PlayCircle } from "lucide-react";
 
 import worshipBg from "../../assets/images/hero3.jpg";
 import worshipBg2 from "../../assets/images/hero4.jpg";
-import worshipBg3 from "../../assets/images/hero6.jpg";
+import worshipBg3 from "../../assets/images/hero6.webp";
 import worshipBg4 from "../../assets/images/hero2.jpg";
 import worshipBg5 from "../../assets/images/hero.jpg";
-import worshipBg6 from "../../assets/images/hero5.jpg";
+import worshipBg6 from "../../assets/images/hero5.webp";
 
 const slides = [
   worshipBg,
@@ -30,59 +30,42 @@ function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-[110vh] overflow-hidden bg-[#541482]">
-      {/* =====================================
-          CHAIN IMAGE SLIDER
-      ===================================== */}
+    <section className="relative min-h-[110vh] overflow-hidden bg-[#541482] font-sans">
+      {/* =====================================================
+          BACKGROUND IMAGE SLIDER
+      ===================================================== */}
       <div className="absolute inset-0 overflow-hidden bg-[#541482]">
-        <div
-          className="
-            flex
-            h-full
-            w-max
-            will-change-transform
-            transition-transform
-            duration-[1200ms]
-            ease-in-out
-          "
-          style={{
-            transform: `translate3d(-${activeSlide * 100}vw, 0, 0)`,
-          }}
-        >
-          {slides.map((slide) => (
-            <div
-              key={slide}
-              className="
-                relative
-                h-full
-                w-screen
-                flex-shrink-0
-                bg-cover
-                bg-center
-              "
-              style={{
-                backgroundImage: `
-                  linear-gradient(
-                    to right,
-                    rgba(84, 20, 130, 0.95) 0%,
-                    rgba(84, 20, 130, 0.82) 40%,
-                    rgba(84, 20, 130, 0.55) 70%,
-                    rgba(84, 20, 130, 0.25) 100%
-                  ),
-                  url(${slide})
-                `,
-              }}
-            />
-          ))}
-        </div>
+        {slides.map((slide, index) => (
+          <div
+            key={slide}
+            aria-hidden={index !== activeSlide}
+            className={`absolute inset-0 bg-cover bg-center transition-opacity duration-[1600ms] ease-in-out motion-reduce:transition-none ${
+              index === activeSlide
+                ? "z-10 opacity-100"
+                : "z-0 opacity-0"
+            }`}
+            style={{
+              backgroundImage: `
+                linear-gradient(
+                  to right,
+                  rgba(84, 20, 130, 0.95) 0%,
+                  rgba(84, 20, 130, 0.82) 40%,
+                  rgba(84, 20, 130, 0.55) 70%,
+                  rgba(84, 20, 130, 0.25) 100%
+                ),
+                url(${slide})
+              `,
+            }}
+          />
+        ))}
 
         {/* Soft vertical overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/10" />
       </div>
 
-      {/* =====================================
+      {/* =====================================================
           SLIDER DOTS
-      ===================================== */}
+      ===================================================== */}
       <div className="absolute bottom-6 left-1/2 z-20 flex -translate-x-1/2 gap-2">
         {slides.map((_, index) => (
           <button
@@ -105,9 +88,9 @@ function Hero() {
         ))}
       </div>
 
-      {/* =====================================
+      {/* =====================================================
           HERO CONTENT
-      ===================================== */}
+      ===================================================== */}
       <div className="relative z-10 mx-auto w-full max-w-[1440px] px-4 sm:px-6 xl:px-10">
         <div
           className="
@@ -120,16 +103,18 @@ function Hero() {
             lg:grid-cols-[1.1fr_0.9fr]
           "
         >
-          {/* =====================================
+          {/* =================================================
               LEFT CONTENT
-          ===================================== */}
-          <div className="space-y-6 text-center text-white lg:text-left">
-            {/* Welcome Text */}
+          ================================================= */}
+          <div className="min-w-0 space-y-6 text-center text-white lg:text-left">
+            {/* Welcome */}
             <p
               className="
-                font-heading
+                whitespace-normal
                 text-3xl
+                font-semibold
                 italic
+                leading-tight
                 text-[#ffd97a]
                 md:text-4xl
               "
@@ -137,39 +122,62 @@ function Hero() {
               Welcome to
             </p>
 
-            <p className="mx-auto max-w-xl text-xs font-bold uppercase tracking-[0.32em] text-white/80 lg:mx-0 md:text-sm">
+            {/* Location / Tagline */}
+            <p
+              className="
+                mx-auto
+                max-w-xl
+                whitespace-normal
+                break-words
+                text-xs
+                font-bold
+                uppercase
+                tracking-[0.32em]
+                leading-6
+                text-white/80
+                md:text-sm
+                lg:mx-0
+              "
+            >
               MFM Kanyanya · Citadel of Solution and Power
             </p>
 
-            {/* Main Heading */}
-            <h1
-              className="
-                max-w-[900px]
-                text-[clamp(2.8rem,5vw,7rem)]
-                font-extrabold
-                leading-[0.92]
-                break-words
-                [overflow-wrap:normal]
-                [word-break:normal]
-              "
-            >
-              Mountain of Fire &amp;
-              <br />
-              Miracles Ministries
+            {/* =================================================
+                MAIN HEADING
+            ================================================= */}
+<h1
+  className="
+    mx-auto
+    max-w-[760px]
+    whitespace-normal
+    break-words
+    text-[clamp(2rem,4.5vw,5rem)]
+    font-extrabold
+    leading-[0.95]
+    tracking-tight
+    lg:mx-0
+  "
+>
+  Mountain of Fire &amp;
+  <br />
+  Miracles Ministries
 
-              <span className="block text-[#ffd97a]">
-                Kanyanya
-              </span>
-            </h1>
-
+  <span className="block whitespace-normal text-[#ffd97a]">
+    Kanyanya
+  </span>
+</h1>
             {/* Description */}
             <p
               className="
+                mx-auto
                 max-w-[760px]
+                whitespace-normal
+                break-words
                 text-base
                 leading-8
                 text-[#fff9f2]
                 md:text-lg
+                lg:mx-0
               "
             >
               A house of prayer for all people. MFM Kanyanya is a citadel of
@@ -177,9 +185,9 @@ function Hero() {
               and grow in faith.
             </p>
 
-            {/* =====================================
+            {/* =================================================
                 ACTION BUTTONS
-            ===================================== */}
+            ================================================= */}
             <div className="mt-8 flex flex-wrap justify-center gap-4 lg:justify-start">
               {/* SERMONS */}
               <Link
@@ -205,7 +213,6 @@ function Hero() {
                 "
               >
                 <PlayCircle size={19} aria-hidden="true" />
-
                 SERMONS
               </Link>
 
@@ -233,7 +240,6 @@ function Hero() {
                 "
               >
                 <MapPin size={19} aria-hidden="true" />
-
                 PLAN YOUR VISIT
               </Link>
 
@@ -265,15 +271,14 @@ function Hero() {
                 "
               >
                 <Mail size={19} aria-hidden="true" />
-
                 CONTACT US
               </Link>
             </div>
           </div>
 
-          {/* =====================================
-              RIGHT SIDE - THEME CARD
-          ===================================== */}
+          {/* =================================================
+              RIGHT SIDE — THEME CARD
+          ================================================= */}
           <div
             className="
               hidden
@@ -300,25 +305,44 @@ function Hero() {
                 xl:max-w-[420px]
               "
             >
+              {/* Theme label */}
               <p
                 className="
+                  whitespace-normal
                   text-xs
                   font-semibold
                   uppercase
                   tracking-[0.3em]
+                  leading-5
                   text-[#ffd97a]/90
                 "
               >
                 Theme of the Year 2026
               </p>
 
-              <p className="mt-3 text-sm font-semibold uppercase tracking-[0.2em] text-white/80">
+              {/* Theme subtitle */}
+              <p
+                className="
+                  mt-3
+                  whitespace-normal
+                  break-words
+                  text-sm
+                  font-semibold
+                  uppercase
+                  tracking-[0.2em]
+                  leading-6
+                  text-white/80
+                "
+              >
                 Citadel of Solution and Power
               </p>
 
+              {/* Main Theme */}
               <h3
                 className="
                   mt-4
+                  whitespace-normal
+                  break-words
                   text-3xl
                   font-extrabold
                   leading-tight
@@ -327,7 +351,7 @@ function Hero() {
               >
                 My Year of
 
-                <span className="block text-[#ffd97a]">
+                <span className="block whitespace-normal text-[#ffd97a]">
                   Great Deliverance &amp; Fresh Glory
                 </span>
               </h3>
