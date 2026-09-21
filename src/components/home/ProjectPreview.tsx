@@ -62,10 +62,10 @@ const projects: Project[] = [
     label: "Growing for Impact",
   },
   {
-    title: "MFM SACCO",
-    shortTitle: "MFM SACCO",
+    title: "MULTI-PURPOSE COOPERATIVE",
+    shortTitle: "Cooperative",
     description:
-      "Through the church SACCO, members are encouraged to save, support one another financially, and build a stronger foundation for personal and community economic growth.",
+      "The church cooperative helps members save together, support one another, and build practical financial strength for families and ministry needs.",
     icon: "savings",
     image:
       "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1200&q=85",

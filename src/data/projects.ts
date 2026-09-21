@@ -142,14 +142,14 @@ export const churchProjects: ChurchProject[] = [
   {
     id: 5,
     status: "ongoing",
-    category: "SACCO",
-    title: "Church SACCO",
+    category: "Multi-Purpose Cooperative",
+    title: "Church Cooperative",
     location: "MFM Kanyanya",
     summary:
-      "A savings and credit cooperative helping members save, borrow wisely, and build stable homes.",
+      "A multi-purpose cooperative that helps members save, support one another, and build steadier homes.",
     story: [
-      "The church SACCO is an ongoing project for members who want to save together and access small credit without turning first to harsh lenders. It is being built on trust, clear records, and teaching on stewardship — so money serves the family and the kingdom, not the other way around.",
-      "As more members join, the SACCO will support school fees, small businesses, and emergency needs in a way that keeps dignity. We are still forming the culture of saving, accountability, and prayer around this work. It is one of the projects we ask the church to stand with now.",
+      "The church cooperative is an ongoing initiative for members who want to save together, support one another, and access practical help without depending on harsh financial pressure. It is guided by trust, accountability, and good stewardship so that money can serve families and the church with dignity.",
+      "As more members join, the cooperative will help with school fees, small businesses, and emergency needs in a way that keeps dignity and encourages responsibility. We are still shaping the culture of saving, accountability, and prayer around this work, and it is one of the ministries that continues to grow with the church.",
     ],
     photos: [
       {

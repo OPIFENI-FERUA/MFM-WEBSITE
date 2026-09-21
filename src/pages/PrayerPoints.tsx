@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Download } from "lucide-react";
 import PageHero from "../components/layout/PageHero";
 import { prayerTopics } from "../data/prayerPoints";
 
@@ -209,6 +209,17 @@ function PrayerPoints() {
                 {mobileSelectedTopic.scripture}
               </p>
 
+              {mobileSelectedTopic.pdfUrl && (
+                <a
+                  href={mobileSelectedTopic.pdfUrl}
+                  download
+                  className="mt-6 inline-flex items-center gap-2 rounded-md bg-[#7A1022] px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-[#5F0C1B]"
+                >
+                  <Download size={17} />
+                  Download PDF
+                </a>
+              )}
+
             </div>
 
           </div>
@@ -265,7 +276,7 @@ function PrayerPoints() {
                 Prayer Points
               </h2>
 
-              <div className="border-l-2 border-gray-200">
+              <div className="max-h-[calc(100vh-18rem)] overflow-y-auto border-l-2 border-gray-200 pr-2">
 
                 {prayerTopics.map((topic) => {
 
@@ -480,6 +491,17 @@ function PrayerPoints() {
                 </p>
 
               </div>
+
+              {selectedTopic.pdfUrl && (
+                <a
+                  href={selectedTopic.pdfUrl}
+                  download
+                  className="mt-8 inline-flex items-center gap-2 rounded-md bg-[#7A1022] px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-[#5F0C1B]"
+                >
+                  <Download size={18} />
+                  Download PDF
+                </a>
+              )}
 
             </div>
 

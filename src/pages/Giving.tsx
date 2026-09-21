@@ -396,7 +396,7 @@ function Giving() {
                       font-bold
                       uppercase
                       tracking-wider
-                      text-gray-500
+                      text-black-500
                     "
                   >
                     Account Number (USD)
@@ -423,7 +423,7 @@ function Giving() {
                         md:text-xl
                       "
                     >
-                      0513000010G
+                      05130000106
                     </p>
 
                     <button
@@ -802,6 +802,10 @@ function Giving() {
                           "
                         >
                           MTN Mobile Money
+                        </p>
+
+                        <p className="mt-2 text-xs font-bold uppercase tracking-[0.16em] text-[#7e099e]">
+                          General Donations
                         </p>
 
                         <div className="mt-2 flex flex-wrap items-center gap-2">

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { Mail, MapPin, PlayCircle } from "lucide-react";
 
 import worshipBg from "../../assets/images/hero3.jpg";
 import worshipBg2 from "../../assets/images/hero4.jpg";
@@ -62,11 +63,11 @@ function Hero() {
               style={{
                 backgroundImage: `
                   linear-gradient(
-                    to top right,
-                    rgba(84, 20, 130, 0.95),
+                    to right,
+                    rgba(84, 20, 130, 0.95) 0%,
                     rgba(84, 20, 130, 0.82) 40%,
                     rgba(84, 20, 130, 0.55) 70%,
-                    rgba(84, 20, 130, 0.25)
+                    rgba(84, 20, 130, 0.25) 100%
                   ),
                   url(${slide})
                 `,
@@ -136,6 +137,10 @@ function Hero() {
               Welcome to
             </p>
 
+            <p className="mx-auto max-w-xl text-xs font-bold uppercase tracking-[0.32em] text-white/80 lg:mx-0 md:text-sm">
+              MFM Kanyanya · Citadel of Solution and Power
+            </p>
+
             {/* Main Heading */}
             <h1
               className="
@@ -143,6 +148,9 @@ function Hero() {
                 text-[clamp(2.8rem,5vw,7rem)]
                 font-extrabold
                 leading-[0.92]
+                break-words
+                [overflow-wrap:normal]
+                [word-break:normal]
               "
             >
               Mountain of Fire &amp;
@@ -164,9 +172,9 @@ function Hero() {
                 md:text-lg
               "
             >
-              A house of prayer for all people.
-              Experience the power of God, find purpose,
-              and grow in your faith with us.
+              A house of prayer for all people. MFM Kanyanya is a citadel of
+              solution and power where you can experience God, find purpose,
+              and grow in faith.
             </p>
 
             {/* =====================================
@@ -196,9 +204,7 @@ function Hero() {
                   hover:shadow-xl
                 "
               >
-                <span className="material-symbols-outlined">
-                  play_circle
-                </span>
+                <PlayCircle size={19} aria-hidden="true" />
 
                 SERMONS
               </Link>
@@ -226,9 +232,7 @@ function Hero() {
                   hover:shadow-xl
                 "
               >
-                <span className="material-symbols-outlined">
-                  place
-                </span>
+                <MapPin size={19} aria-hidden="true" />
 
                 PLAN YOUR VISIT
               </Link>
@@ -260,9 +264,7 @@ function Hero() {
                   hover:shadow-xl
                 "
               >
-                <span className="material-symbols-outlined">
-                  mail_outline
-                </span>
+                <Mail size={19} aria-hidden="true" />
 
                 CONTACT US
               </Link>
@@ -285,7 +287,7 @@ function Hero() {
                 mb-0
                 w-full
                 max-w-[360px]
-                translate-y-[90px]
+                translate-y-[70px]
                 rounded-3xl
                 border
                 border-white/20
@@ -308,6 +310,10 @@ function Hero() {
                 "
               >
                 Theme of the Year 2026
+              </p>
+
+              <p className="mt-3 text-sm font-semibold uppercase tracking-[0.2em] text-white/80">
+                Citadel of Solution and Power
               </p>
 
               <h3

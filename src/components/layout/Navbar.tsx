@@ -107,7 +107,7 @@ function Navbar() {
           >
             <img
               src={mfmLogo}
-              alt="MFM Uganda logo"
+              alt="MFM Kanyanya logo"
               className="
                 h-8
                 w-8
@@ -143,7 +143,7 @@ function Navbar() {
                   xl:tracking-[0.14em]
                 "
               >
-                MFM UGANDA
+                MFM KANYANYA
               </p>
 
               <p
@@ -162,7 +162,7 @@ function Navbar() {
                   xl:tracking-[0.08em]
                 "
               >
-                MEGA Regional Headquarters
+                Citadel of Solution and Power
               </p>
             </div>
           </Link>
@@ -394,7 +394,7 @@ function Navbar() {
           >
             <img
               src={mfmLogo}
-              alt="MFM Uganda logo"
+              alt="MFM Kanyanya logo"
               className="
                 h-9
                 w-9
@@ -412,7 +412,7 @@ function Navbar() {
                   text-[#7e099e]
                 "
               >
-                MFM UGANDA
+                MFM KANYANYA
               </p>
 
               <p
@@ -422,7 +422,7 @@ function Navbar() {
                   text-gray-500
                 "
               >
-                MEGA Regional Headquarters
+                Citadel of Solution and Power
               </p>
             </div>
           </Link>

@@ -37,10 +37,10 @@ const Footer = () => {
                 />
                 <div>
                   <h2 className="text-sm font-bold uppercase tracking-wider text-[#ffdf9e]">
-                    Mountain of Fire
+                    MFM Kanyanya
                   </h2>
                   <p className="text-xs font-semibold text-white">
-                    & Miracles Ministries – Uganda
+                    Citadel of Solution and Power
                   </p>
                 </div>
               </div>
@@ -126,7 +126,7 @@ const Footer = () => {
               <div className="flex gap-3">
                 <MapPin size={18} className="mt-1 shrink-0 text-[#ffdf9e]" />
                 <p className="leading-7">
-                  <strong className="text-white">MFM Uganda Regional HQ</strong><br />
+                  <strong className="text-white">MFM Kanyanya Regional HQ</strong><br />
                   Kanyanya - Kisaasi Road,<br />
                   Kampala, Uganda
                 </p>
@@ -160,7 +160,7 @@ const Footer = () => {
             </h3>
             <div className="overflow-hidden rounded-xl border border-white/10 shadow-md">
               <iframe
-                title="MFM Uganda Church Location"
+                title="MFM Kanyanya Church Location"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15958.94827828064!2d32.5765!3d0.3708!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbb28c89b2513%3A0x628bf4225091724!2sKanyanya%2C%20Kampala!5e0!3m2!1sen!2sug!4v1700000000000!5m2!1sen!2sug"
                 width="100%"
                 height="180"
@@ -187,9 +187,9 @@ const Footer = () => {
       {/* Bottom Footer Bar */}
       <div className="border-t border-white/10 bg-[#040404]">
         <div className="mx-auto flex max-w-[1280px] flex-col items-center justify-between gap-3 px-6 py-4 text-xs text-white sm:flex-row sm:px-8 lg:px-10">
-          <p>© {new Date().getFullYear()} Mountain of Fire and Miracles Ministries – Uganda. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} MFM Kanyanya. All rights reserved.</p>
           <p className="flex items-center gap-1">
-            Part of the Global MFM Ministry Network
+            Citadel of Solution and Power
           </p>
         </div>
       </div>

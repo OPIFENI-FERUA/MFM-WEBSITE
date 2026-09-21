@@ -61,7 +61,7 @@ function Projects() {
       <PageHero
         label="Our Work"
         title="Projects"
-        description="Skills training, care for the elderly, and community outreach — with the church farm and SACCO still growing."
+        description="Skills training, care for the elderly, and community outreach — with the church farm and multi-purpose cooperative still growing."
       />
 
       <section className="px-6 py-16 md:py-20">
@@ -75,7 +75,7 @@ function Projects() {
           <p className="mt-4 text-base leading-8 text-gray-600 md:text-lg">
             The main work we have done is training people with skills, honouring
             the elderly, and going out into the community. Two projects are
-            still underway: the church farm and the church SACCO.
+            still underway: the church farm and the church cooperative.
           </p>
         </div>
       </section>
@@ -164,13 +164,16 @@ function Projects() {
             </h2>
             <p className="mt-4 max-w-2xl text-base leading-8 text-gray-600">
               These two works are active now. Members can still pray, give, and
-              serve as the farm and the SACCO take shape.
+              serve as the farm and the cooperative take shape.
             </p>
           </div>
 
           <div className="grid gap-8 lg:grid-cols-2">
             {ongoing.map((project) => {
-              const Icon = project.category === "SACCO" ? Wallet : Sprout;
+              const Icon =
+                project.category === "Multi-Purpose Cooperative"
+                  ? Wallet
+                  : Sprout;
               const hero = project.photos[0];
 
               return (
@@ -230,19 +233,20 @@ function Projects() {
             Partner with us
           </p>
           <h2 className="mt-4 text-3xl font-bold md:text-4xl">
-            Stand with the farm and the SACCO
+            Partner with the gospel mission
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-8 text-white/80">
-            If you would like to support the church farm, join the SACCO, or
-            help with skills, elderly care, or outreach, the church office is
-            ready to receive you.
+            If you would like to support the church farm, strengthen the
+            cooperative, or help with skills, elderly care, or outreach, the
+            church office is ready to receive you. Partnership is stronger when
+            it is rooted in the gospel and the mission of Christ.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link
               to="/giving"
               className="rounded-full bg-[#D9A441] px-7 py-3 text-sm font-bold uppercase tracking-wider text-[#7e099e] transition hover:bg-[#D9A441]"
             >
-              Give towards a project
+              Support the ministry
             </Link>
             <Link
               to="/contact"

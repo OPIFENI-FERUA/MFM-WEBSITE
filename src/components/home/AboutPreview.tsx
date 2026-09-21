@@ -72,10 +72,9 @@ function AboutPreview() {
           from-[#7e099e]/95
           via-[#7e099e]/30
           to-transparent
-          opacity-0
+          opacity-100
           transition-opacity
           duration-500
-          group-hover:opacity-100
         "
       />
 
@@ -86,7 +85,7 @@ function AboutPreview() {
           bottom-0
           left-0
           right-0
-          translate-y-full
+          translate-y-0
           px-8
           pb-8
           pt-20
@@ -94,7 +93,6 @@ function AboutPreview() {
           transition-all
           duration-500
           ease-out
-          group-hover:translate-y-0
         "
       >
         <span className="inline-block rounded-full bg-[#d4af37] px-3 py-1 text-[11px] font-bold uppercase tracking-[0.15em] text-[#7e099e]">

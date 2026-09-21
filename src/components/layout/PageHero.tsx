@@ -134,6 +134,10 @@ function PageHero({
           {label}
         </p>
 
+        <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-white/80 sm:text-xs">
+          Citadel of Solution and Power
+        </p>
+
         {/* =================================================
             TITLE
         ================================================= */}
